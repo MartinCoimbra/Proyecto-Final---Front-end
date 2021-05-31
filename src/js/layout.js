@@ -5,6 +5,7 @@ import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./views/home";
 import { Login } from "./views/login";
 import { Registro } from "./views/registro";
+import { Recuperarpass } from "./views/recuperarpass";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -27,6 +28,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/registro">
 							<Registro />
+						</Route>
+						<Route exact path="/recuperarpass">
+							<Recuperarpass />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>

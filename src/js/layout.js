@@ -7,6 +7,7 @@ import { Login } from "./views/login";
 import { Registro } from "./views/registro";
 import { Recuperarpass } from "./views/recuperarpass";
 import { Acercade } from "./views/acercade";
+import { Top } from "./views/top";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -35,6 +36,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/acercade">
 							<Acercade />
+						</Route>
+						<Route exact path="/top">
+							<Top />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>

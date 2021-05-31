@@ -20,7 +20,7 @@ export const Navbar = () => {
 				<Link to="/acercade">
 					<span className="mr-3">Acerca de</span>
 				</Link>
-				<Link to="/">
+				<Link to="/top">
 					<span className="mr-3">Top</span>
 				</Link>
 			</div>

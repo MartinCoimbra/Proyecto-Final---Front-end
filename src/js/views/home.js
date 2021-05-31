@@ -2,9 +2,9 @@ import React from "react";
 import "../../styles/home.scss";
 
 export const Home = () => (
-	<div className="text-center mt-5 pt-2">
+	<div className="text-center container-fluid mt-5 pt-2">
 		<div className="row">
-			<div className="col-12 ">
+			<div className="col-12 px-0">
 				<div id="carouselExampleIndicators" className="carousel slide" htmlData-ride="carousel">
 					<ol className="carousel-indicators">
 						<li htmlData-target="#carouselExampleIndicators" htmlData-slide-to="0" className="active" />
@@ -57,23 +57,27 @@ export const Home = () => (
 			</div>
 		</div>
 		<div className="container">
-			<div className="row mt-2">
-				<div className="col-3">
-					<button className="btn btn-primary bg-danger">Play!</button>
-					<div className="form-group">
-						<label htmlFor="exampleFormControlSelect1">Categorias</label>
-						<select className="form-control" id="exampleFormControlSelect1">
-							<option>Geografia</option>
-							<option>Matematica</option>
-							<option>Historia</option>
-							<option>Programacion</option>
-						</select>
+			<div className="row my-4 desenfoque justify-content-between">
+				<div className="row col-3 ml-4">
+					<div className="col-5 d-flex align-items-center">
+						<button className="btn btn-primary bg-danger">Play!</button>
+					</div>
+					<div className="col-7">
+						<div className="form-group">
+							<label htmlFor="exampleFormControlSelect1">Categorias</label>
+							<select className="form-control" id="exampleFormControlSelect1">
+								<option>Geografia</option>
+								<option>Matematica</option>
+								<option>Historia</option>
+								<option>Programacion</option>
+							</select>
+						</div>
 					</div>
 				</div>
-				<div className="col-6">
-					<h1>Preguntados</h1>
+				<div className="col-6 d-flex align-items-center justify-content-center w-100">
+					<h1> Preguntados</h1>
 				</div>
-				<div className="col-3">
+				<div className="row col-3 d-flex align-items-center">
 					<button className="btn btn-primary bg-success">Publicar un preguntado</button>
 				</div>
 			</div>

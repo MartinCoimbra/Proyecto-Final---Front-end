@@ -1,0 +1,23 @@
+@import "~bootstrap/scss/bootstrap.scss";
+
+.contenedor{
+    background-color: #e6e6e6;
+    width: 100%;
+    height: 700px;
+    overflow-y: scroll;
+}
+
+.info{
+    display: none;
+}
+.desenfoque{
+    /* backdrop-filter: blur(15px); */
+}
+.imgS{
+    cursor: pointer;
+}
+.imgS:hover{
+    .info{
+        display: block;
+    }
+}  

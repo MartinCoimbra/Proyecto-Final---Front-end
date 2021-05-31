@@ -10,14 +10,18 @@
 .info{
     display: none;
 }
-.desenfoque{
-    /* backdrop-filter: blur(15px); */
-}
+
 .imgS{
     cursor: pointer;
+}
+.desenfoque2{
+        backdrop-filter: blur(0px);
 }
 .imgS:hover{
     .info{
         display: block;
+    }
+    .desenfoque2{
+        backdrop-filter: blur(5px);
     }
 }  

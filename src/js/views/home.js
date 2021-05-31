@@ -88,7 +88,7 @@ export const Home = () => (
 								className="card-img "
 								alt="..."
 							/>
-							<div className="card-img-overlay">
+							<div className="card-img-overlay desenfoque2">
 								<h5 className="card-title info">Card title</h5>
 								<p className="card-text info">
 									bit lonxzczxczxcxcxx xxxxxxx xxxxxxxx dfs sdfsdf dfdfdger.

@@ -7,6 +7,7 @@ import { Login } from "./views/login";
 import { Registro } from "./views/registro";
 import { Recuperarpass } from "./views/recuperarpass";
 import { Acercade } from "./views/acercade";
+import { Postpreguntado } from "./views/postpreguntado";
 import { Top } from "./views/top";
 import { Infopreguntado } from "./views/infopreguntado";
 import { Juego } from "./views/juego";
@@ -52,6 +53,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/juego">
 							<Juego />
+						</Route>
+						<Route exact path="/postpreguntado">
+							<Postpreguntado />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>

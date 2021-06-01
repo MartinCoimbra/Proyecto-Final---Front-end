@@ -79,7 +79,9 @@ export const Home = () => (
 					<h1> Preguntados</h1>
 				</div>
 				<div className="row col-3 d-flex align-items-center">
-					<button className="btn btn-primary bg-success">Publicar un preguntado</button>
+					<Link to="/postpreguntado">
+						<button className="btn btn-primary bg-success">Publicar un preguntado</button>
+					</Link>
 				</div>
 			</div>
 

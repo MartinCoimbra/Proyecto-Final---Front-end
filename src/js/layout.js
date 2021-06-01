@@ -9,6 +9,7 @@ import { Recuperarpass } from "./views/recuperarpass";
 import { Acercade } from "./views/acercade";
 import { Top } from "./views/top";
 import { Infopreguntado } from "./views/infopreguntado";
+import { Juego } from "./views/juego";
 /* Privadas */
 import { Perfil } from "./views/perfil";
 import injectContext from "./store/appContext";
@@ -48,6 +49,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/perfil">
 							<Perfil />
+						</Route>
+						<Route exact path="/juego">
+							<Juego />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>

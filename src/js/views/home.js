@@ -1,5 +1,6 @@
 import React from "react";
 import "../../styles/home.scss";
+import { Link } from "react-router-dom";
 
 export const Home = () => (
 	<div className="text-center container-fluid mt-5 pt-2">
@@ -93,13 +94,16 @@ export const Home = () => (
 								alt="..."
 							/>
 							<div className="card-img-overlay desenfoque2">
-								<h5 className="card-title info">Card title</h5>
+								<h5 className="card-title info">Historia</h5>
 								<p className="card-text info">
 									bit lonxzczxczxcxcxx xxxxxxx xxxxxxxx dfs sdfsdf dfdfdger.
 								</p>
 								{/* LINK-s */}
 								<div className="info">
-									<button className="btn btn-info mr-1">Ver más</button>
+									{/* AQUI Acuerdate de intercalar el id segun el que seleciono */}
+									<Link to="/infopreguntado/1">
+										<button className="btn btn-info mr-1">Ver más</button>
+									</Link>
 									<button className="btn btn-success">Play</button>
 								</div>
 							</div>

@@ -10,7 +10,7 @@ export const Perfil = () => {
 
 	return (
 		<div className="container-fluid  px-0 mx-0 mt-5">
-			<div className="container desenfoque mt-5">
+			<div className="container paleta1 mt-5">
 				<div className="row pt-4 pr-4 pl-4 mb-0 pb-0">
 					<div className="col-3">
 						<figure className="figure">

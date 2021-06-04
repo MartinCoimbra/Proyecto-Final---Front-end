@@ -16,37 +16,43 @@ export const Acercade = () => {
 						<li data-target="#carouselExampleCaptions" data-slide-to="0" className="active" />
 						<li data-target="#carouselExampleCaptions" data-slide-to="1" />
 						<li data-target="#carouselExampleCaptions" data-slide-to="2" />
+						<li data-target="#carouselExampleCaptions" data-slide-to="3" />
+						<li data-target="#carouselExampleCaptions" data-slide-to="4" />
 					</ol>
 					<div className="carousel-inner">
 						<div className="carousel-item active">
 							<img
 								height="600px"
-								src="https://wellaggio.com/wp-content/uploads/2018/06/Wellaggio-diseno-web-valencia-Co%CC%81mo-disen%CC%83ar-la-pa%CC%81gina-%E2%80%9Csobre-nosotros%E2%80%9D-en-la-web-de-mi-empresa.jpg"
+								src="https://coworkingfy.com/wp-content/uploads/2019/11/trabajo-en-equipo-grupo-figurativo-de-equipo-de-trabajo.jpg"
 								className="d-block w-100"
 								alt="..."
 							/>
 							<div className="carousel-caption d-none d-md-block desenfoqueText">
-								<h5 className="h3">Acerca de</h5>
+								<h5 className="h3">Acerca de Nosotros</h5>
 								<p>
-									Some representative placeholder content for the first slide. Some representative
-									placeholder content for the first slide. Some representative placeholder content for
-									the first slide. Some representative placeholder content for the first slide.
+									Somos una pagina que ofrece entrenamiento y aprendisaje al mismo tiempo. Como
+									muchos, nosotros creemos en la utilización de los juegos para el aprendizaje que se
+									ha utilizado siempre en las clases de idiomas para aprender y practicar exponentes
+									lingüísticos, estrategias comunicativas, destrezas orales, etc, además de ayudarnos
+									como herramienta para desarrollar el componente afectivo en las actividades
+									grupales.
 								</p>
 							</div>
 						</div>
 						<div className="carousel-item">
 							<img
 								height="600px"
-								src="https://www.caracteristicas.co/wp-content/uploads/2017/03/cerebro-e1565716723530.jpg"
+								src="https://e.rpp-noticias.io/xlarge/2018/10/08/531753_690363.jpg"
 								className="d-block w-100"
 								alt="..."
 							/>
 							<div className="carousel-caption d-none d-md-block desenfoqueText">
 								<h5 className="h3">¿Sabias que?</h5>
 								<p>
-									Some representative placeholder content for the second slide. Some representative
-									placeholder content for the second slide. Some representative placeholder content
-									for the second slide. Some representative placeholder content for the second slide.
+									El cerebro almacena la información como un CD, no como un casete. Responder a la
+									pregunta de cómo almacenar información, si en forma continua o discreta, es fácil
+									para los ingenieros. ... El ADN almacena información en forma discreta en forma de
+									secuencia de nucleótidos
 								</p>
 							</div>
 						</div>
@@ -58,8 +64,47 @@ export const Acercade = () => {
 								alt="..."
 							/>
 							<div className="carousel-caption d-none d-md-block desenfoqueText">
-								<h5 className="h3">Third slide label</h5>
-								<p>Some representative placeholder content for the third slide.</p>
+								<h5 className="h3">¿Por que es tan importante estudiar?</h5>
+								<p>
+									Es importante porque quien estudia adquiere conocimientos. El conocimiento es lo
+									único que puede ayudarte a desarrollar tus capacidades completamente. Es importante
+									porque saber cosas y entender las razones por las que son o suceden así es lo que te
+									permite cuestionarlas y traer progreso a toda la humanidad.
+								</p>
+							</div>
+						</div>
+						<div className="carousel-item">
+							<img
+								height="600px"
+								src="https://lamenteesmaravillosa.com/wp-content/uploads/2018/01/cerebro-haciendo-deporte-1024x768.jpg"
+								className="d-block w-100"
+								alt="..."
+							/>
+							<div className="carousel-caption d-none d-md-block desenfoqueText">
+								<h5 className="h3">¿Sabias que?</h5>
+								<p>
+									Memorizar paisajes, poesías o canciones a lo largo del tiempo, es una forma muy
+									efectiva de hacer que tu cerebro sea más receptivo a la memoria. No es necesario
+									tratar de memorizar libros enteros, comienza con cosas del día a día: trata de
+									memorizar siempre los teléfonos importantes en lugar de tenerlos en tu celular.
+								</p>
+							</div>
+						</div>
+						<div className="carousel-item">
+							<img
+								height="600px"
+								src="http://blogs.upn.edu.pe/carreras-para-adultos-que-trabajan/wp-content/uploads/sites/15/2018/06/upn_blog_wa_creativid_12-jun.jpg"
+								className="d-block w-100"
+								alt="..."
+							/>
+							<div className="carousel-caption d-none d-md-block desenfoqueText">
+								<h5 className="h3">Se Creativo!!!</h5>
+								<p>
+									La Mente Creativa es rebelde, ésa es su principal característica. No da nada por
+									sentado, no se fundamenta en presunciones ni moldes establecidos. La Mente Creativa
+									asume que todo puede ser completado, superado, mejorado, que nada está definido y
+									todo es perfectible.
+								</p>
 							</div>
 						</div>
 					</div>

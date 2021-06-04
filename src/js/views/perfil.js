@@ -10,7 +10,7 @@ export const Perfil = () => {
 
 	return (
 		<div className="container-fluid  px-0 mx-0 mt-5">
-			<div className="container paleta1 mt-5">
+			<div className="container fondoperfil mt-5">
 				<div className="row pt-4 pr-4 pl-4 mb-0 pb-0">
 					<div className="col-3">
 						<figure className="figure">
@@ -24,8 +24,8 @@ export const Perfil = () => {
 					<div className="col-9 d-flex align-items-start flex-column">
 						<h1>Martin Coimbra</h1>
 						<div className="row m-auto w-100">
-							<div className="col-8 border bg-white comentMarcado p-3">
-								<p className="p-0 m-0">Me gusta muchisimo el café ☕</p>
+							<div className="col-8 mt-3 border border-info bg-white comentMarcado p-3">
+								<p className="p-0 m-0 ">Me gusta muchisimo el café ☕</p>
 							</div>
 							<div className="col-1 d-flex align-self-end">
 								<a className="d-inline">Editar</a>

@@ -3,8 +3,8 @@ import "../../styles/home.scss";
 import { Link } from "react-router-dom";
 
 export const Home = () => (
-	<div className="text-center container-fluid mt-5 pt-2">
-		<div className="row">
+	<div className="text-center container-fluid">
+		<div className="row h-75">
 			<div className="col-12 px-0">
 				<div id="carouselExampleIndicators" className="carousel slide" htmlData-ride="carousel">
 					<ol className="carousel-indicators">
@@ -12,30 +12,38 @@ export const Home = () => (
 						<li htmlData-target="#carouselExampleIndicators" htmlData-slide-to="1" />
 						<li htmlData-target="#carouselExampleIndicators" htmlData-slide-to="2" />
 					</ol>
-					<div className="carousel-inner">
-						<div className="carousel-item active">
+					<div className="carousel-inner h-100">
+						<div className="carousel-item active h-100">
 							<img
-								height="600px"
-								src="https://juegosmesaparados.com/wp-content/uploads/2020/03/Juegos-de-mesa-de-preguntas-y-respuestas.jpg"
-								className="d-block w-100"
+								src="https://www.itl.cat/pngfile/big/299-2991222_education-wallpaper-education-wallpaper-hd.jpg"
+								className="d-block w-100 h-100"
+								alt="..."
+							/>
+							<div className="carousel-caption d-none d-md-block desenfoqueText">
+								<h5 className="h3">¡ES HORA DE APRENDER!</h5>
+								<p>
+									Tan sólo tú y tú, hay que vencer al mejor, la mente tienes que elevar y no rendirte
+									sin probar, el juego va a empezar.
+								</p>
+							</div>
+						</div>
+						<div className="carousel-item h-100">
+							<img
+								src="https://i.pinimg.com/originals/51/0e/3a/510e3a54ba009852022df4f585fc349e.jpg"
+								className="d-block w-100 h-100"
 								alt="..."
 							/>
 						</div>
-						<div className="carousel-item">
+						<div className="carousel-item h-100">
 							<img
-								height="600px"
-								src="https://static.wixstatic.com/media/94a51f_dcacaad8108d45129e8ac56b9b955a8b~mv2.png/v1/fit/w_511%2Ch_292%2Cal_c/file.png"
-								className="d-block w-100"
+								src="https://wallpaperaccess.com/full/3129561.jpg"
+								className="d-block w-100 h-100"
 								alt="..."
 							/>
-						</div>
-						<div className="carousel-item">
-							<img
-								height="600px"
-								src="https://formacionparaformadores.com/wp-content/uploads/2015/01/Ser-Formador-preguntas-y-re-630x315.jpg"
-								className="d-block w-100"
-								alt="..."
-							/>
+							<div className="carousel-caption d-none d-md-block desenfoqueText">
+								<h5 className="h3">¡APRENDER SOBRE DEPORTES!</h5>
+								<p>Juega, aprende y demuestra que eres un verdadero crack de los deportes.</p>
+							</div>
 						</div>
 					</div>
 					<a

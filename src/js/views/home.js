@@ -84,7 +84,7 @@ export const Home = () => (
 					</div>
 				</div>
 				<div className="col-6 d-flex align-items-center justify-content-center w-100">
-					<h1> Preguntados</h1>
+					<h1>JUDYA</h1>
 				</div>
 				<div className="row col-3 d-flex align-items-center">
 					<Link to="/postpreguntado">

@@ -8,7 +8,7 @@ export const Navbar = () => {
 	return (
 		<nav className="navbar navbar-dark paleta5 fixed-top">
 			<Link to="/">
-				<span className="navbar-brand mb-0 h1">Preguntados</span>
+				<span className="navbar-brand mb-0 h1">JUDYA</span>
 			</Link>
 			<div className={store.logeado == false ? "d-block ml-auto" : "d-none"}>
 				<Link className="text-decoration-none" to="/">
@@ -25,6 +25,9 @@ export const Navbar = () => {
 				</Link>
 				<Link className="text-decoration-none" to="/top">
 					<span className="mr-3 text-white">Top</span>
+				</Link>
+				<Link className="text-decoration-none" to="/sabiasque">
+					<span className="mr-3 text-white">Curiosidades</span>
 				</Link>
 			</div>
 			<div className={store.logeado == false ? "d-none" : "d-block ml-auto"}>

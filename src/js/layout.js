@@ -11,6 +11,7 @@ import { Postpreguntado } from "./views/postpreguntado";
 import { Top } from "./views/top";
 import { Infopreguntado } from "./views/infopreguntado";
 import { Juego } from "./views/juego";
+import { Sabiasque } from "./views/sabiasque";
 /* Privadas */
 import { Perfil } from "./views/perfil";
 import injectContext from "./store/appContext";
@@ -56,6 +57,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/postpreguntado">
 							<Postpreguntado />
+						</Route>
+						<Route exact path="/sabiasque">
+							<Sabiasque />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>

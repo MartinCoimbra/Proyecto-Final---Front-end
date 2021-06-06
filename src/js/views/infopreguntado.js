@@ -9,8 +9,8 @@ export const Infopreguntado = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="container-fluid px-0 mx-0 mt-5">
-			<div className="container desenfoque p-3 mt-5">
+		<div className="container-fluid fondoTop px-0 mx-0 mt-5">
+			<div className="container bg-light rounded p-3 mt-5 mb-3">
 				<div className="row mb-5">
 					<div className="col-6">
 						<figure className="figure">
@@ -47,7 +47,7 @@ export const Infopreguntado = () => {
 				</div>
 				<div className="container contenedorTop width2">
 					{/* Aqui va el map de los comentarios */}
-					<div className="w-100 row bg-white mb-2">
+					<div className="w-100 row border bg-white mb-2">
 						<div className="col-2 d-flex align-items-center justify-content-center">
 							<img
 								className="w-75"
@@ -69,7 +69,7 @@ export const Infopreguntado = () => {
 						</div>
 					</div>
 				</div>
-				<div className="container mt-3 bg-white width2 p-4 comentMarcado">
+				<div className="container mt-3 border width2 p-4">
 					<h4>¡Cuentanos que opinas sobre este post!</h4>
 					<div className="form-group ">
 						<label htmlFor="exampleFormControlTextarea1">¡Tu comentario es importante!</label>

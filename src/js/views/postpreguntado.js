@@ -7,15 +7,15 @@ export const Postpreguntado = () => {
 	const { store, actions } = useContext(Context);
 	const [siguiente, setSiguiente] = useState(0);
 	return (
-		<div className="container-fluid  px-0 mx-0 mt-5">
-			<div className="container mt-5 fondonew">
+		<div className="container-fluid my-5 fondoTop px-0 mx-0 mt-5">
+			<div className="container mt-5 mb-2">
 				<div className="row justify-content-center">
 					<div className="col-8 text-center">
 						<p className="h1">¡Publiquemos un preguntado!</p>
 					</div>
 				</div>
 			</div>
-			<div className={siguiente == 0 ? "container py-2 fondonew" : "d-none"}>
+			<div className={siguiente == 0 ? "container py-2 mb-4 fondoPerson" : "d-none"}>
 				{/* PONER SELECT CPARA SABER DE QUE CATEGORIA QUIERE QUE SEA */}
 				<div className="row justify-content-center my-2">
 					<div className="col-9">
@@ -78,7 +78,7 @@ export const Postpreguntado = () => {
 						? "d-block"
 						: "d-none"
 				}>
-				<div className="container fondonew py-4">
+				<div className="container py-4">
 					<div className="row justify-content-center">
 						<div className="col-8 text-center">
 							<p className="h3">¿Cuales van a ser tus preguntas?</p>
@@ -87,7 +87,7 @@ export const Postpreguntado = () => {
 				</div>
 			</div>
 			<div className={siguiente == 1 ? "d-block" : "d-none"}>
-				<div className="container fondonew py-4">
+				<div className="container my-5 fondoPerson py-4">
 					<div className="row justify-content-center mb-3">
 						<div className="col-9">
 							<p className="text-left h4">Pregunta 1:</p>
@@ -140,7 +140,7 @@ export const Postpreguntado = () => {
 				</div>
 			</div>
 			<div className={siguiente == 2 ? "d-block" : "d-none"}>
-				<div className="container fondonew py-4">
+				<div className="container my-5 fondoPerson py-4">
 					<div className="row justify-content-center mb-3">
 						<div className="col-9">
 							<p className="text-left h4">Pregunta 2:</p>
@@ -193,7 +193,7 @@ export const Postpreguntado = () => {
 				</div>
 			</div>
 			<div className={siguiente == 3 ? "d-block" : "d-none"}>
-				<div className="container fondonew py-4">
+				<div className="container my-5 fondoPerson py-4">
 					<div className="row justify-content-center mb-3">
 						<div className="col-9">
 							<p className="text-left h4">Pregunta 3:</p>
@@ -246,7 +246,7 @@ export const Postpreguntado = () => {
 				</div>
 			</div>
 			<div className={siguiente == 4 ? "d-block" : "d-none"}>
-				<div className="container fondonew py-4">
+				<div className="container my-5 fondoPerson py-4">
 					<div className="row justify-content-center mb-3">
 						<div className="col-9">
 							<p className="text-left h4">Pregunta 4:</p>
@@ -299,7 +299,7 @@ export const Postpreguntado = () => {
 				</div>
 			</div>
 			<div className={siguiente == 5 ? "d-block" : "d-none"}>
-				<div className="container fondonew py-4">
+				<div className="container my-5 fondoPerson py-4">
 					<div className="row justify-content-center mb-3">
 						<div className="col-9">
 							<p className="text-left h4">Pregunta 5:</p>
@@ -352,7 +352,7 @@ export const Postpreguntado = () => {
 				</div>
 			</div>
 			<div className={siguiente == 6 ? "d-block" : "d-none"}>
-				<div className="container mt-3 mb-3">
+				<div className="container my-5 mb-3">
 					<div className="row justify-content-center">
 						<div className="col-5 text-center">
 							<button className="btn btn-success p-4">

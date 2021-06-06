@@ -3,7 +3,7 @@ import "../../styles/home.scss";
 import { Link } from "react-router-dom";
 
 export const Home = () => (
-	<div className="text-center container-fluid">
+	<div className="text-center container-fluid fondoTop">
 		<div className="row h-75">
 			<div className="col-12 px-0">
 				<div id="carouselExampleIndicators" className="carousel slide" htmlData-ride="carousel">
@@ -66,10 +66,10 @@ export const Home = () => (
 			</div>
 		</div>
 		<div className="container">
-			<div className="row my-4 desenfoque justify-content-between">
+			<div className="row my-4 fondoPerson justify-content-between">
 				<div className="row col-3 ml-4">
 					<div className="col-5 d-flex align-items-center">
-						<button className="btn btn-primary bg-danger">Play!</button>
+						<button className="btn btn-primary bg-danger mt-3">Play!</button>
 					</div>
 					<div className="col-7">
 						<div className="form-group">
@@ -88,15 +88,15 @@ export const Home = () => (
 				</div>
 				<div className="row col-3 d-flex align-items-center">
 					<Link to="/postpreguntado">
-						<button className="btn btn-primary bg-success">Publicar un preguntado</button>
+						<button className="btn btn-primary bg-success mt-3">Publicar un preguntado</button>
 					</Link>
 				</div>
 			</div>
 
 			<div className="contenedor">
-				{/* Mapeo de 5 preguntados aleatorio, Nota:Mapear segun la categoria seleccionada luego */}
-				<div className="row">
-					<div className="col-4  mb-3">
+				<div className="row px-0 mx-0">
+					{/* Mapeo de 5 preguntados aleatorio, Nota:Mapear segun la categoria seleccionada luego */}
+					<div className="col-4 mb-3">
 						<div className="card bg-dark imgS text-white">
 							<img
 								src="https://www.ecestaticos.com/image/clipping/af87059eaa01d0ce789779b415c78134/como-se-debe-ensenar-la-historia.jpg"

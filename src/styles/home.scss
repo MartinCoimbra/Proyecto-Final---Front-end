@@ -1,12 +1,10 @@
 @import "~bootstrap/scss/bootstrap.scss";
 
 .contenedor{
-    background-color: #e6e6e6;
     width: 100%;
     height: 700px;
     overflow-y: scroll;
 }
-
 .info{
     display: none;
 }
@@ -33,15 +31,15 @@
     height: 200px;
     overflow-x: scroll;
 }
-.estadistica::-webkit-scrollbar {
+.estadistica::-webkit-scrollbar, .contenedor::-webkit-scrollbar {
     width: 8px;     /* Tamaño del scroll en vertical */
     height: 8px;    /* Tamaño del scroll en horizontal */
 }
-.estadistica::-webkit-scrollbar-thumb {
+.estadistica::-webkit-scrollbar-thumb, .contenedor::-webkit-scrollbar-thumb {
     background: #1d1d1d;
     border-radius: 4px;
 }
-.estadistica:-webkit-scrollbar-thumb:hover {
+.estadistica:-webkit-scrollbar-thumb:hover, .contenedor:-webkit-scrollbar-thumb:hover {
     background: #424242;
     box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
 }

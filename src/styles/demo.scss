@@ -8,6 +8,20 @@
     height: 500px;
     overflow-y: scroll;
 }
+
+.contenedorTop::-webkit-scrollbar {
+    width: 8px;     /* Tamaño del scroll en vertical */
+    height: 8px;    /* Tamaño del scroll en horizontal */
+}
+.contenedorTop::-webkit-scrollbar-thumb {
+    background: #1d1d1d;
+    border-radius: 4px;
+}
+.contenedorTop:-webkit-scrollbar-thumb:hover {
+    background: #424242;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
 .width2{
     width: 95%;
 }

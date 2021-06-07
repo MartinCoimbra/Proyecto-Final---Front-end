@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-
 import { Context } from "../store/appContext";
-
 import "../../styles/demo.scss";
 
 export const Perfil = () => {
@@ -15,17 +13,20 @@ export const Perfil = () => {
 					<div className="col-3">
 						<figure className="figure">
 							<img
-								src="https://image.freepik.com/vector-gratis/perfil-hombre-dibujos-animados_18591-58482.jpg"
+								src={store.infoProfile.urlfoto}
 								className="figure-img img-fluid rounded rounded-circle"
 								alt="..."
 							/>
 						</figure>
 					</div>
 					<div className="col-9 d-flex align-items-start flex-column">
-						<h1>Martin Coimbra</h1>
+						<h1>
+							{store.infoProfile.first_name + " "}
+							{store.infoProfile.last_name}
+						</h1>
 						<div className="row m-auto w-100">
 							<div className="col-8 mt-3 border border-info bg-white comentMarcado p-3">
-								<p className="p-0 m-0 ">Me gusta muchisimo el café ☕</p>
+								<p className="p-0 m-0 ">{store.infoProfile.descripcion} ☕</p>
 							</div>
 							<div className="col-1 d-flex align-self-end">
 								<a className="d-inline">Editar</a>

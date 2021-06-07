@@ -18,7 +18,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			registroData: {},
 			loginData: {},
 			infoProfile: {} /* Info del usuario logueado */,
-			registroFake: false
+			registroFake: false,
+			dataPreguntado: {},
+			categorias: [{}]
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -55,6 +57,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 				let dataCapt = { [e.target.name]: e.target.value };
 				setStore({ loginData: { ...getStore().loginData, ...dataCapt } });
 			},
+			preguntadoData: e => {
+				if (e.target.name == "categoria") {
+					let categorianew = parseInt(e.target.value);
+					let dataCapt = { [e.target.name]: categorianew };
+					setStore({ dataPreguntado: { ...getStore().dataPreguntado, ...dataCapt } });
+				} else {
+					let dataCapt = { [e.target.name]: e.target.value };
+					setStore({ dataPreguntado: { ...getStore().dataPreguntado, ...dataCapt } });
+				}
+			},
 			registroData: e => {
 				/* Guardamos los datos del usuario que se quiere registrar */
 				let dataCapt = { [e.target.name]: e.target.value };
@@ -79,6 +91,24 @@ const getState = ({ getStore, getActions, setStore }) => {
 						setStore({ registroFake: true });
 					});
 			},
+			postPreguntado: () => {
+				const dataEnviar = getStore().dataPreguntado;
+				fetch(process.env.BACKEND_URL + "/preguntado", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: localStorage.getItem("token")
+					},
+					body: JSON.stringify(dataEnviar)
+				})
+					.then(resp => resp.json())
+					.then(resp => {
+						console.log(resp);
+					})
+					.catch(error => {
+						console.log(error + "Necesita estar login para post un preguntado");
+					});
+			},
 			putEditar: newDataUser => {
 				console.log(newDataUser);
 				fetch(process.env.BACKEND_URL + "/editardatos", {
@@ -97,6 +127,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.catch(error => {
 						console.log(error);
 					});
+			},
+			getCategorias: () => {
+				fetch(process.env.BACKEND_URL + "/categorias", {
+					method: "GET"
+				})
+					.then(resp => resp.json())
+					.then(resp => {
+						console.log(resp);
+						setStore({ categorias: resp });
+					})
+					.catch(error => console.log(error));
 			},
 			actionRemove: () => {
 				localStorage.removeItem("token");

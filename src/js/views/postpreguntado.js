@@ -6,6 +6,11 @@ import "../../styles/demo.scss";
 export const Postpreguntado = () => {
 	const { store, actions } = useContext(Context);
 	const [siguiente, setSiguiente] = useState(0);
+
+	/* Abria que cambiarlo value por id */
+	/* const handleChange = event => {
+		console.log(`Seleccionaste ${event.target.value}`);
+	}; */
 	return (
 		<div className="container-fluid my-5 fondoTop px-0 mx-0 mt-5">
 			<div className="container mt-5 mb-2">
@@ -26,29 +31,36 @@ export const Postpreguntado = () => {
 					<div className="col-3">
 						<div className="form-group">
 							<p className="text-left">Categoria de la tematica</p>
-							<select className="form-control" id="exampleFormControlSelect1">
-								<option>Geografia</option>
-								<option>Matematica</option>
-								<option>Historia</option>
-								<option>Programacion</option>
+							<select
+								onChange={actions.preguntadoData}
+								className="form-control"
+								name="categoria"
+								id="examplesFormControlSelect1">
+								{store.categorias.map(element => (
+									<option key={element.value} value={element.id}>
+										{element.name}
+									</option>
+								))}
 							</select>
 						</div>
 					</div>
 					<div className="col-3">
 						<p className="text-left">Nombre de la tematica:</p>
 						<input
-							type="name"
+							onChange={actions.preguntadoData}
+							name="nombre"
+							type="text"
 							className="form-control"
-							id="exampleInputEmail1"
 							aria-describedby="emailHelp"
 						/>
 					</div>
 					<div className="col-3">
 						<p className="text-left">url de portada:</p>
 						<input
-							type="urlFoto"
+							onChange={actions.preguntadoData}
+							name="url_foto"
+							type="text"
 							className="form-control"
-							id="exampleInputEmail1"
 							aria-describedby="emailHelp"
 						/>
 					</div>
@@ -57,7 +69,13 @@ export const Postpreguntado = () => {
 					<div className="col-7">
 						<p className="text-left">¡Cuentanos sobre esta tematica!</p>
 						<div className="form-group ">
-							<textarea className="form-control textArea" id="exampleFormControlTextarea1" rows="4" />
+							<textarea
+								onChange={actions.preguntadoData}
+								name="descripcion"
+								className="form-control textArea"
+								id="exampleFormControlTextarea1"
+								rows="4"
+							/>
 						</div>
 					</div>
 				</div>
@@ -71,7 +89,6 @@ export const Postpreguntado = () => {
 					</button>
 				</div>
 			</div>
-
 			<div
 				className={
 					siguiente == 1 || siguiente == 2 || siguiente == 3 || siguiente == 4 || siguiente == 5
@@ -92,9 +109,20 @@ export const Postpreguntado = () => {
 						<div className="col-9">
 							<p className="text-left h4">Pregunta 1:</p>
 							<input
-								type="name"
+								onChange={actions.preguntadoData}
+								name="pregunta"
+								type="text"
 								className="form-control"
-								id="exampleInputEmail1"
+								aria-describedby="emailHelp"
+							/>
+						</div>
+						<div className="col-9 mt-3">
+							<p className="text-left">Url Foto</p>
+							<input
+								onChange={actions.preguntadoData}
+								name="url_foto_pregunta"
+								type="text"
+								className="form-control"
 								aria-describedby="emailHelp"
 							/>
 						</div>
@@ -103,27 +131,30 @@ export const Postpreguntado = () => {
 						<div className="col-3">
 							<p className="text-left">Respuesta correcta 1:</p>
 							<input
-								type="name"
+								onChange={actions.preguntadoData}
+								name="opcion_correcta"
+								type="text"
 								className="form-control"
-								id="exampleInputEmail1"
 								aria-describedby="emailHelp"
 							/>
 						</div>
 						<div className="col-3">
 							<p className="text-left">Opcion 2:</p>
 							<input
-								type="name"
+								onChange={actions.preguntadoData}
+								name="opcion_b"
+								type="text"
 								className="form-control"
-								id="exampleInputEmail1"
 								aria-describedby="emailHelp"
 							/>
 						</div>
 						<div className="col-3">
 							<p className="text-left">Opcion 3:</p>
 							<input
-								type="name"
+								onChange={actions.preguntadoData}
+								name="opcion_c"
+								type="text"
 								className="form-control"
-								id="exampleInputEmail1"
 								aria-describedby="emailHelp"
 							/>
 						</div>
@@ -145,9 +176,20 @@ export const Postpreguntado = () => {
 						<div className="col-9">
 							<p className="text-left h4">Pregunta 2:</p>
 							<input
-								type="name"
+								onChange={actions.preguntadoData}
+								name="pregunta2"
+								type="text"
 								className="form-control"
-								id="exampleInputEmail1"
+								aria-describedby="emailHelp"
+							/>
+						</div>
+						<div className="col-9 mt-3">
+							<p className="text-left">Url Foto</p>
+							<input
+								onChange={actions.preguntadoData}
+								name="url_foto_pregunta2"
+								type="text"
+								className="form-control"
 								aria-describedby="emailHelp"
 							/>
 						</div>
@@ -156,27 +198,30 @@ export const Postpreguntado = () => {
 						<div className="col-3">
 							<p className="text-left">Respuesta correcta 1:</p>
 							<input
-								type="name"
+								onChange={actions.preguntadoData}
+								name="opcion_correcta2"
+								type="text"
 								className="form-control"
-								id="exampleInputEmail1"
 								aria-describedby="emailHelp"
 							/>
 						</div>
 						<div className="col-3">
 							<p className="text-left">Opcion 2:</p>
 							<input
-								type="name"
+								onChange={actions.preguntadoData}
+								name="opcion_b2"
+								type="text"
 								className="form-control"
-								id="exampleInputEmail1"
 								aria-describedby="emailHelp"
 							/>
 						</div>
 						<div className="col-3">
 							<p className="text-left">Opcion 3:</p>
 							<input
-								type="name"
+								onChange={actions.preguntadoData}
+								name="opcion_c2"
+								type="text"
 								className="form-control"
-								id="exampleInputEmail1"
 								aria-describedby="emailHelp"
 							/>
 						</div>
@@ -198,9 +243,20 @@ export const Postpreguntado = () => {
 						<div className="col-9">
 							<p className="text-left h4">Pregunta 3:</p>
 							<input
-								type="name"
+								onChange={actions.preguntadoData}
+								name="pregunta3"
+								type="text"
 								className="form-control"
-								id="exampleInputEmail1"
+								aria-describedby="emailHelp"
+							/>
+						</div>
+						<div className="col-9 mt-3">
+							<p className="text-left">Url Foto</p>
+							<input
+								onChange={actions.preguntadoData}
+								name="url_foto_pregunta3"
+								type="text"
+								className="form-control"
 								aria-describedby="emailHelp"
 							/>
 						</div>
@@ -209,27 +265,30 @@ export const Postpreguntado = () => {
 						<div className="col-3">
 							<p className="text-left">Respuesta correcta 1:</p>
 							<input
-								type="name"
+								onChange={actions.preguntadoData}
+								name="opcion_correcta3"
+								type="text"
 								className="form-control"
-								id="exampleInputEmail1"
 								aria-describedby="emailHelp"
 							/>
 						</div>
 						<div className="col-3">
 							<p className="text-left">Opcion 2:</p>
 							<input
-								type="name"
+								onChange={actions.preguntadoData}
+								name="opcion_b3"
+								type="text"
 								className="form-control"
-								id="exampleInputEmail1"
 								aria-describedby="emailHelp"
 							/>
 						</div>
 						<div className="col-3">
 							<p className="text-left">Opcion 3:</p>
 							<input
-								type="name"
+								onChange={actions.preguntadoData}
+								name="opcion_c3"
+								type="text"
 								className="form-control"
-								id="exampleInputEmail1"
 								aria-describedby="emailHelp"
 							/>
 						</div>
@@ -251,9 +310,20 @@ export const Postpreguntado = () => {
 						<div className="col-9">
 							<p className="text-left h4">Pregunta 4:</p>
 							<input
-								type="name"
+								onChange={actions.preguntadoData}
+								name="pregunta4"
+								type="text"
 								className="form-control"
-								id="exampleInputEmail1"
+								aria-describedby="emailHelp"
+							/>
+						</div>
+						<div className="col-9 mt-3">
+							<p className="text-left">Url Foto</p>
+							<input
+								onChange={actions.preguntadoData}
+								name="url_foto_pregunta4"
+								type="text"
+								className="form-control"
 								aria-describedby="emailHelp"
 							/>
 						</div>
@@ -262,27 +332,30 @@ export const Postpreguntado = () => {
 						<div className="col-3">
 							<p className="text-left">Respuesta correcta 1:</p>
 							<input
-								type="name"
+								onChange={actions.preguntadoData}
+								name="opcion_correcta4"
+								type="text"
 								className="form-control"
-								id="exampleInputEmail1"
 								aria-describedby="emailHelp"
 							/>
 						</div>
 						<div className="col-3">
 							<p className="text-left">Opcion 2:</p>
 							<input
-								type="name"
+								onChange={actions.preguntadoData}
+								name="opcion_b4"
+								type="text"
 								className="form-control"
-								id="exampleInputEmail1"
 								aria-describedby="emailHelp"
 							/>
 						</div>
 						<div className="col-3">
 							<p className="text-left">Opcion 3:</p>
 							<input
-								type="name"
+								onChange={actions.preguntadoData}
+								name="opcion_c4"
+								type="text"
 								className="form-control"
-								id="exampleInputEmail1"
 								aria-describedby="emailHelp"
 							/>
 						</div>
@@ -304,9 +377,20 @@ export const Postpreguntado = () => {
 						<div className="col-9">
 							<p className="text-left h4">Pregunta 5:</p>
 							<input
-								type="name"
+								onChange={actions.preguntadoData}
+								name="pregunta5"
+								type="text"
 								className="form-control"
-								id="exampleInputEmail1"
+								aria-describedby="emailHelp"
+							/>
+						</div>
+						<div className="col-9 mt-3">
+							<p className="text-left">Url Foto</p>
+							<input
+								onChange={actions.preguntadoData}
+								name="url_foto_pregunta5"
+								type="text"
+								className="form-control"
 								aria-describedby="emailHelp"
 							/>
 						</div>
@@ -315,27 +399,30 @@ export const Postpreguntado = () => {
 						<div className="col-3">
 							<p className="text-left">Respuesta correcta 1:</p>
 							<input
-								type="name"
+								onChange={actions.preguntadoData}
+								name="opcion_correcta5"
+								type="text"
 								className="form-control"
-								id="exampleInputEmail1"
 								aria-describedby="emailHelp"
 							/>
 						</div>
 						<div className="col-3">
 							<p className="text-left">Opcion 2:</p>
 							<input
-								type="name"
+								onChange={actions.preguntadoData}
+								name="opcion_b5"
+								type="text"
 								className="form-control"
-								id="exampleInputEmail1"
 								aria-describedby="emailHelp"
 							/>
 						</div>
 						<div className="col-3">
 							<p className="text-left">Opcion 3:</p>
 							<input
-								type="name"
+								onChange={actions.preguntadoData}
+								name="opcion_c5"
+								type="text"
 								className="form-control"
-								id="exampleInputEmail1"
 								aria-describedby="emailHelp"
 							/>
 						</div>
@@ -355,7 +442,11 @@ export const Postpreguntado = () => {
 				<div className="container my-5 mb-3">
 					<div className="row justify-content-center">
 						<div className="col-5 text-center">
-							<button className="btn btn-success p-4">
+							<button
+								onClick={() => {
+									actions.postPreguntado();
+								}}
+								className="btn btn-success p-4">
 								<p className="h4">¡Publicar mi preguntado!</p>
 							</button>
 						</div>

@@ -79,10 +79,29 @@ const getState = ({ getStore, getActions, setStore }) => {
 						setStore({ registroFake: true });
 					});
 			},
+			putEditar: newDataUser => {
+				console.log(newDataUser);
+				fetch(process.env.BACKEND_URL + "/editardatos", {
+					method: "PUT",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: localStorage.getItem("token")
+					},
+					body: JSON.stringify(newDataUser)
+				})
+					.then(resp => resp.json())
+					.then(resp => {
+						console.log(resp);
+						setStore({ infoProfile: resp });
+					})
+					.catch(error => {
+						console.log(error);
+					});
+			},
 			actionRemove: () => {
 				localStorage.removeItem("token");
 				setStore({ logeado: false });
-				/* setStore({ infoProfile: {} }); */
+				setStore({ infoProfile: {} });
 			}
 		}
 	};

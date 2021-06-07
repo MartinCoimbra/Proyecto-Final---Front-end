@@ -9,6 +9,11 @@ export const Perfil = () => {
 	return (
 		<div className="container-fluid fondoTop px-0 mx-0 mt-5">
 			<div className="container fondoperfil rounded my-5">
+				<div className="row justify-content-end form-group">
+					<Link to="/">
+						<button className="btn btn-outline-primary mr-3 mt-4">Volver</button>
+					</Link>
+				</div>
 				<div className="row pt-4 pr-4 pl-4 mb-0 pb-0">
 					<div className="col-3">
 						<figure className="figure">

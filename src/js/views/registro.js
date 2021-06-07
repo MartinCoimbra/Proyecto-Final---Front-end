@@ -55,7 +55,7 @@ export const Registro = () => {
 							/>
 						</div>
 						<div className="col-5">
-							<p className="text-left">Contraseña confirmacion</p>
+							<p className="text-left">Confirme Contraseña</p>
 							<input
 								/* onChange={actions.registroData} */
 								name="password2"

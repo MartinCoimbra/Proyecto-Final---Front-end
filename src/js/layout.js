@@ -12,10 +12,11 @@ import { Top } from "./views/top";
 import { Infopreguntado } from "./views/infopreguntado";
 import { Juego } from "./views/juego";
 import { Sabiasque } from "./views/sabiasque";
+
 /* Privadas */
 import { Perfil } from "./views/perfil";
 import injectContext from "./store/appContext";
-
+import { Editardatos } from "./views/editardatos";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
@@ -60,6 +61,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/sabiasque">
 							<Sabiasque />
+						</Route>
+						<Route exact path="/editardatos">
+							<Editardatos />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>

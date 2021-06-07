@@ -39,13 +39,13 @@ export const Juego = () => {
 			setNum2(numPositivo);
 			console.log(num2);
 			if (num == 5) {
-				setFondo("bg-danger");
+				setFondo("bg-danger rounded");
 			} else if (num == 3) {
-				setFondo("bg-danger");
+				setFondo("bg-danger rounded");
 			} else if (num == 1) {
-				setFondo("bg-danger");
+				setFondo("bg-danger rounded");
 			} else {
-				setFondo("bg-white");
+				setFondo("bg-white rounded");
 			}
 		});
 	}
@@ -53,19 +53,19 @@ export const Juego = () => {
 	/* Cambio de color */
 
 	return (
-		<div className="container-fluid px-0 mx-0 mt-3">
-			<div className="container desenfoque mt-5">
+		<div className="container-fluid fondoTop px-0 mx-0 mt-4">
+			<div className="container paleta5 rounded border my-5">
 				<div className="row justify-content-between p-5">
 					<div className="col-2">
 						<button className="btn btn-danger">Salir</button>
 					</div>
-					<div className="col-8 text-center">
+					<div className="col-8 text-center text-white">
 						<h1>Historia</h1>
 					</div>
 					<div className="col-2" />
 					<div className="col-3">
-						<p className="mt-3 p-2 bg-white">Puntos:</p>
-						<p className="mt-3 p-2 bg-white">Partidas 1/5</p>
+						<p className="mt-3 p-2 bg-white rounded">Puntos:</p>
+						<p className="mt-3 p-2 bg-white rounded">Partidas 1/5</p>
 					</div>
 					<div className="col-5 px-0 text-center">
 						<img

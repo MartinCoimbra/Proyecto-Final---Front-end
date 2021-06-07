@@ -9,8 +9,8 @@ export const Perfil = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="container-fluid  px-0 mx-0 mt-5">
-			<div className="container fondoperfil mt-5">
+		<div className="container-fluid fondoTop px-0 mx-0 mt-5">
+			<div className="container fondoperfil rounded my-5">
 				<div className="row pt-4 pr-4 pl-4 mb-0 pb-0">
 					<div className="col-3">
 						<figure className="figure">

@@ -12,7 +12,7 @@ export const Registro = () => {
 		<div className="container-fluid  px-0 mx-0 mt-5">
 			<div className="card bg-dark text-center text-white">
 				<img
-					height="600px"
+					height="650px"
 					src="https://i.pinimg.com/originals/d1/17/88/d11788e6dc8943bc0cd439b21549729d.jpg"
 					className="card-img"
 					alt="..."
@@ -23,40 +23,44 @@ export const Registro = () => {
 					<div className="row justify-content-center form-group">
 						{/* Email */}
 						<div className="col-5">
-							<p className="text-left">Email address</p>
+							<p className="text-left">Email</p>
 							<input
+								onChange={actions.registroData}
+								name="email"
 								type="email"
 								className="form-control"
-								id="exampleInputEmail1"
 								aria-describedby="emailHelp"
 							/>
 						</div>
 						<div className="col-5">
 							<p className="text-left">Username</p>
 							<input
-								type="email"
+								onChange={actions.registroData}
+								name="username"
+								type="text"
 								className="form-control"
-								id="exampleInputEmail1"
 								aria-describedby="emailHelp"
 							/>
 						</div>
 					</div>
 					<div className="row justify-content-center form-group">
 						<div className="col-5">
-							<p className="text-left">Password</p>
+							<p className="text-left">Contraseña</p>
 							<input
+								onChange={actions.registroData}
+								name="password"
 								type="password"
 								className="form-control"
-								id="exampleInputEmail1"
 								aria-describedby="emailHelp"
 							/>
 						</div>
 						<div className="col-5">
-							<p className="text-left">Password confirmacion</p>
+							<p className="text-left">Contraseña confirmacion</p>
 							<input
+								/* onChange={actions.registroData} */
+								name="password2"
 								type="password"
 								className="form-control"
-								id="exampleInputEmail1"
 								aria-describedby="emailHelp"
 							/>
 						</div>
@@ -65,29 +69,64 @@ export const Registro = () => {
 						<div className="col-5">
 							<p className="text-left">Nombre</p>
 							<input
+								onChange={actions.registroData}
+								name="first_name"
 								type="text"
 								className="form-control"
-								id="exampleInputEmail1"
 								aria-describedby="emailHelp"
 							/>
 						</div>
 						<div className="col-5">
 							<p className="text-left">Apellido</p>
 							<input
+								onChange={actions.registroData}
+								name="last_name"
 								type="text"
 								className="form-control"
-								id="exampleInputEmail1"
 								aria-describedby="emailHelp"
 							/>
 						</div>
 						{/* AQUI VA EL CAPTCHAT */}
 					</div>
 					<div className="row justify-content-center form-group">
+						<div className="col-6">
+							<div className="form-group">
+								<label htmlFor="exampleFormControlTextarea1">¡Cuentanos de ti!</label>
+								<textarea
+									onChange={actions.registroData}
+									name="descripcion"
+									className="form-control textArea"
+									id="exampleFormControlTextarea1"
+									rows="2"
+								/>
+							</div>
+						</div>
+					</div>
+					<div className={store.registrado ? "d-block" : "d-none"}>
+						<div className="row justify-content-center">
+							<div className="col-6">
+								<p className="h3 text-primary">¡Registro completado!</p>
+							</div>
+						</div>
+					</div>
+					<div className={store.registroFake ? "d-block" : "d-none"}>
+						<div className="row justify-content-center">
+							<div className="col-6">
+								<p className="h3 text-danger">¡Complete todos los campos!</p>
+							</div>
+						</div>
+					</div>
+					<div className="row justify-content-center form-group">
 						<Link to="/">
 							<button className="btn btn-secondary mr-3">Cancelar</button>
 						</Link>
-
-						<button className="btn btn-primary">Aceptar</button>
+						<button
+							onClick={() => {
+								actions.postRegistro();
+							}}
+							className="btn btn-primary">
+							Aceptar
+						</button>
 					</div>
 				</div>
 			</div>

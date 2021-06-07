@@ -29,7 +29,9 @@ export const Perfil = () => {
 								<p className="p-0 m-0 ">{store.infoProfile.descripcion} ☕</p>
 							</div>
 							<div className="col-1 d-flex align-self-end">
-								<a className="d-inline">Editar</a>
+								<Link to="/editardatos">
+									<a className="d-inline">Editar</a>
+								</Link>
 							</div>
 							<div className="col-3 d-flex align-self-end">
 								<button className="btn btn-success">¡VAMOS A JUGAR!</button>

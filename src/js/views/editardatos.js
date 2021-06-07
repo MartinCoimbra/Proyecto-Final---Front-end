@@ -116,7 +116,7 @@ export const Editardatos = () => {
 						</div>
 					</div>
 					<div className="row justify-content-center form-group">
-						<Link to="/">
+						<Link to="/perfil">
 							<button className="btn btn-secondary mr-3">Cancelar</button>
 						</Link>
 						<button

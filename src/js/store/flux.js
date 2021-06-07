@@ -13,7 +13,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 					initial: "white"
 				}
 			],
-			logeado: false
+			logeado: false,
+			registrado: false,
+			registroData: {},
+			loginData: {},
+			infoProfile: {} /* Info del usuario logueado */,
+			registroFake: false
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -24,6 +29,55 @@ const getState = ({ getStore, getActions, setStore }) => {
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
+			},
+			login: () => {
+				const dataEnviar = getStore().loginData;
+				fetch(process.env.BACKEND_URL + "/login", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify(dataEnviar) //Convertimos la data a JSON
+				})
+					.then(resp => resp.json())
+					.then(resp => {
+						/* Guardamos el token en el localStorage */
+						localStorage.setItem("token", resp.token);
+						if (resp.token !== undefined) {
+							setStore({ logeado: true });
+							setStore({ infoProfile: resp.user });
+						}
+					})
+					.catch(error => console.log(error));
+			},
+			loginData: e => {
+				/* Guardamos los datos del usuario que quiere hacer login */
+				let dataCapt = { [e.target.name]: e.target.value };
+				setStore({ loginData: { ...getStore().loginData, ...dataCapt } });
+			},
+			registroData: e => {
+				/* Guardamos los datos del usuario que se quiere registrar */
+				let dataCapt = { [e.target.name]: e.target.value };
+				setStore({ registroData: { ...getStore().registroData, ...dataCapt } });
+			},
+			postRegistro: () => {
+				const dataEnviar = getStore().registroData;
+				fetch(process.env.BACKEND_URL + "/user", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify(dataEnviar)
+				})
+					.then(resp => resp.json())
+					.then(resp => {
+						console.log("entre" + resp);
+						setStore({ registrado: true });
+					})
+					.catch(error => {
+						console.log(error);
+						setStore({ registroFake: true });
+					});
 			},
 			actionRemove: () => {
 				localStorage.removeItem("token");

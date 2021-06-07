@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 import { Context } from "../store/appContext";
 
@@ -18,14 +18,16 @@ export const Login = () => {
 					alt="..."
 				/>
 				<div className="card-img-overlay desenfoque ">
-					<h5 className="card-title mt-4 h2">Sign in</h5>
+					<h5 className="card-title mt-4 h2">Iniciar sesión</h5>
 					<p className="card-text">¡Es hora de aprender!</p>
 					<div className="row justify-content-center form-group">
 						{/* Email */}
 						<div className="col-5">
-							<p className="text-left">Email address</p>
+							<p className="text-left">Email</p>
 							<input
-								type="email"
+								onChange={actions.loginData}
+								name="email"
+								type="text"
 								className="form-control"
 								id="exampleInputEmail1"
 								aria-describedby="emailHelp"
@@ -35,8 +37,10 @@ export const Login = () => {
 					<div className="row justify-content-center form-group">
 						{/* Email */}
 						<div className="col-5">
-							<p className="text-left">Password</p>
+							<p className="text-left">Contraseña</p>
 							<input
+								onChange={actions.loginData}
+								name="password"
 								type="password"
 								className="form-control"
 								id="exampleInputEmail1"
@@ -52,7 +56,14 @@ export const Login = () => {
 							<button className="btn btn-secondary mr-3">Cancelar</button>
 						</Link>
 
-						<button className="btn btn-primary">Aceptar</button>
+						<button
+							onClick={() => {
+								actions.login();
+							}}
+							className="btn btn-primary">
+							Aceptar
+							{store.logeado == true ? <Redirect to="/" /> : ""}
+						</button>
 					</div>
 				</div>
 			</div>

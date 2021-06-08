@@ -15,12 +15,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 			],
 			logeado: false,
 			registrado: false,
+			filtrado: false,
 			registroData: {},
 			loginData: {},
 			infoProfile: {} /* Info del usuario logueado */,
 			registroFake: false,
 			dataPreguntado: {},
-			categorias: [{}]
+			categorias: [{}],
+			preguntados: {},
+			catFiltrada: 0
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -138,6 +141,29 @@ const getState = ({ getStore, getActions, setStore }) => {
 						setStore({ categorias: resp });
 					})
 					.catch(error => console.log(error));
+			},
+			getPreguntado: () => {
+				let preguntados;
+				/* Para filtrar por cat tenes que editar la condicional de "/:id" */
+				getStore().filtrado == false
+					? (preguntados = "/preguntados")
+					: (preguntados = "/preguntados/categoria/" + getStore().catFiltrada);
+
+				getStore().filtrado == true ? console.log("filtrado") : console.log("NO");
+
+				fetch(process.env.BACKEND_URL + preguntados, {
+					method: "GET"
+				})
+					.then(resp => resp.json())
+					.then(resp => {
+						setStore({ preguntados: resp });
+					})
+					.catch(error => console.log(error));
+			},
+			filtradoTrue: e => {
+				setStore({ filtrado: true });
+				setStore({ catFiltrada: e.target.value });
+				getActions().getPreguntado();
 			},
 			actionRemove: () => {
 				localStorage.removeItem("token");

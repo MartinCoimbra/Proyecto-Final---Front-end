@@ -92,12 +92,12 @@ export const Home = () => {
 							</div>
 						</div>
 					</div>
-					<div className="col-6 d-flex align-items-center justify-content-center w-100">
+					<div className="col-6 col-sm-12 d-flex align-items-center justify-content-center w-100">
 						<h1>JUDYA</h1>
 					</div>
 					<div className="row col-3 col-sm-6 d-flex align-items-center">
 						<Link to="/postpreguntado">
-							<button className="btn btn-primary bg-success mt-3">Publicar un preguntado</button>
+							<button className="btn btn-primary bg-success mt-3 ">Publicar un preguntado</button>
 						</Link>
 					</div>
 				</div>

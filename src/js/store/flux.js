@@ -1,3 +1,5 @@
+import { number, string } from "prop-types";
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -24,7 +26,34 @@ const getState = ({ getStore, getActions, setStore }) => {
 			categorias: [{}],
 			preguntados: [{}],
 			preguntadoEs: [{}],
-			catFiltrada: 0
+			catFiltrada: 0,
+			comentarioData: {},
+			comentariosDelPreguntado: [
+				{
+					id: 1,
+					comentario: "",
+					calificacion: 4,
+					preguntados: 1,
+					preguntado: {
+						id: 1,
+						nombre: "",
+						descripcion: "",
+						calificacion: 0,
+						url_foto: "hg"
+					},
+					usuario: {
+						id: 1,
+						username: "",
+						first_name: "",
+						last_name: "",
+						email: "",
+						password: "",
+						puntos: 0,
+						descripcion: "s",
+						urlfoto: "hg"
+					}
+				}
+			]
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -175,6 +204,48 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(resp => {
 						setStore({ preguntadoEs: resp });
 						console.log(resp);
+					})
+					.catch(error => console.log(error));
+			},
+			comentarioData: e => {
+				/* Guardamos datos del comentario */
+				let dataCapt = { [e.target.name]: e.target.value };
+				setStore({ comentarioData: { ...getStore().comentarioData, ...dataCapt } });
+			},
+			calificacionData: num => {
+				/* Guardamos datos del comentario */
+				let dataCapt = { calificacion: num };
+				setStore({ comentarioData: { ...getStore().comentarioData, ...dataCapt } });
+			},
+			postComentario: () => {
+				/*  comentarioData*/
+				let numPreguntado = getStore().preguntadoEs[0].id;
+				const dataEnviar = getStore().comentarioData;
+				fetch(process.env.BACKEND_URL + "/preguntado/" + numPreguntado + "/comentario", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: localStorage.getItem("token")
+					},
+					body: JSON.stringify(dataEnviar)
+				})
+					.then(resp => resp.json())
+					.then(resp => {
+						console.log(resp);
+					})
+					.catch(error => {
+						console.log(error + "Necesita estar login para comentar");
+					});
+			},
+			getComentariosDelPreguntado: id => {
+				console.log("Comentarios del preguntado:" + id);
+				fetch(process.env.BACKEND_URL + "/preguntado/" + id + "/comentario", {
+					method: "GET"
+				})
+					.then(resp => resp.json())
+					.then(resp => {
+						console.log(resp);
+						setStore({ comentariosDelPreguntado: resp });
 					})
 					.catch(error => console.log(error));
 			},

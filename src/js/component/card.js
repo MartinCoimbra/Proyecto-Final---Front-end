@@ -19,6 +19,7 @@ export function Cards(props) {
 						<Link
 							onClick={() => {
 								actions.verpreguntadoE(id);
+								actions.getComentariosDelPreguntado(id);
 							}}
 							to={"/infopreguntado/" + props.id}>
 							<button className="btn btn-info mr-1">Ver más</button>

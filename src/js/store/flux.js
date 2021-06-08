@@ -22,7 +22,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			registroFake: false,
 			dataPreguntado: {},
 			categorias: [{}],
-			preguntados: {},
+			preguntados: [{}],
 			catFiltrada: 0
 		},
 		actions: {

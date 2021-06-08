@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import "../../styles/home.scss";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
-
+import { Cards } from "../component/card";
 export const Home = () => {
 	const { store, actions } = useContext(Context);
 
@@ -104,30 +104,18 @@ export const Home = () => {
 
 				<div className="contenedor">
 					<div className="row px-0 mx-0">
-						{/* Mapeo de 5 preguntados aleatorio, Nota:Mapear segun la categoria seleccionada luego */}
-						<div className="col-4 mb-3">
-							<div className="card bg-dark imgS text-white">
-								<img
-									src="https://www.ecestaticos.com/image/clipping/af87059eaa01d0ce789779b415c78134/como-se-debe-ensenar-la-historia.jpg"
-									className="card-img "
-									alt="..."
+						{/* Mapeo de 5 preguntados. aleatorio, Nota:Mapear segun la categoria seleccionada luego */}
+						{store.preguntados.map((element, i) => {
+							return (
+								<Cards
+									key={i}
+									id={element.id}
+									nombre={element.nombre}
+									img={element.url_foto}
+									descripcion={element.descripcion}
 								/>
-								<div className="card-img-overlay desenfoque2">
-									<h5 className="card-title info">Historia</h5>
-									<p className="card-text info">
-										bit lonxzczxczxcxcxx xxxxxxx xxxxxxxx dfs sdfsdf dfdfdger.
-									</p>
-									{/* LINK-s */}
-									<div className="info">
-										{/* AQUI Acuerdate de intercalar el id segun el que seleciono */}
-										<Link to="/infopreguntado/1">
-											<button className="btn btn-info mr-1">Ver más</button>
-										</Link>
-										<button className="btn btn-success">Play</button>
-									</div>
-								</div>
-							</div>
-						</div>
+							);
+						})}
 					</div>
 				</div>
 			</div>

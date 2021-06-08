@@ -71,11 +71,11 @@ export const Home = () => {
 			</div>
 			<div className="container">
 				<div className="row my-4 fondoPerson justify-content-between">
-					<div className="row col-3 ml-4">
-						<div className="col-5 d-flex align-items-center">
+					<div className="row col-3 col-sm-6 ml-4">
+						<div className="col-5 col-sm-6 d-flex align-items-center">
 							<button className="btn btn-primary bg-danger mt-3">Play!</button>
 						</div>
-						<div className="col-7">
+						<div className="col-7 col-sm-6">
 							<div className="form-group">
 								<label htmlFor="exampleFormControlSelect1">Categorias</label>
 								<select
@@ -95,7 +95,7 @@ export const Home = () => {
 					<div className="col-6 d-flex align-items-center justify-content-center w-100">
 						<h1>JUDYA</h1>
 					</div>
-					<div className="row col-3 d-flex align-items-center">
+					<div className="row col-3 col-sm-6 d-flex align-items-center">
 						<Link to="/postpreguntado">
 							<button className="btn btn-primary bg-success mt-3">Publicar un preguntado</button>
 						</Link>

@@ -7,7 +7,9 @@ import "../../styles/demo.scss";
 
 export const Infopreguntado = () => {
 	const { store, actions } = useContext(Context);
-
+	useEffect(() => {
+		console.log(store.preguntadoEs[0]);
+	});
 	return (
 		<div className="container-fluid fondoTop px-0 mx-0 mt-5">
 			<div className="container bg-light rounded p-3 mt-5 mb-3">
@@ -15,21 +17,18 @@ export const Infopreguntado = () => {
 					<div className="col-6">
 						<figure className="figure">
 							<img
-								src="https://www.ecestaticos.com/image/clipping/af87059eaa01d0ce789779b415c78134/como-se-debe-ensenar-la-historia.jpg"
+								src={store.preguntadoEs[0].url_foto}
 								className="figure-img img-fluid rounded"
 								alt="..."
 							/>
 						</figure>
 					</div>
 					<div className="col-6">
-						<h1 className="text-center">Historia</h1>
+						<h1 className="text-center">{store.preguntadoEs[0].nombre}</h1>
 						<p>
-							kasdjk aksjdkas daksjdn alksjdn aksjdnajs kasdjk aksjdkas daksjdn alksjdn aksjdnajs kasdjk
-							kasdjk aksjdkas daksjdn alksjdn aksjdnajs kasdjk aksjdkas daksjdn alksjdn aksjdnajs kasdjk
-							kasdjk aksjdkas daksjdn alksjdn aksjdnajs kasdjk aksjdkas daksjdn alksjdn aksjdnajs kasdjk
-							kasdjk aksjdkas daksjdn alksjdn aksjdnajs kasdjk aksjdkas daksjdn alksjdn aksjdnajs kasdjk
-							kasdjk aksjdkas daksjdn alksjdn aksjdnajs kasdjk aksjdkas daksjdn alksjdn aksjdnajs kasdjk
-							aksjdkas daksjdn alksjdn aksjdnajs kasdjk aksjdkas daksjdn alksjdn aksjdnajs
+							{store.preguntadoEs[0].descripcion} <br />
+							Categoria:
+							{/* {store.preguntadoEspecifico.categoria.name} */}
 						</p>
 					</div>
 					<div className="col-6">

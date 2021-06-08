@@ -55,7 +55,7 @@ export const Registro = () => {
 							/>
 						</div>
 						<div className="col-5">
-							<p className="text-left">Contraseña confirmacion</p>
+							<p className="text-left">Confirme Contraseña</p>
 							<input
 								/* onChange={actions.registroData} */
 								name="password2"
@@ -89,15 +89,23 @@ export const Registro = () => {
 						{/* AQUI VA EL CAPTCHAT */}
 					</div>
 					<div className="row justify-content-center form-group">
-						<div className="col-6">
+						<div className="col-5">
+							<p className="text-left">Url foto</p>
+							<input
+								onChange={actions.registroData}
+								name="urlfoto"
+								type="text"
+								className="form-control"
+								aria-describedby="emailHelp"
+							/>
+						</div>
+						<div className="col-5">
 							<div className="form-group">
 								<label htmlFor="exampleFormControlTextarea1">¡Cuentanos de ti!</label>
 								<textarea
 									onChange={actions.registroData}
 									name="descripcion"
 									className="form-control textArea"
-									id="exampleFormControlTextarea1"
-									rows="2"
 								/>
 							</div>
 						</div>

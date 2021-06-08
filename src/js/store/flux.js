@@ -15,10 +15,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 			],
 			logeado: false,
 			registrado: false,
+			filtrado: false,
 			registroData: {},
 			loginData: {},
 			infoProfile: {} /* Info del usuario logueado */,
-			registroFake: false
+			registroFake: false,
+			dataPreguntado: {},
+			categorias: [{}],
+			preguntados: [{}],
+			preguntadoEs: [{}],
+			catFiltrada: 0
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -55,6 +61,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 				let dataCapt = { [e.target.name]: e.target.value };
 				setStore({ loginData: { ...getStore().loginData, ...dataCapt } });
 			},
+			preguntadoData: e => {
+				if (e.target.name == "categoria") {
+					let categorianew = parseInt(e.target.value);
+					let dataCapt = { [e.target.name]: categorianew };
+					setStore({ dataPreguntado: { ...getStore().dataPreguntado, ...dataCapt } });
+				} else {
+					let dataCapt = { [e.target.name]: e.target.value };
+					setStore({ dataPreguntado: { ...getStore().dataPreguntado, ...dataCapt } });
+				}
+			},
 			registroData: e => {
 				/* Guardamos los datos del usuario que se quiere registrar */
 				let dataCapt = { [e.target.name]: e.target.value };
@@ -79,10 +95,93 @@ const getState = ({ getStore, getActions, setStore }) => {
 						setStore({ registroFake: true });
 					});
 			},
+			postPreguntado: () => {
+				const dataEnviar = getStore().dataPreguntado;
+				fetch(process.env.BACKEND_URL + "/preguntado", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: localStorage.getItem("token")
+					},
+					body: JSON.stringify(dataEnviar)
+				})
+					.then(resp => resp.json())
+					.then(resp => {
+						console.log(resp);
+					})
+					.catch(error => {
+						console.log(error + "Necesita estar login para post un preguntado");
+					});
+			},
+			putEditar: newDataUser => {
+				console.log(newDataUser);
+				fetch(process.env.BACKEND_URL + "/editardatos", {
+					method: "PUT",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: localStorage.getItem("token")
+					},
+					body: JSON.stringify(newDataUser)
+				})
+					.then(resp => resp.json())
+					.then(resp => {
+						console.log(resp);
+						setStore({ infoProfile: resp });
+					})
+					.catch(error => {
+						console.log(error);
+					});
+			},
+			getCategorias: () => {
+				fetch(process.env.BACKEND_URL + "/categorias", {
+					method: "GET"
+				})
+					.then(resp => resp.json())
+					.then(resp => {
+						console.log(resp);
+						setStore({ categorias: resp });
+					})
+					.catch(error => console.log(error));
+			},
+			getPreguntado: () => {
+				let preguntados;
+				/* Para filtrar por cat tenes que editar la condicional de "/:id" */
+				getStore().filtrado == false
+					? (preguntados = "/preguntados")
+					: (preguntados = "/preguntados/categoria/" + getStore().catFiltrada);
+
+				getStore().filtrado == true ? console.log("filtrado") : console.log("NO");
+
+				fetch(process.env.BACKEND_URL + preguntados, {
+					method: "GET"
+				})
+					.then(resp => resp.json())
+					.then(resp => {
+						setStore({ preguntados: resp });
+					})
+					.catch(error => console.log(error));
+			},
+			filtradoTrue: e => {
+				setStore({ filtrado: true });
+				setStore({ catFiltrada: e.target.value });
+				getActions().getPreguntado();
+			},
+			verpreguntadoE: id => {
+				console.log(id);
+				fetch(process.env.BACKEND_URL + "/preguntadoE/" + id, {
+					method: "GET"
+				})
+					.then(resp => resp.json())
+					.then(resp => {
+						setStore({ preguntadoEs: resp });
+						console.log(resp);
+					})
+					.catch(error => console.log(error));
+			},
 			actionRemove: () => {
 				localStorage.removeItem("token");
 				setStore({ logeado: false });
-				/* setStore({ infoProfile: {} }); */
+				setStore({ infoProfile: {} });
 			}
 		}
 	};

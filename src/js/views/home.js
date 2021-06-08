@@ -71,7 +71,7 @@ export const Home = () => (
 					<div className="col-5 d-flex align-items-center">
 						<button className="btn btn-primary bg-danger mt-3">Play!</button>
 					</div>
-					<div className="col-7">
+					<div className="col-5 col-sm-2 col-md-3 col-lg-8 col-xl-12">
 						<div className="form-group">
 							<label htmlFor="exampleFormControlSelect1">Categorias</label>
 							<select className="form-control" id="exampleFormControlSelect1">

@@ -15,39 +15,68 @@ export const Home = () => {
 							<li htmlData-target="#carouselExampleIndicators" htmlData-slide-to="0" className="active" />
 							<li htmlData-target="#carouselExampleIndicators" htmlData-slide-to="1" />
 							<li htmlData-target="#carouselExampleIndicators" htmlData-slide-to="2" />
+							<li htmlData-target="#carouselExampleIndicators" htmlData-slide-to="3" />
+							<li htmlData-target="#carouselExampleIndicators" htmlData-slide-to="4" />
+							<li htmlData-target="#carouselExampleIndicators" htmlData-slide-to="5" />
+							<li htmlData-target="#carouselExampleIndicators" htmlData-slide-to="6" />
+							<li htmlData-target="#carouselExampleIndicators" htmlData-slide-to="7" />
 						</ol>
 						<div className="carousel-inner h-100">
 							<div className="carousel-item active h-100">
 								<img
-									src="https://www.itl.cat/pngfile/big/299-2991222_education-wallpaper-education-wallpaper-hd.jpg"
-									className="d-block w-100 h-100"
-									alt="..."
-								/>
-								<div className="carousel-caption d-none d-md-block desenfoqueText">
-									<h5 className="h3">¡ES HORA DE APRENDER!</h5>
-									<p>
-										Tan sólo tú y tú, hay que vencer al mejor, la mente tienes que elevar y no
-										rendirte sin probar, el juego va a empezar.
-									</p>
-								</div>
-							</div>
-							<div className="carousel-item h-100">
-								<img
-									src="https://i.pinimg.com/originals/51/0e/3a/510e3a54ba009852022df4f585fc349e.jpg"
+									src="https://github.com/Niukeitor/imagenesPF/blob/main/arte.gif?raw=true"
 									className="d-block w-100 h-100"
 									alt="..."
 								/>
 							</div>
 							<div className="carousel-item h-100">
 								<img
-									src="https://wallpaperaccess.com/full/3129561.jpg"
+									src="https://github.com/Niukeitor/imagenesPF/blob/main/ciencia.gif?raw=true"
 									className="d-block w-100 h-100"
 									alt="..."
 								/>
-								<div className="carousel-caption d-none d-md-block desenfoqueText">
-									<h5 className="h3">¡APRENDER SOBRE DEPORTES!</h5>
-									<p>Juega, aprende y demuestra que eres un verdadero crack de los deportes.</p>
-								</div>
+							</div>
+							<div className="carousel-item h-100">
+								<img
+									src="https://github.com/Niukeitor/imagenesPF/blob/main/ciencias%20sociales.gif?raw=true"
+									className="d-block w-100 h-100"
+									alt="..."
+								/>
+							</div>
+							<div className="carousel-item h-100">
+								<img
+									src="https://github.com/Niukeitor/imagenesPF/blob/main/deportes.gif?raw=true"
+									className="d-block w-100 h-100"
+									alt="..."
+								/>
+							</div>
+							<div className="carousel-item h-100">
+								<img
+									src="https://github.com/Niukeitor/imagenesPF/blob/main/entretenimiento.gif?raw=true"
+									className="d-block w-100 h-100"
+									alt="..."
+								/>
+							</div>
+							<div className="carousel-item h-100">
+								<img
+									src="https://github.com/Niukeitor/imagenesPF/blob/main/geografia.gif?raw=true"
+									className="d-block w-100 h-100"
+									alt="..."
+								/>
+							</div>
+							<div className="carousel-item h-100">
+								<img
+									src="https://github.com/Niukeitor/imagenesPF/blob/main/mates.gif?raw=true"
+									className="d-block w-100 h-100"
+									alt="..."
+								/>
+							</div>
+							<div className="carousel-item h-100">
+								<img
+									src="https://github.com/Niukeitor/imagenesPF/blob/main/programacion.gif?raw=true"
+									className="d-block w-100 h-100"
+									alt="..."
+								/>
 							</div>
 						</div>
 						<a

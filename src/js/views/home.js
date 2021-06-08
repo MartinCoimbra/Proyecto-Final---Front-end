@@ -108,7 +108,7 @@ export const Home = () => {
 						{store.preguntados.map((element, i) => {
 							return (
 								<Cards
-									key={i}
+									key={element.id}
 									id={element.id}
 									nombre={element.nombre}
 									img={element.url_foto}

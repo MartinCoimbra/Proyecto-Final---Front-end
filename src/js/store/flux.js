@@ -23,6 +23,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			dataPreguntado: {},
 			categorias: [{}],
 			preguntados: [{}],
+			preguntadoEs: [{}],
 			catFiltrada: 0
 		},
 		actions: {
@@ -164,6 +165,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ filtrado: true });
 				setStore({ catFiltrada: e.target.value });
 				getActions().getPreguntado();
+			},
+			verpreguntadoE: id => {
+				console.log(id);
+				fetch(process.env.BACKEND_URL + "/preguntadoE/" + id, {
+					method: "GET"
+				})
+					.then(resp => resp.json())
+					.then(resp => {
+						setStore({ preguntadoEs: resp });
+						console.log(resp);
+					})
+					.catch(error => console.log(error));
 			},
 			actionRemove: () => {
 				localStorage.removeItem("token");

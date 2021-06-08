@@ -1,11 +1,11 @@
 import React, { useState, useContext } from "react";
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export function Cards(props) {
 	const { store, actions } = useContext(Context);
-
+	const [id, setId] = useState(props.id);
 	return (
 		<div className="col-4 mb-3">
 			<div className="card bg-dark imgS text-white">
@@ -15,8 +15,12 @@ export function Cards(props) {
 					<p className="card-text info">{props.descripcion}</p>
 					{/* LINK-s */}
 					<div className="info">
-						{/* AQUI Acuerdate de intercalar el id segun el que seleciono */}
-						<Link to={"/infopreguntado/" + props.id}>
+						{/* Evento on click, al apretar ver mas fecht de ese preguntado ESPECIFICO */}
+						<Link
+							onClick={() => {
+								actions.verpreguntadoE(id);
+							}}
+							to={"/infopreguntado/" + props.id}>
 							<button className="btn btn-info mr-1">Ver más</button>
 						</Link>
 						<button className="btn btn-success">Play</button>

@@ -6,7 +6,7 @@ import "../../styles/demo.scss";
 export const Cuentaregresiva = () => {
 	const { store, actions } = useContext(Context);
 	/* re direct a /juego cuando el contados sea 0 */
-	const [num, setNum] = useState(10);
+	const [num, setNum] = useState(3);
 	const [pause, setPause] = useState(false);
 	let intervalRef = useRef();
 

@@ -12,17 +12,17 @@ export const Registro = () => {
 		<div className="container-fluid  px-0 mx-0 mt-5">
 			<div className="card bg-dark text-center text-white">
 				<img
-					height="650px"
+					height="1000px"
 					src="https://i.pinimg.com/originals/d1/17/88/d11788e6dc8943bc0cd439b21549729d.jpg"
 					className="card-img"
 					alt="..."
 				/>
-				<div className="card-img-overlay desenfoque ">
+				<div className="card-img-overlay desenfoque mt-5">
 					<h5 className="card-title mt-4 h2">Registro</h5>
 					<p className="card-text">¡Es hora de aprender!</p>
 					<div className="row justify-content-center form-group">
 						{/* Email */}
-						<div className="col-5">
+						<div className="col-12 col-sm-5">
 							<p className="text-left">Email</p>
 							<input
 								onChange={actions.registroData}
@@ -32,7 +32,7 @@ export const Registro = () => {
 								aria-describedby="emailHelp"
 							/>
 						</div>
-						<div className="col-5">
+						<div className="col-12 col-sm-5">
 							<p className="text-left">Username</p>
 							<input
 								onChange={actions.registroData}
@@ -44,7 +44,7 @@ export const Registro = () => {
 						</div>
 					</div>
 					<div className="row justify-content-center form-group">
-						<div className="col-5">
+						<div className="col-12 col-sm-5">
 							<p className="text-left">Contraseña</p>
 							<input
 								onChange={actions.registroData}
@@ -54,7 +54,7 @@ export const Registro = () => {
 								aria-describedby="emailHelp"
 							/>
 						</div>
-						<div className="col-5">
+						<div className="col-12 col-sm-5">
 							<p className="text-left">Confirme Contraseña</p>
 							<input
 								/* onChange={actions.registroData} */
@@ -66,7 +66,7 @@ export const Registro = () => {
 						</div>
 					</div>
 					<div className="row justify-content-center form-group">
-						<div className="col-5">
+						<div className="col-12 col-sm-5">
 							<p className="text-left">Nombre</p>
 							<input
 								onChange={actions.registroData}
@@ -76,7 +76,7 @@ export const Registro = () => {
 								aria-describedby="emailHelp"
 							/>
 						</div>
-						<div className="col-5">
+						<div className="col-12 col-sm-5">
 							<p className="text-left">Apellido</p>
 							<input
 								onChange={actions.registroData}
@@ -89,7 +89,7 @@ export const Registro = () => {
 						{/* AQUI VA EL CAPTCHAT */}
 					</div>
 					<div className="row justify-content-center form-group">
-						<div className="col-5">
+						<div className="col-12 col-sm-5">
 							<p className="text-left">Url foto</p>
 							<input
 								onChange={actions.registroData}
@@ -99,7 +99,7 @@ export const Registro = () => {
 								aria-describedby="emailHelp"
 							/>
 						</div>
-						<div className="col-5">
+						<div className="col-12 col-sm-5">
 							<div className="form-group">
 								<label htmlFor="exampleFormControlTextarea1">¡Cuentanos de ti!</label>
 								<textarea

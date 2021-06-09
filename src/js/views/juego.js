@@ -15,11 +15,8 @@ export const Juego = () => {
 	const [fondo, setFondo] = useState("bg-white");
 	/* Respuesta va a ser la posicion de la respuesta correcta */
 	const [respuestaC, setRespuesta] = useState();
-	/* 
-    * respuestaC = respuesta correcta
-    * respuesta1 = opcion_c
-    * respuesta2 = opcion_b
-    */
+	const [resFV, setResFV] = useState("");
+
 	const pauseA = () => {
 		if (!pause) {
 			clearInterval(intervalRef.current);
@@ -31,7 +28,6 @@ export const Juego = () => {
 
 	/* Cuando llegue a 0 pausar */
 	if (num == 0 || num < 0) {
-		console.log("Pausa!");
 		clearInterval(intervalRef.current);
 	}
 	useEffect(() => {
@@ -43,7 +39,6 @@ export const Juego = () => {
 		useEffect(() => {
 			let numPositivo = 20 - num;
 			setNum2(numPositivo);
-			console.log(num2);
 			if (num == 5) {
 				setFondo("bg-danger rounded");
 			} else if (num == 3) {
@@ -62,15 +57,56 @@ export const Juego = () => {
 		}
 	};
 
+	const [btn1, setBtn1] = useState();
+	const [btn2, setBtn2] = useState();
+	const [btn3, setBtn3] = useState();
+
 	/* hacer un random de 3 y que los cosos eligan cual es la respuesta correcta */
 	const numAleatorio = () => {
 		let respuestaCorrecta = Math.floor(Math.random() * (3 - 1 + 1) + 1);
 		setRespuesta(respuestaCorrecta);
+
+		/* Validamos la respuesta y le damos valor al btn 1 */
+		respuestaCorrecta == 1
+			? setBtn1(store.preguntasYresp[0].respuesta[0].opcion_correcta)
+			: respuestaCorrecta == 2
+				? setBtn1(store.preguntasYresp[0].respuesta[0].opcion_b)
+				: respuestaCorrecta == 3
+					? setBtn1(store.preguntasYresp[0].respuesta[0].opcion_c)
+					: "";
+		/* Validamos la respuesta 2 le damos valor al btn 2 */
+		respuestaCorrecta == 1
+			? setBtn2(store.preguntasYresp[0].respuesta[0].opcion_c)
+			: respuestaCorrecta == 3
+				? setBtn2(store.preguntasYresp[0].respuesta[0].opcion_b)
+				: respuestaCorrecta == 2
+					? setBtn2(store.preguntasYresp[0].respuesta[0].opcion_correcta)
+					: "";
+		/* Validamos la respuesta 3 le damos valor al btn 3 */
+		respuestaCorrecta == 1
+			? setBtn3(store.preguntasYresp[0].respuesta[0].opcion_b)
+			: respuestaCorrecta == 2
+				? setBtn3(store.preguntasYresp[0].respuesta[0].opcion_c)
+				: respuestaCorrecta == 3
+					? setBtn3(store.preguntasYresp[0].respuesta[0].opcion_correcta)
+					: "";
 	};
+
 	useEffect(() => {
 		numAleatorio();
 	}, []);
 
+	const respuestaCorrectaVerific = resp => {
+		if (store.preguntasYresp[0].respuesta[0].opcion_correcta === resp) {
+			console.log("Tu respuesta es correcta");
+			setNum(0);
+			setResFV("Correcta!");
+		} else {
+			console.log("NOOOOOO");
+			setResFV("Incorrecta D:!");
+			setNum(0);
+		}
+	};
 	/* Cada vez que pase a la siguiente pregunta en un btn siguiente incrementar el [0] por 1  */
 	/* preguntasYresp[0] */
 	/* Al hacer click le mandamos el num de la resp que le hicimos click 
@@ -132,21 +168,58 @@ export const Juego = () => {
 					</div>
 				</div>
 				<div className="row justify-content-center pb-5 mt-2">
+					<div className="col-5">
+						<h3 className="text-white">Tu respuesta es: {resFV} </h3>
+					</div>
+				</div>
+				<div className="row justify-content-center pb-5 mt-2">
 					<div className="col-5 d-flex justify-content-between">
-						<button onClick={handleClick} className="btn btn-primary">
+						{/* BOTON 1 */}
+						<button
+							onClick={() => {
+								respuestaCorrectaVerific(btn1);
+								handleClick;
+							}}
+							className="btn btn-primary">
 							{respuestaC == 1
 								? store.preguntasYresp[0].respuesta[0].opcion_correcta
-								: store.preguntasYresp[0].respuesta[0].opcion_b}
+								: respuestaC == 2
+									? store.preguntasYresp[0].respuesta[0].opcion_b
+									: respuestaC == 3
+										? store.preguntasYresp[0].respuesta[0].opcion_c
+										: ""}
 						</button>
-						<button onClick={handleClick} className="btn btn-primary">
-							{respuestaC == 2
-								? store.preguntasYresp[0].respuesta[0].opcion_correcta
-								: store.preguntasYresp[0].respuesta[0].opcion_b}
+						{/* BOTON 2 */}
+
+						<button
+							onClick={() => {
+								respuestaCorrectaVerific(btn2);
+								handleClick;
+							}}
+							className="btn btn-primary">
+							{respuestaC == 1
+								? store.preguntasYresp[0].respuesta[0].opcion_c
+								: respuestaC == 3
+									? store.preguntasYresp[0].respuesta[0].opcion_b
+									: respuestaC == 2
+										? store.preguntasYresp[0].respuesta[0].opcion_correcta
+										: ""}
 						</button>
-						<button onClick={handleClick} className="btn btn-primary">
-							{respuestaC == 3
-								? store.preguntasYresp[0].respuesta[0].opcion_correcta
-								: store.preguntasYresp[0].respuesta[0].opcion_c}
+						{/* BOTON 3 */}
+
+						<button
+							onClick={() => {
+								respuestaCorrectaVerific(btn3);
+								handleClick;
+							}}
+							className="btn btn-primary">
+							{respuestaC == 1
+								? store.preguntasYresp[0].respuesta[0].opcion_b
+								: respuestaC == 2
+									? store.preguntasYresp[0].respuesta[0].opcion_c
+									: respuestaC == 3
+										? store.preguntasYresp[0].respuesta[0].opcion_correcta
+										: ""}
 						</button>
 						<h1 className="text-white">{respuestaC}</h1>
 					</div>

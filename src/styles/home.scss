@@ -49,3 +49,27 @@
     background: #424242;
     box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
 }
+
+#botton-up{
+    width: 40px;
+    height: 40px;
+    background: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+border-radius: 500%;
+font-size: 20px;
+position: fixed;
+bottom: 50px;
+right: 50px;
+cursor: pointer;
+border: 4px solid transparent;
+transition: all 300ms ease;
+}
+
+#botton-up:hover{
+    transform: scale(1.1);
+    border-color: rgba(0, 0, 0, 0.2);
+
+}

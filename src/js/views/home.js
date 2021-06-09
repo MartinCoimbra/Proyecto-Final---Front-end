@@ -125,7 +125,7 @@ export const Home = () => {
 						<h1>JUDYA</h1>
 					</div>
 					<div className="row col-3 d-flex align-items-center">
-						<Link to="/postpreguntado">
+						<Link to={store.logeado == true ? "/postpreguntado" : "/login"}>
 							<button className="btn btn-primary bg-success mt-3">Publicar un preguntado</button>
 						</Link>
 					</div>

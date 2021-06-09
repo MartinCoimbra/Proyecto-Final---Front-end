@@ -19,6 +19,7 @@ import injectContext from "./store/appContext";
 import { Editardatos } from "./views/editardatos";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { Cuentaregresiva } from "./views/cuentaRegresiva";
 
 const Layout = () => {
 	const basename = process.env.BASENAME || "";
@@ -64,6 +65,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/editardatos">
 							<Editardatos />
+						</Route>
+						<Route exact path="/cuentaregresiva">
+							<Cuentaregresiva />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>

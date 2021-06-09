@@ -53,7 +53,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 						urlfoto: "hg"
 					}
 				}
-			]
+			],
+			preguntasYresp: {}
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -246,6 +247,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(resp => {
 						console.log(resp);
 						setStore({ comentariosDelPreguntado: resp });
+					})
+					.catch(error => console.log(error));
+			},
+			getPreguntasYresp: id => {
+				console.log("el id es" + id);
+				fetch(process.env.BACKEND_URL + "/preguntado/" + id, {
+					method: "GET",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: localStorage.getItem("token")
+					}
+				})
+					.then(resp => resp.json())
+					.then(resp => {
+						setStore({ preguntasYresp: resp });
 					})
 					.catch(error => console.log(error));
 			},

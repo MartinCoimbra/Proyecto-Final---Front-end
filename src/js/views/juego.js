@@ -13,7 +13,13 @@ export const Juego = () => {
 	const decreaseNum = () => setNum(prev => prev - 1);
 	const [num2, setNum2] = useState(0);
 	const [fondo, setFondo] = useState("bg-white");
-
+	/* Respuesta va a ser la posicion de la respuesta correcta */
+	const [respuestaC, setRespuesta] = useState();
+	/* 
+    * respuestaC = respuesta correcta
+    * respuesta1 = opcion_c
+    * respuesta2 = opcion_b
+    */
 	const pauseA = () => {
 		if (!pause) {
 			clearInterval(intervalRef.current);
@@ -49,9 +55,26 @@ export const Juego = () => {
 			}
 		});
 	}
+	/* pausa */
+	const handleClick = () => {
+		if (!pause) {
+			clearInterval(intervalRef.current);
+		}
+	};
 
-	/* Cambio de color */
+	/* hacer un random de 3 y que los cosos eligan cual es la respuesta correcta */
+	const numAleatorio = () => {
+		let respuestaCorrecta = Math.floor(Math.random() * (3 - 1 + 1) + 1);
+		setRespuesta(respuestaCorrecta);
+	};
+	useEffect(() => {
+		numAleatorio();
+	}, []);
 
+	/* Cada vez que pase a la siguiente pregunta en un btn siguiente incrementar el [0] por 1  */
+	/* preguntasYresp[0] */
+	/* Al hacer click le mandamos el num de la resp que le hicimos click 
+        y si concide el num por parametro a respuesttaC= num */
 	return (
 		<div className="container-fluid fondoTop px-0 mx-0 mt-4">
 			<div className="container paleta5 rounded border my-5">
@@ -60,7 +83,7 @@ export const Juego = () => {
 						<button className="btn btn-danger">Salir</button>
 					</div>
 					<div className="col-8 text-center text-white">
-						<h1>Historia</h1>
+						<h1>{store.preguntasYresp[0].preguntado.nombre}</h1>
 					</div>
 					<div className="col-2" />
 					<div className="col-3">
@@ -69,7 +92,7 @@ export const Juego = () => {
 					</div>
 					<div className="col-5 px-0 text-center">
 						<img
-							src="https://www.ecestaticos.com/image/clipping/af87059eaa01d0ce789779b415c78134/como-se-debe-ensenar-la-historia.jpg"
+							src={store.preguntasYresp[0].foto_pregunta}
 							className="figure-img img-fluid rounded w-75"
 							alt="..."
 						/>
@@ -88,7 +111,7 @@ export const Juego = () => {
 				<div className="row justify-content-center">
 					<div className="col-6">
 						<div className="cuadrodepregunta w-100 pt-2 pb-2 text-center">
-							<p className="h4">¿Que paso el año 1882 en España?</p>
+							<p className="h4">{store.preguntasYresp[0].preguntas}</p>
 						</div>
 					</div>
 				</div>
@@ -110,9 +133,22 @@ export const Juego = () => {
 				</div>
 				<div className="row justify-content-center pb-5 mt-2">
 					<div className="col-5 d-flex justify-content-between">
-						<button className="btn btn-primary">Opcion 1</button>
-						<button className="btn btn-primary">Opcion 2</button>
-						<button className="btn btn-primary">Opcion 3</button>
+						<button onClick={handleClick} className="btn btn-primary">
+							{respuestaC == 1
+								? store.preguntasYresp[0].respuesta[0].opcion_correcta
+								: store.preguntasYresp[0].respuesta[0].opcion_b}
+						</button>
+						<button onClick={handleClick} className="btn btn-primary">
+							{respuestaC == 2
+								? store.preguntasYresp[0].respuesta[0].opcion_correcta
+								: store.preguntasYresp[0].respuesta[0].opcion_b}
+						</button>
+						<button onClick={handleClick} className="btn btn-primary">
+							{respuestaC == 3
+								? store.preguntasYresp[0].respuesta[0].opcion_correcta
+								: store.preguntasYresp[0].respuesta[0].opcion_c}
+						</button>
+						<h1 className="text-white">{respuestaC}</h1>
 					</div>
 				</div>
 			</div>

@@ -12,6 +12,7 @@ import { Infopreguntado } from "./views/infopreguntado";
 import { Juego } from "./views/juego";
 import { Sabiasque } from "./views/sabiasque";
 import { ScrollToTop } from "./component/ScrollToTop";
+import { Error404 } from "./views/error404";
 
 /* Privadas */
 import { Perfil } from "./views/perfil";
@@ -72,7 +73,7 @@ const Layout = () => {
 						<Cuentaregresiva />
 					</Route>
 					<Route>
-						<img src="https://web.dev/optimize-css-background-images-with-media-queries/" />
+						<Error404 />
 					</Route>
 				</Switch>
 				<Footer />

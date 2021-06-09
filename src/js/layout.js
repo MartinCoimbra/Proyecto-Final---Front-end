@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
 import { Login } from "./views/login";
@@ -12,6 +11,7 @@ import { Top } from "./views/top";
 import { Infopreguntado } from "./views/infopreguntado";
 import { Juego } from "./views/juego";
 import { Sabiasque } from "./views/sabiasque";
+import { ScrollToTop } from "./component/ScrollToTop";
 
 /* Privadas */
 import { Perfil } from "./views/perfil";
@@ -19,58 +19,58 @@ import injectContext from "./store/appContext";
 import { Editardatos } from "./views/editardatos";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-
 const Layout = () => {
 	const basename = process.env.BASENAME || "";
 
 	return (
 		<div className="d-flex flex-column">
 			<BrowserRouter basename={basename}>
-				<ScrollToTop>
-					<Navbar />
-					<Switch>
-						<Route exact path="/">
-							<Home />
-						</Route>
-						<Route exact path="/login">
-							<Login />
-						</Route>
-						<Route exact path="/registro">
-							<Registro />
-						</Route>
-						<Route exact path="/recuperarpass">
-							<Recuperarpass />
-						</Route>
-						<Route exact path="/acercade">
-							<Acercade />
-						</Route>
-						<Route exact path="/top">
-							<Top />
-						</Route>
-						<Route exact path="/infopreguntado/:id">
-							<Infopreguntado />
-						</Route>
-						<Route exact path="/perfil">
-							<Perfil />
-						</Route>
-						<Route exact path="/juego">
-							<Juego />
-						</Route>
-						<Route exact path="/postpreguntado">
-							<Postpreguntado />
-						</Route>
-						<Route exact path="/sabiasque">
-							<Sabiasque />
-						</Route>
-						<Route exact path="/editardatos">
-							<Editardatos />
-						</Route>
-						<Route>
-							<h1>Not found!</h1>
-						</Route>
-					</Switch>
-					<Footer />
-				</ScrollToTop>
+				<Navbar />
+				<Route exact path="/ScrollToTop">
+					<ScrollToTop />
+				</Route>
+				<Switch>
+					<Route exact path="/">
+						<Home />
+					</Route>
+					<Route exact path="/login">
+						<Login />
+					</Route>
+					<Route exact path="/registro">
+						<Registro />
+					</Route>
+					<Route exact path="/recuperarpass">
+						<Recuperarpass />
+					</Route>
+					<Route exact path="/acercade">
+						<Acercade />
+					</Route>
+					<Route exact path="/top">
+						<Top />
+					</Route>
+					<Route exact path="/infopreguntado/:id">
+						<Infopreguntado />
+					</Route>
+					<Route exact path="/perfil">
+						<Perfil />
+					</Route>
+					<Route exact path="/juego">
+						<Juego />
+					</Route>
+					<Route exact path="/postpreguntado">
+						<Postpreguntado />
+					</Route>
+					<Route exact path="/sabiasque">
+						<Sabiasque />
+					</Route>
+					<Route exact path="/editardatos">
+						<Editardatos />
+					</Route>
+					<Route>
+						<img src="https://web.dev/optimize-css-background-images-with-media-queries/" />
+					</Route>
+				</Switch>
+				<Footer />
 			</BrowserRouter>
 		</div>
 	);

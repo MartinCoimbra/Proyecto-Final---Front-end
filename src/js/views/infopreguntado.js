@@ -95,13 +95,15 @@ export const Infopreguntado = () => {
 							/>
 						</div>
 						<div>
-							<button
-								onClick={() => {
-									actions.postComentario();
-								}}
-								className="btn btn-success">
-								Comentar
-							</button>
+							<Link to={store.logeado == true ? "" : "/login"}>
+								<button
+									onClick={() => {
+										actions.postComentario();
+									}}
+									className="btn btn-success">
+									Comentar
+								</button>
+							</Link>
 						</div>
 					</div>
 				</div>

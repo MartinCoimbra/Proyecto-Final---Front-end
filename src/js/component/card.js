@@ -24,7 +24,16 @@ export function Cards(props) {
 							to={"/infopreguntado/" + props.id}>
 							<button className="btn btn-info mr-1">Ver más</button>
 						</Link>
-						<button className="btn btn-success">Play</button>
+						<Link to={store.logeado == true ? "/cuentaregresiva" : "/login"}>
+							{/* Al darle play poner preguntas y respuestas en el array */}
+							<button
+								onClick={() => {
+									store.logeado == true ? actions.getPreguntasYresp(id) : console.log("No jugamos");
+								}}
+								className="btn btn-success">
+								Play
+							</button>
+						</Link>
 					</div>
 				</div>
 			</div>

@@ -17,7 +17,7 @@ export const Login = () => {
 					className="card-img"
 					alt="..."
 				/>
-				<div className="card-img-overlay desenfoque ">
+				<div className="card-img-overlay desenfoque mt-5">
 					<h5 className="card-title mt-4 h2">Iniciar sesión</h5>
 					<p className="card-text">¡Es hora de aprender!</p>
 					<div className="row justify-content-center form-group">

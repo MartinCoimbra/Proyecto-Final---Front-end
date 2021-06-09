@@ -15,7 +15,7 @@ export const Postpreguntado = () => {
 		<div className="container-fluid my-5 fondoTop px-0 mx-0 mt-5">
 			<div className="container mt-5 mb-2">
 				<div className="row justify-content-center">
-					<div className="col-8 text-center">
+					<div className="col-8 text-center mt-5">
 						<p className="h1">¡Publiquemos un preguntado!</p>
 					</div>
 				</div>
@@ -28,7 +28,7 @@ export const Postpreguntado = () => {
 					</div>
 				</div>
 				<div className="row justify-content-center">
-					<div className="col-3">
+					<div className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
 						<div className="form-group">
 							<p className="text-left">Categoria de la tematica</p>
 							<select
@@ -44,7 +44,7 @@ export const Postpreguntado = () => {
 							</select>
 						</div>
 					</div>
-					<div className="col-3">
+					<div className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
 						<p className="text-left">Nombre de la tematica:</p>
 						<input
 							onChange={actions.preguntadoData}
@@ -54,8 +54,8 @@ export const Postpreguntado = () => {
 							aria-describedby="emailHelp"
 						/>
 					</div>
-					<div className="col-3">
-						<p className="text-left">url de portada:</p>
+					<div className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
+						<p className="text-left">URL de la portada:</p>
 						<input
 							onChange={actions.preguntadoData}
 							name="url_foto"
@@ -66,7 +66,7 @@ export const Postpreguntado = () => {
 					</div>
 				</div>
 				<div className="row justify-content-center">
-					<div className="col-7">
+					<div className="col-12 col-md-12 col-lg-7 col-xl-7">
 						<p className="text-left">¡Cuentanos sobre esta tematica!</p>
 						<div className="form-group ">
 							<textarea
@@ -106,7 +106,7 @@ export const Postpreguntado = () => {
 			<div className={siguiente == 1 ? "d-block" : "d-none"}>
 				<div className="container my-5 fondoPerson py-4">
 					<div className="row justify-content-center mb-3">
-						<div className="col-9">
+						<div className="col-12 col-md-9">
 							<p className="text-left h4">Pregunta 1:</p>
 							<input
 								onChange={actions.preguntadoData}
@@ -116,7 +116,7 @@ export const Postpreguntado = () => {
 								aria-describedby="emailHelp"
 							/>
 						</div>
-						<div className="col-9 mt-3">
+						<div className="col-12 col-md-9 mt-3">
 							<p className="text-left">Url Foto</p>
 							<input
 								onChange={actions.preguntadoData}
@@ -128,7 +128,7 @@ export const Postpreguntado = () => {
 						</div>
 					</div>
 					<div className="row justify-content-center mt-3 mb-3">
-						<div className="col-3">
+						<div className="col-12 col-md-9 col-lg-3 col-xl-3">
 							<p className="text-left">Respuesta correcta 1:</p>
 							<input
 								onChange={actions.preguntadoData}
@@ -138,7 +138,7 @@ export const Postpreguntado = () => {
 								aria-describedby="emailHelp"
 							/>
 						</div>
-						<div className="col-3">
+						<div className="col-12 col-md-9 col-lg-3 col-xl-3">
 							<p className="text-left">Opcion 2:</p>
 							<input
 								onChange={actions.preguntadoData}
@@ -148,7 +148,7 @@ export const Postpreguntado = () => {
 								aria-describedby="emailHelp"
 							/>
 						</div>
-						<div className="col-3">
+						<div className="col-12 col-md-9 col-lg-3 col-xl-3">
 							<p className="text-left">Opcion 3:</p>
 							<input
 								onChange={actions.preguntadoData}
@@ -173,7 +173,7 @@ export const Postpreguntado = () => {
 			<div className={siguiente == 2 ? "d-block" : "d-none"}>
 				<div className="container my-5 fondoPerson py-4">
 					<div className="row justify-content-center mb-3">
-						<div className="col-9">
+						<div className="col-12 col-md-9">
 							<p className="text-left h4">Pregunta 2:</p>
 							<input
 								onChange={actions.preguntadoData}
@@ -183,7 +183,7 @@ export const Postpreguntado = () => {
 								aria-describedby="emailHelp"
 							/>
 						</div>
-						<div className="col-9 mt-3">
+						<div className="col-12 col-md-9 mt-3">
 							<p className="text-left">Url Foto</p>
 							<input
 								onChange={actions.preguntadoData}
@@ -195,7 +195,7 @@ export const Postpreguntado = () => {
 						</div>
 					</div>
 					<div className="row justify-content-center mt-3 mb-3">
-						<div className="col-3">
+						<div className="col-12 col-md-9 col-lg-3 col-xl-3">
 							<p className="text-left">Respuesta correcta 1:</p>
 							<input
 								onChange={actions.preguntadoData}
@@ -205,7 +205,7 @@ export const Postpreguntado = () => {
 								aria-describedby="emailHelp"
 							/>
 						</div>
-						<div className="col-3">
+						<div className="col-12 col-md-9 col-lg-3 col-xl-3">
 							<p className="text-left">Opcion 2:</p>
 							<input
 								onChange={actions.preguntadoData}
@@ -215,7 +215,7 @@ export const Postpreguntado = () => {
 								aria-describedby="emailHelp"
 							/>
 						</div>
-						<div className="col-3">
+						<div className="col-12 col-md-9 col-lg-3 col-xl-3">
 							<p className="text-left">Opcion 3:</p>
 							<input
 								onChange={actions.preguntadoData}
@@ -240,7 +240,7 @@ export const Postpreguntado = () => {
 			<div className={siguiente == 3 ? "d-block" : "d-none"}>
 				<div className="container my-5 fondoPerson py-4">
 					<div className="row justify-content-center mb-3">
-						<div className="col-9">
+						<div className="col-12 col-md-9">
 							<p className="text-left h4">Pregunta 3:</p>
 							<input
 								onChange={actions.preguntadoData}
@@ -250,7 +250,7 @@ export const Postpreguntado = () => {
 								aria-describedby="emailHelp"
 							/>
 						</div>
-						<div className="col-9 mt-3">
+						<div className="col-12 col-md-9 mt-3">
 							<p className="text-left">Url Foto</p>
 							<input
 								onChange={actions.preguntadoData}
@@ -262,7 +262,7 @@ export const Postpreguntado = () => {
 						</div>
 					</div>
 					<div className="row justify-content-center mt-3 mb-3">
-						<div className="col-3">
+						<div className="col-12 col-md-9 col-lg-3 col-xl-3">
 							<p className="text-left">Respuesta correcta 1:</p>
 							<input
 								onChange={actions.preguntadoData}
@@ -272,7 +272,7 @@ export const Postpreguntado = () => {
 								aria-describedby="emailHelp"
 							/>
 						</div>
-						<div className="col-3">
+						<div className="col-12 col-md-9 col-lg-3 col-xl-3">
 							<p className="text-left">Opcion 2:</p>
 							<input
 								onChange={actions.preguntadoData}
@@ -282,7 +282,7 @@ export const Postpreguntado = () => {
 								aria-describedby="emailHelp"
 							/>
 						</div>
-						<div className="col-3">
+						<div className="col-12 col-md-9 col-lg-3 col-xl-3">
 							<p className="text-left">Opcion 3:</p>
 							<input
 								onChange={actions.preguntadoData}
@@ -307,7 +307,7 @@ export const Postpreguntado = () => {
 			<div className={siguiente == 4 ? "d-block" : "d-none"}>
 				<div className="container my-5 fondoPerson py-4">
 					<div className="row justify-content-center mb-3">
-						<div className="col-9">
+						<div className="col-12 col-md-9">
 							<p className="text-left h4">Pregunta 4:</p>
 							<input
 								onChange={actions.preguntadoData}
@@ -317,7 +317,7 @@ export const Postpreguntado = () => {
 								aria-describedby="emailHelp"
 							/>
 						</div>
-						<div className="col-9 mt-3">
+						<div className="col-12 col-md-9 mt-3">
 							<p className="text-left">Url Foto</p>
 							<input
 								onChange={actions.preguntadoData}
@@ -329,7 +329,7 @@ export const Postpreguntado = () => {
 						</div>
 					</div>
 					<div className="row justify-content-center mt-3 mb-3">
-						<div className="col-3">
+						<div className="col-12 col-md-9 col-lg-3 col-xl-3">
 							<p className="text-left">Respuesta correcta 1:</p>
 							<input
 								onChange={actions.preguntadoData}
@@ -339,7 +339,7 @@ export const Postpreguntado = () => {
 								aria-describedby="emailHelp"
 							/>
 						</div>
-						<div className="col-3">
+						<div className="col-12 col-md-9 col-lg-3 col-xl-3">
 							<p className="text-left">Opcion 2:</p>
 							<input
 								onChange={actions.preguntadoData}
@@ -349,7 +349,7 @@ export const Postpreguntado = () => {
 								aria-describedby="emailHelp"
 							/>
 						</div>
-						<div className="col-3">
+						<div className="col-12 col-md-9 col-lg-3 col-xl-3">
 							<p className="text-left">Opcion 3:</p>
 							<input
 								onChange={actions.preguntadoData}
@@ -374,7 +374,7 @@ export const Postpreguntado = () => {
 			<div className={siguiente == 5 ? "d-block" : "d-none"}>
 				<div className="container my-5 fondoPerson py-4">
 					<div className="row justify-content-center mb-3">
-						<div className="col-9">
+						<div className="col-12 col-md-9">
 							<p className="text-left h4">Pregunta 5:</p>
 							<input
 								onChange={actions.preguntadoData}
@@ -384,7 +384,7 @@ export const Postpreguntado = () => {
 								aria-describedby="emailHelp"
 							/>
 						</div>
-						<div className="col-9 mt-3">
+						<div className="col-12 col-md-9 mt-3">
 							<p className="text-left">Url Foto</p>
 							<input
 								onChange={actions.preguntadoData}
@@ -396,7 +396,7 @@ export const Postpreguntado = () => {
 						</div>
 					</div>
 					<div className="row justify-content-center mt-3 mb-3">
-						<div className="col-3">
+						<div className="col-12 col-md-9 col-lg-3 col-xl-3">
 							<p className="text-left">Respuesta correcta 1:</p>
 							<input
 								onChange={actions.preguntadoData}
@@ -406,7 +406,7 @@ export const Postpreguntado = () => {
 								aria-describedby="emailHelp"
 							/>
 						</div>
-						<div className="col-3">
+						<div className="col-12 col-md-9 col-lg-3 col-xl-3">
 							<p className="text-left">Opcion 2:</p>
 							<input
 								onChange={actions.preguntadoData}
@@ -416,7 +416,7 @@ export const Postpreguntado = () => {
 								aria-describedby="emailHelp"
 							/>
 						</div>
-						<div className="col-3">
+						<div className="col-12 col-md-9 col-lg-3 col-xl-3">
 							<p className="text-left">Opcion 3:</p>
 							<input
 								onChange={actions.preguntadoData}
@@ -441,7 +441,7 @@ export const Postpreguntado = () => {
 			<div className={siguiente == 6 ? "d-block" : "d-none"}>
 				<div className="container my-5 mb-3">
 					<div className="row justify-content-center">
-						<div className="col-5 text-center">
+						<div className="col-9 col-md-5 col-lg-5 col-xl-5 text-center">
 							<button
 								onClick={() => {
 									actions.postPreguntado();

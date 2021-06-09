@@ -41,15 +41,15 @@ export const Editardatos = () => {
 		<div className="container-fluid  px-0 mx-0 mt-5">
 			<div className="card bg-dark text-center text-white">
 				<img
-					height="650px"
+					height="850px"
 					src="https://blogs.iadb.org/conocimiento-abierto/wp-content/uploads/sites/10/2016/10/photo-editing-WP.jpg"
 					className="card-img"
 					alt="..."
 				/>
 				<div className="card-img-overlay">
-					<h5 className="card-title mt-4 h2">Edita tus datos</h5>
+					<h5 className="card-title mt-5 h2">Edita tus datos</h5>
 					<div className="row justify-content-center form-group">
-						<div className="col-3">
+						<div className="col-12 col-sm-5">
 							<p className="text-left">Nombre</p>
 							<input
 								onChange={e => setFirst_name(e.target.value)}
@@ -60,7 +60,7 @@ export const Editardatos = () => {
 								value={first_name}
 							/>
 						</div>
-						<div className="col-3">
+						<div className="col-12 col-sm-5">
 							<p className="text-left">Apellido</p>
 							<input
 								onChange={e => setLast_name(e.target.value)}
@@ -75,7 +75,7 @@ export const Editardatos = () => {
 					</div>
 					<div className="row justify-content-center form-group">
 						{/* Email */}
-						<div className="col-3">
+						<div className="col-12 col-sm-5">
 							<p className="text-left">Email</p>
 							<input
 								onChange={e => setEmail(e.target.value)}
@@ -86,7 +86,7 @@ export const Editardatos = () => {
 								value={email}
 							/>
 						</div>
-						<div className="col-3">
+						<div className="col-12 col-sm-5">
 							<p className="text-left">Url Foto</p>
 							<input
 								onChange={e => setUrlfoto(e.target.value)}
@@ -99,7 +99,7 @@ export const Editardatos = () => {
 						</div>
 					</div>
 					<div className="row justify-content-center form-group">
-						<div className="col-3">
+						<div className="col-12 col-sm-5">
 							<p className="text-left">Contraseña</p>
 							<input
 								onChange={e => setPassword(e.target.value)}
@@ -110,7 +110,7 @@ export const Editardatos = () => {
 								value={password}
 							/>
 						</div>
-						<div className="col-3">
+						<div className="col-12 col-sm-5">
 							<p className="text-left">Contraseña</p>
 							<input
 								onChange={e => setPassword(e.target.value)}
@@ -124,7 +124,7 @@ export const Editardatos = () => {
 					</div>
 
 					<div className="row justify-content-center form-group">
-						<div className="col-6">
+						<div className="col-12 col-sm-5">
 							<div className="form-group">
 								<label htmlFor="exampleFormControlTextarea1">¡Cuentanos de ti!</label>
 								<textarea

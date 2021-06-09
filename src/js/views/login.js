@@ -22,7 +22,7 @@ export const Login = () => {
 					<p className="card-text">¡Es hora de aprender!</p>
 					<div className="row justify-content-center form-group">
 						{/* Email */}
-						<div className="col-5">
+						<div className="col-12 col-sm-5">
 							<p className="text-left">Email</p>
 							<input
 								onChange={actions.loginData}
@@ -36,7 +36,7 @@ export const Login = () => {
 					</div>
 					<div className="row justify-content-center form-group">
 						{/* Email */}
-						<div className="col-5">
+						<div className="col-12 col-sm-5">
 							<p className="text-left">Contraseña</p>
 							<input
 								onChange={actions.loginData}

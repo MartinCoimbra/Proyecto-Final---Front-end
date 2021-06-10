@@ -1,10 +1,10 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import { PayPal } from "../component/paypal";
 
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
-
 	return (
 		<nav className="navbar navbar-dark paleta5 border-bottom fixed-top">
 			<Link to="/">
@@ -46,7 +46,9 @@ export const Navbar = () => {
 				<Link to="/perfil" className="btn btn-outline-success ml-4">
 					Perfil
 				</Link>
-
+				<Link to="/paypal">
+					<button className="btn btn-outline-primary mr-3 mt-4">Paypal</button>
+				</Link>
 				<Link to="/" onClick={actions.actionRemove} className="btn btn-outline-danger ml-4 float-right">
 					Cerrar sesión
 				</Link>

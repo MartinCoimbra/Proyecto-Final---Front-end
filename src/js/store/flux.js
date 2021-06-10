@@ -15,7 +15,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					initial: "white"
 				}
 			],
-			logeado: false,
+			logeado: true,
 			registrado: false,
 			filtrado: false,
 			registroData: {},

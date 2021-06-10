@@ -13,6 +13,9 @@ export const Perfil = () => {
 					<Link to="/">
 						<button className="btn btn-outline-primary mr-3 mt-4">Volver</button>
 					</Link>
+					<Link to="/">
+						<button className="btn btn-outline-primary mr-3 mt-4">Volver</button>
+					</Link>
 				</div>
 				<div className="row pt-4 pr-4 pl-4 mb-0 pb-0">
 					<div className="col-3">

@@ -21,6 +21,8 @@ import { Editardatos } from "./views/editardatos";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { Cuentaregresiva } from "./views/cuentaRegresiva";
+import { PayPal } from "./component/paypal";
+import { PayPalV } from "./views/PaypalV";
 
 const Layout = () => {
 	const basename = process.env.BASENAME || "";
@@ -71,6 +73,9 @@ const Layout = () => {
 					</Route>
 					<Route exact path="/cuentaregresiva">
 						<Cuentaregresiva />
+					</Route>
+					<Route exact path="/paypal">
+						<PayPalV />
 					</Route>
 					<Route>
 						<Error404 />

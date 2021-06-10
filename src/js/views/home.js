@@ -9,8 +9,8 @@ export const Home = () => {
 	return (
 		<div className="text-center container-fluid fondoTop">
 			<div className="row h-75">
-				<div className="col-12 px-0">
-					<div id="carouselExampleIndicators" className="carousel slide" htmlData-ride="carousel">
+				<div className="col-12 px-0 pt-2">
+					<div id="carouselExampleIndicators" className="carousel slide mt-5" htmlData-ride="carousel">
 						<ol className="carousel-indicators">
 							<li htmlData-target="#carouselExampleIndicators" htmlData-slide-to="0" className="active" />
 							<li htmlData-target="#carouselExampleIndicators" htmlData-slide-to="1" />

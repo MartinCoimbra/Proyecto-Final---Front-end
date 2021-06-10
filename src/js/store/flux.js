@@ -54,7 +54,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 				}
 			],
-			preguntasYresp: {}
+			preguntasYresp: {},
+			top: [{}]
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -262,6 +263,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(resp => resp.json())
 					.then(resp => {
 						setStore({ preguntasYresp: resp });
+					})
+					.catch(error => console.log(error));
+			},
+			getTop: () => {
+				fetch(process.env.BACKEND_URL + "/top", {
+					method: "GET"
+				})
+					.then(resp => resp.json())
+					.then(resp => {
+						setStore({ top: resp });
 					})
 					.catch(error => console.log(error));
 			},

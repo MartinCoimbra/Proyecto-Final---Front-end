@@ -13,9 +13,6 @@ export const Perfil = () => {
 					<Link to="/">
 						<button className="btn btn-outline-primary mr-3 mt-4">Volver</button>
 					</Link>
-					<Link to="/">
-						<button className="btn btn-outline-primary mr-3 mt-4">Volver</button>
-					</Link>
 				</div>
 				<div className="row pt-4 pr-4 pl-4 mb-0 pb-0">
 					<div className="col-3">
@@ -49,7 +46,14 @@ export const Perfil = () => {
 				</div>
 				<div className="row">
 					<div className="col-3 px-0 mx-0 text-center">
-						<p className="h3 ml-5 text-danger">Coin: 400 💎</p>
+						<p className="h3 ml-5 text-danger">Coin: {store.coin} 💸</p>
+						<button
+							onClick={() => {
+								actions.postCoin();
+							}}
+							className="btn btn-success">
+							Reclamar coin
+						</button>
 					</div>
 					<div className="col-9 mb-3">
 						<p className="h4">Tus estadisticas</p>

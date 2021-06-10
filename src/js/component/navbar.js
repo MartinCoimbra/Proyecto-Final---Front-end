@@ -43,7 +43,12 @@ export const Navbar = () => {
 				<Link className="text-decoration-none" to="/sabiasque">
 					<span className="mr-3 text-white">Curiosidades</span>
 				</Link>
-				<Link to="/perfil" className="btn btn-outline-success ml-4">
+				<Link
+					to="/perfil"
+					onClick={() => {
+						actions.getCoin();
+					}}
+					className="btn btn-outline-success ml-4">
 					Perfil
 				</Link>
 				<Link to="/paypal">

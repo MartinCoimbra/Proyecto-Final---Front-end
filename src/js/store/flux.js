@@ -15,7 +15,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					initial: "white"
 				}
 			],
-			logeado: true,
+			logeado: false,
 			registrado: false,
 			filtrado: false,
 			registroData: {},
@@ -55,7 +55,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			],
 			preguntasYresp: {},
-			top: [{}]
+			top: [{}],
+			coin: 0
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -83,6 +84,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						if (resp.token !== undefined) {
 							setStore({ logeado: true });
 							setStore({ infoProfile: resp.user });
+							/* getActions().getCoin() */
 						}
 					})
 					.catch(error => console.log(error));
@@ -106,6 +108,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 				/* Guardamos los datos del usuario que se quiere registrar */
 				let dataCapt = { [e.target.name]: e.target.value };
 				setStore({ registroData: { ...getStore().registroData, ...dataCapt } });
+				if (e.target.name === "email" || e.target.name === "password") {
+					let dataCapt = { [e.target.name]: e.target.value };
+					setStore({ loginData: { ...getStore().loginData, ...dataCapt } });
+				}
 			},
 			postRegistro: () => {
 				const dataEnviar = getStore().registroData;
@@ -118,7 +124,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 				})
 					.then(resp => resp.json())
 					.then(resp => {
-						console.log("entre" + resp);
 						setStore({ registrado: true });
 					})
 					.catch(error => {
@@ -273,6 +278,39 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(resp => resp.json())
 					.then(resp => {
 						setStore({ top: resp });
+					})
+					.catch(error => console.log(error));
+			},
+			postCoin: () => {
+				/* postCoin */
+				fetch(process.env.BACKEND_URL + "/postCoin ", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: localStorage.getItem("token")
+					}
+				})
+					.then(resp => resp.json())
+					.then(resp => {
+						console.log(resp);
+						getActions().getCoin();
+					})
+					.catch(error => console.log(error));
+			},
+			getCoin: () => {
+				/* /coin */
+				fetch(process.env.BACKEND_URL + "/coin ", {
+					method: "GET",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: localStorage.getItem("token")
+					}
+				})
+					.then(resp => resp.json())
+					.then(resp => {
+						console.log(resp);
+
+						setStore({ coin: resp[0].coins });
 					})
 					.catch(error => console.log(error));
 			},

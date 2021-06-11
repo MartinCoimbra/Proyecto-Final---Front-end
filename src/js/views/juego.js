@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 import { Context } from "../store/appContext";
 
@@ -23,6 +23,7 @@ export const Juego = () => {
 	const [btn2, setBtn2] = useState();
 	const [btn3, setBtn3] = useState();
 	const [puntos, setPuntos] = useState(0);
+	const [home, setHome] = useState(false);
 
 	/* Cuando llegue a 0 pausar */
 	if (num == 0 || num < 0) {
@@ -124,7 +125,6 @@ export const Juego = () => {
 			goTimer();
 		}
 	};
-
 	/* Cada vez que pase a la siguiente pregunta en un btn siguiente incrementar el [0] por 1  */
 	/* preguntasYresp[0] position */
 	/* Al hacer click le mandamos el num de la resp que le hicimos click 
@@ -188,12 +188,13 @@ export const Juego = () => {
 						</div>
 					</div>
 				</div>
+
 				<div className={ver}>
 					<div className="row justify-content-center">
 						<div className="col-5">
 							<h3 className="text-white">Tu respuesta es: {resFV} </h3>
 						</div>
-						<div className="col-2">
+						<div className={position + 1 === 5 ? "d-none" : "col-2"}>
 							<button
 								onClick={() => {
 									aumentarPuntos();
@@ -201,6 +202,17 @@ export const Juego = () => {
 								}}
 								className="btn btn-success">
 								Siguiente ✅
+							</button>
+						</div>
+						<div className={position + 1 === 5 ? "d-block" : "d-none"}>
+							<button
+								onClick={() => {
+									console.log("tus puntos sonnn:" + puntos);
+									actions.putEditarPuntos(puntos);
+									setHome(true);
+								}}
+								className="btn btn-success">
+								Siguiente ✅{home == true ? <Redirect to="/top" /> : ""}
 							</button>
 						</div>
 					</div>

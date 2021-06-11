@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/demo.scss";
 
 export const Postpreguntado = () => {
 	const { store, actions } = useContext(Context);
 	const [siguiente, setSiguiente] = useState(0);
+	const [home, setHome] = useState(false);
 
 	/* Abria que cambiarlo value por id */
 	/* const handleChange = event => {
@@ -445,9 +446,11 @@ export const Postpreguntado = () => {
 							<button
 								onClick={() => {
 									actions.postPreguntado();
+									setHome(true);
 								}}
 								className="btn btn-success p-4">
 								<p className="h4">¡Publicar mi preguntado!</p>
+								{home == true ? <Redirect to="/" /> : ""}
 							</button>
 						</div>
 					</div>

@@ -46,7 +46,13 @@ export const Perfil = () => {
 				</div>
 				<div className="row">
 					<div className="col-3 px-0 mx-0 text-center">
-						<p className="h3 ml-5 text-danger">Coin: {store.coin} 💸</p>
+						<p className="h3 ml-5 text-danger">
+							Coins: {store.coin}{" "}
+							<img
+								src="https://github.com/Niukeitor/imagenesPF/blob/main/monedita.png?raw=true"
+								width="35px"
+							/>
+						</p>
 						<div className={store.coin > 0 ? "d-none" : "d-block"}>
 							<button
 								onClick={() => {

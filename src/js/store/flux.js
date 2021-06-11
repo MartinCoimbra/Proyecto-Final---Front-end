@@ -144,6 +144,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(resp => resp.json())
 					.then(resp => {
 						console.log(resp);
+						getActions().getPreguntado();
 					})
 					.catch(error => {
 						console.log(error + "Necesita estar login para post un preguntado");
@@ -313,6 +314,27 @@ const getState = ({ getStore, getActions, setStore }) => {
 						setStore({ coin: resp[0].coins });
 					})
 					.catch(error => console.log(error));
+			},
+			putEditarPuntos: numPuntos => {
+				let newPoin = getStore().infoProfile.puntos + numPuntos;
+				console.log("Tus puntos en total eran:" + getStore().infoProfile.puntos + "--" + newPoin);
+				let jsona = { puntos: newPoin };
+				fetch(process.env.BACKEND_URL + "/editardatos", {
+					method: "PUT",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: localStorage.getItem("token")
+					},
+					body: JSON.stringify(jsona)
+				})
+					.then(resp => resp.json())
+					.then(resp => {
+						console.log(resp);
+						getActions().getTop();
+					})
+					.catch(error => {
+						console.log(error);
+					});
 			},
 			actionRemove: () => {
 				localStorage.removeItem("token");

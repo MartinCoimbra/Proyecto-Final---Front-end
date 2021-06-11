@@ -47,13 +47,15 @@ export const Perfil = () => {
 				<div className="row">
 					<div className="col-3 px-0 mx-0 text-center">
 						<p className="h3 ml-5 text-danger">Coin: {store.coin} 💸</p>
-						<button
-							onClick={() => {
-								actions.postCoin();
-							}}
-							className="btn btn-success">
-							Reclamar coin
-						</button>
+						<div className={store.coin > 0 ? "d-none" : "d-block"}>
+							<button
+								onClick={() => {
+									actions.postCoin();
+								}}
+								className="btn btn-success">
+								Reclamar coin
+							</button>
+						</div>
 					</div>
 					<div className="col-9 mb-3">
 						<p className="h4">Tus estadisticas</p>

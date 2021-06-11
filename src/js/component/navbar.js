@@ -52,9 +52,9 @@ export const Navbar = () => {
 					Perfil
 				</Link>
 				<Link to="/paypal">
-					<button className="btn btn-outline-primary mr-3 mt-4">Paypal</button>
+					<button className="btn btn-outline-primary mx-3">Paypal</button>
 				</Link>
-				<Link to="/" onClick={actions.actionRemove} className="btn btn-outline-danger ml-4 float-right">
+				<Link to="/" onClick={actions.actionRemove} className="btn btn-outline-danger float-right">
 					Cerrar sesión
 				</Link>
 			</div>

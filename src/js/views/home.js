@@ -22,59 +22,59 @@ export const Home = () => {
 							<li htmlData-target="#carouselExampleIndicators" htmlData-slide-to="7" />
 						</ol>
 						<div className="carousel-inner h-100">
-							<div className="carousel-item active h-100">
+							<div className="carousel-item active slider">
 								<img
 									src="https://github.com/Niukeitor/imagenesPF/blob/main/arte.gif?raw=true"
-									className="d-block w-100 h-100"
+									className="d-block w-100 slider"
 									alt="..."
 								/>
 							</div>
 							<div className="carousel-item h-100">
 								<img
 									src="https://github.com/Niukeitor/imagenesPF/blob/main/ciencia.gif?raw=true"
-									className="d-block w-100 h-100"
+									className="d-block w-100 slider"
 									alt="..."
 								/>
 							</div>
 							<div className="carousel-item h-100">
 								<img
 									src="https://github.com/Niukeitor/imagenesPF/blob/main/ciencias%20sociales.gif?raw=true"
-									className="d-block w-100 h-100"
+									className="d-block w-100 slider"
 									alt="..."
 								/>
 							</div>
 							<div className="carousel-item h-100">
 								<img
 									src="https://github.com/Niukeitor/imagenesPF/blob/main/deportes.gif?raw=true"
-									className="d-block w-100 h-100"
+									className="d-block w-100 slider"
 									alt="..."
 								/>
 							</div>
 							<div className="carousel-item h-100">
 								<img
 									src="https://github.com/Niukeitor/imagenesPF/blob/main/entretenimiento.gif?raw=true"
-									className="d-block w-100 h-100"
+									className="d-block w-100 slider"
 									alt="..."
 								/>
 							</div>
 							<div className="carousel-item h-100">
 								<img
 									src="https://github.com/Niukeitor/imagenesPF/blob/main/geografia.gif?raw=true"
-									className="d-block w-100 h-100"
+									className="d-block w-100 slider"
 									alt="..."
 								/>
 							</div>
 							<div className="carousel-item h-100">
 								<img
 									src="https://github.com/Niukeitor/imagenesPF/blob/main/mates.gif?raw=true"
-									className="d-block w-100 h-100"
+									className="d-block w-100 slider"
 									alt="..."
 								/>
 							</div>
 							<div className="carousel-item h-100">
 								<img
 									src="https://github.com/Niukeitor/imagenesPF/blob/main/programacion.gif?raw=true"
-									className="d-block w-100 h-100"
+									className="d-block w-100 slider"
 									alt="..."
 								/>
 							</div>
@@ -99,10 +99,10 @@ export const Home = () => {
 				</div>
 			</div>
 			<div className="container">
-				<div className="row my-4 fondoPerson justify-content-between">
-					<div className="row col-3 ml-4">
+				<div className="row my-4 bg-dark text-white justify-content-between">
+					<div className="col-3 d-flex ml-4">
 						<div className="col-5 d-flex align-items-center">
-							<button className="btn btn-primary bg-danger mt-3">Play!</button>
+							<button className="btn bg-danger text-white mt-3">Play!</button>
 						</div>
 						<div className="col-7">
 							<div className="form-group">
@@ -124,9 +124,9 @@ export const Home = () => {
 					<div className="col-6 d-flex align-items-center justify-content-center w-100">
 						<h1>JUDYA</h1>
 					</div>
-					<div className="row col-3 d-flex align-items-center">
+					<div className="d-flex col-3 align-items-center">
 						<Link to={store.logeado == true ? "/postpreguntado" : "/login"}>
-							<button className="btn btn-primary bg-success mt-3">Publicar un preguntado</button>
+							<button className="btn btn-danger mt-3">Publicar un preguntado</button>
 						</Link>
 					</div>
 				</div>

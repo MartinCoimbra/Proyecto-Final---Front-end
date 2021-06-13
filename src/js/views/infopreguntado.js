@@ -8,21 +8,17 @@ import { Comentario } from "../component/comentario";
 
 export const Infopreguntado = () => {
 	const { store, actions } = useContext(Context);
-
+	const [cant, setCant] = useState(0);
+	const [startA, setStartA] = useState("");
+	/* startActive */
 	return (
 		<div className="container-fluid fondoTop px-0 mx-0 mt-5">
 			<div className="container bg-light rounded p-3 mt-5 mb-3">
 				<div className="row mb-5">
-					<div className="col-6">
-						<figure className="figure">
-							<img
-								src={store.preguntadoEs[0].url_foto}
-								className="figure-img img-fluid rounded"
-								alt="..."
-							/>
-						</figure>
+					<div className="col-12 col-md-6">
+						<img src={store.preguntadoEs[0].url_foto} className="rounded w-100 infoimgH mb-2" alt="..." />
 					</div>
-					<div className="col-6">
+					<div className="col-12 col-md-6">
 						<h1 className="text-center">{store.preguntadoEs[0].nombre}</h1>
 						<p>
 							{store.preguntadoEs[0].descripcion} <br />
@@ -35,12 +31,12 @@ export const Infopreguntado = () => {
 							<button className="btn btn-outline-primary">Volver</button>
 						</Link>
 					</div>
-					<div className="col-6 text-center text-warning h2">
-						<i className="fas fa-star" />
-						<i className="fas fa-star" />
-						<i className="fas fa-star" />
-						<i className="fas fa-star" />
-						<i className="fas fa-star" />
+					<div className="col-12 col-md-6 text-center text-warning h2 ">
+						<i className="fas fa-star start" />
+						<i className="fas fa-star start" />
+						<i className="fas fa-star start" />
+						<i className="fas fa-star start" />
+						<i className="fas fa-star start" />
 					</div>
 				</div>
 				<div className="container contenedorTop width2">
@@ -61,37 +57,62 @@ export const Infopreguntado = () => {
 							rows="4"
 						/>
 					</div>
-					<div className="w-100 text-right text-warning">
+					<div className="w-100 text-right h5 h2-sm">
 						<div className=" d-flex mr-4">
 							<i
 								onClick={() => {
 									actions.calificacionData(1);
+									setCant(1);
 								}}
-								className="fas fa-star"
+								className={
+									cant == 1 || cant == 2 || cant == 3 || cant == 4 || cant == 5
+										? "fas fa-star start hoverStart1 startActive"
+										: "fas fa-star start hoverStart1"
+								}
 							/>
 							<i
 								onClick={() => {
 									actions.calificacionData(2);
+									setCant(2);
 								}}
-								className="fas fa-star"
+								className={
+									+cant == 2 || cant == 3 || cant == 4 || cant == 5
+										? "fas fa-star start hoverStart2 startActive"
+										: "fas fa-star start hoverStart2 "
+								}
 							/>
 							<i
 								onClick={() => {
 									actions.calificacionData(3);
+									setCant(3);
 								}}
-								className="fas fa-star"
+								className={
+									cant == 3 || cant == 4 || cant == 5
+										? "fas fa-star start hoverStart3  startActive"
+										: "fas fa-star start hoverStart3 "
+								}
 							/>
 							<i
 								onClick={() => {
 									actions.calificacionData(4);
+									setCant(4);
 								}}
-								className="fas fa-star"
+								className={
+									cant == 4 || cant == 5
+										? "fas fa-star start hoverStart4 startActive"
+										: "fas fa-star start hoverStart4"
+								}
 							/>
 							<i
 								onClick={() => {
 									actions.calificacionData(5);
+									setCant(5);
 								}}
-								className="fas fa-star"
+								className={
+									cant == 5
+										? "fas fa-star start hoverStart5 startActive"
+										: "fas fa-star start hoverStart5 "
+								}
 							/>
 						</div>
 						<div>

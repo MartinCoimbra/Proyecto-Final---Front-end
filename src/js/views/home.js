@@ -99,40 +99,40 @@ export const Home = () => {
 				</div>
 			</div>
 			<div className="container">
-				<div className="row my-4 bg-dark text-white justify-content-between">
-					<div className="col-3 d-flex ml-4">
-						<div className="col-5 d-flex align-items-center">
-							<button className="btn bg-danger text-white mt-3">Play!</button>
-						</div>
-						<div className="col-7">
-							<div className="form-group">
-								<label htmlFor="exampleFormControlSelect1">Categorias</label>
-								<select
-									onChange={actions.filtradoTrue}
-									className="form-control"
-									name="categoria"
-									id="examplesFormControlSelect1">
-									{store.categorias.map(element => (
-										<option key={element.value} value={element.id}>
-											{element.name}
-										</option>
-									))}
-								</select>
-							</div>
+				<div className="row my-4 bg-dark text-white flex-column flex-sm-row align-items-center justify-content-between">
+					<h1 className="w-100 m-0">JUDYA</h1>
+					{/* col-md */}
+
+					<div className="col-10 col-sm-4">
+						<div className="form-group m-0">
+							<select
+								onChange={actions.filtradoTrue}
+								className="form-control"
+								name="categoria"
+								id="examplesFormControlSelect1">
+								{store.categorias.map(element => (
+									<option key={element.value} value={element.id}>
+										{element.name}
+									</option>
+								))}
+							</select>
 						</div>
 					</div>
-					<div className="col-6 d-flex align-items-center justify-content-center w-100">
-						<h1>JUDYA</h1>
+
+					<div className="col-10 my-3 my-sm-0 col-sm-3">
+						<button className="btn bg-danger w-100 text-white">Play!</button>
 					</div>
-					<div className="d-flex col-3 align-items-center">
-						<Link to={store.logeado == true ? "/postpreguntado" : "/login"}>
-							<button className="btn btn-danger mt-3">Publicar un preguntado</button>
+					<div className="col-10 col-sm-4 mb-3">
+						<Link
+							className="btn btn-danger w-100"
+							to={store.logeado == true ? "/postpreguntado" : "/login"}>
+							Publicar un preguntado
 						</Link>
 					</div>
 				</div>
 
 				<div className="contenedor">
-					<div className="row px-0 mx-0">
+					<div className="row  flex-sm-row justify-content-center px-0 mx-0">
 						{/* Mapeo de 5 preguntados. aleatorio, Nota:Mapear segun la categoria seleccionada luego */}
 						{store.preguntados.map((element, i) => {
 							return (

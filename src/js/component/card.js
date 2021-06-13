@@ -7,9 +7,10 @@ export function Cards(props) {
 	const { store, actions } = useContext(Context);
 	const [id, setId] = useState(props.id);
 	return (
-		<div className="col-4 mb-3">
+		<div className="col-9 col-sm-6 col-md-4 mb-3">
 			<div className="card bg-dark imgS text-white">
-				<img src={props.img} className="card-img " alt="..." />
+				<img src={props.img} className="card-img preguntadoMapH" alt="..." />
+
 				<div className="card-img-overlay desenfoque2">
 					<h5 className="card-title info">{props.nombre}</h5>
 					<p className="card-text info">{props.descripcion}</p>

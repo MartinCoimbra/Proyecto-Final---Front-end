@@ -7,8 +7,8 @@ export const Navbar = () => {
 	const { store, actions } = useContext(Context);
 	return (
 		<nav className="navbar navbar-dark paleta5 border-bottom fixed-top">
-			<Link to="/">
-				<span className="navbar-brand mb-0 h1">JUDYA</span>
+			<Link to="/" className="navbar-brand mb-0 h1 d-sm-block d-flex">
+				JUDYA
 			</Link>
 			<div className={store.logeado == false ? "d-block ml-auto" : "d-none"}>
 				<Link className="text-decoration-none" to="/">

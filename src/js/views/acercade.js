@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
 
 import { Context } from "../store/appContext";
 
@@ -9,116 +8,129 @@ export const Acercade = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="container-fluid  px-0 mx-0 mt-5">
-			<div className="container">
-				<div id="carouselExampleCaptions" className="carousel slide" data-ride="carousel">
-					<ol className="carousel-indicators">
-						<li data-target="#carouselExampleCaptions" data-slide-to="0" className="active" />
-						<li data-target="#carouselExampleCaptions" data-slide-to="1" />
-						<li data-target="#carouselExampleCaptions" data-slide-to="2" />
-						<li data-target="#carouselExampleCaptions" data-slide-to="3" />
-					</ol>
-					<div className="carousel-inner">
-						<div className="carousel-item active">
-							<img
-								height="600px"
-								src="https://coworkingfy.com/wp-content/uploads/2019/11/trabajo-en-equipo-grupo-figurativo-de-equipo-de-trabajo.jpg"
-								className="d-block w-100"
-								alt="..."
-							/>
-							<div className="carousel-caption d-none d-md-block desenfoqueText">
-								<h5 className="h3">Sobre nosotros</h5>
-								<p>
-									Somos una pagina que ofrece entrenamiento y aprendisaje al mismo tiempo. Como
-									muchos, nosotros creemos en la utilización de los juegos para el aprendizaje que se
-									ha utilizado siempre en las clases de idiomas para aprender y practicar exponentes
-									lingüísticos, estrategias comunicativas, destrezas orales, etc, además de ayudarnos
-									como herramienta para desarrollar el componente afectivo en las actividades
-									grupales.
-								</p>
-							</div>
-						</div>
-						<div className="carousel-item">
-							<img
-								height="600px"
-								src="https://cdn.ticbeat.com/src/uploads/2017/11/tecnicas-aprender-rapido-810x540.jpg"
-								className="d-block w-100"
-								alt="..."
-							/>
-							<div className="carousel-caption d-none d-md-block desenfoqueText">
-								<h5 className="h3">Como jugar</h5>
-								<p>
-									Para poder jugar primero que nada tienes que estar registrado y logeado, luego ir al
-									inicio y seleccionar play en la categoria que te gustaria jugar (Deportes, Historia,
-									Geografia, Matematicas,etc). Al entrar en la categoria vas a poder jugar al
-									instante, responde bien las preguntas en menos del tiempo indicado y ganaras puntos
-									(los puntos que ganes se basan en los segundos que te queden al responder
-									correctamente, de lo contrario no sumaras puntos).
-								</p>
-							</div>
-						</div>
-						<div className="carousel-item">
-							<img
-								height="600px"
-								src="https://www.revistamoi.com/wp-content/uploads/2016/07/mejora-tu-memoria-con-ejercicio.jpg"
-								className="d-block w-100"
-								alt="..."
-							/>
-							<div className="carousel-caption d-none d-md-block desenfoqueText">
-								<h5 className="h3">Top semanal</h5>
-								<p>
-									Que es el top semanal? El top semanal es un metodo de competicion entre todos los
-									usuario. Quieres ganar buenas recompenzas? pues es hora de estudiar y responder
-									correctamente en el menos tiempo posible, asi podras ganar mas puntos en menos
-									tiempo y ser el primero en el top semanal. Los primeros 5 ganaran recompenzas como
-									por ejemplo 1000 coins, si leiste bien 1000 coins 😲, una locura no? pero deja te
-									contamos que si todo funciona segun lo planeado, podremos meter un top mensual en el
-									que podras ganar hasta 20000 coins 🤯.
-								</p>
-							</div>
-						</div>
-						<div className="carousel-item">
-							<img
-								height="600px"
-								src="http://blogs.upn.edu.pe/carreras-para-adultos-que-trabajan/wp-content/uploads/sites/15/2018/06/upn_blog_wa_creativid_12-jun.jpg"
-								className="d-block w-100"
-								alt="..."
-							/>
-							<div className="carousel-caption d-none d-md-block desenfoqueText">
-								<h5 className="h3">Quien esta detras</h5>
-								<p>
-									Si te preguntas o te has preguntado quien o quienes estan detras de este proyecto,
-									aqui te vamos a responder. Somos 3 chicos que estudiamos en 4Geeks Academy en donde
-									aprendimos todo lo que teniamos que saber sobre desarrollo de aplicaciones web. Como
-									proyecto final nos toco trabajar en una aplicacion web sobre algo que nos interesara
-									a nosotros. Cuando se eligieron los grupos el nuestro era el mas pequeño en
-									participantes, pero eso no nos puso trabas en el camino ya que como grupo trabajamos
-									exelentes. La idea del proyecto surgio despues de 2 horas de planteamientos de
-									ideas, dimos justo en lo indicado ya que tenemos un participante apacionado por los
-									videojuegos y eso nos dio una ventaja a la hora de desarrollar la aplicacion.
-									Tambien otra de las ventajas fue tener un participante que programa desde hace mucho
-									tiempo y
-								</p>
-							</div>
+		<div>
+			<div id="carouselExampleCaptions" className="carousel slide" data-ride="carousel">
+				<ol className="carousel-indicators">
+					<li data-target="#carouselExampleCaptions" data-slide-to="0" className="active" />
+					<li data-target="#carouselExampleCaptions" data-slide-to="1" />
+					<li data-target="#carouselExampleCaptions" data-slide-to="2" />
+					<li data-target="#carouselExampleCaptions" data-slide-to="3" />
+					<li data-target="#carouselExampleCaptions" data-slide-to="4" />
+				</ol>
+				<div className="carousel-inner h-100">
+					<div className="carousel-item active">
+						<img
+							src="https://coworkingfy.com/wp-content/uploads/2019/11/trabajo-en-equipo-grupo-figurativo-de-equipo-de-trabajo.jpg"
+							alt="..."
+							className="d-block w-100 sslider"
+						/>
+						<div className="carousel-caption  desenfoqueText">
+							<h5 className="h3">Sobre nosotros</h5>
+							<p>
+								Somos una pagina que ofrece entretenimiento y aprendisaje al mismo tiempo. Como muchos,
+								nosotros creemos en la utilización de los juegos para el aprendizaje que se ha utilizado
+								siempre en las clases de idiomas para aprender y practicar exponentes lingüísticos,
+								estrategias comunicativas, destrezas orales, etc, además de ayudarnos como herramienta
+								para desarrollar el componente afectivo en las actividades grupales.
+							</p>
 						</div>
 					</div>
-					<a
-						className="carousel-control-prev"
-						href="#carouselExampleCaptions"
-						role="button"
-						data-slide="prev">
-						<span className="carousel-control-prev-icon" aria-hidden="true" />
-						<span className="sr-only">Previous</span>
-					</a>
-					<a
-						className="carousel-control-next"
-						href="#carouselExampleCaptions"
-						role="button"
-						data-slide="next">
-						<span className="carousel-control-next-icon" aria-hidden="true" />
-						<span className="sr-only">Next</span>
-					</a>
+					<div className="carousel-item">
+						<img
+							height="600px"
+							src="https://wallpapercave.com/wp/wp5448905.jpg"
+							className="d-block w-100 sslider"
+							alt="..."
+						/>
+						<div className="carousel-caption  desenfoqueText">
+							<h5 className="h3">Como jugar</h5>
+							<p>
+								Para poder jugar primero que nada tienes que estar registrado y logeado, luego ir al
+								inicio y seleccionar play en la categoria que te gustaria jugar (Deportes, Historia,
+								Geografia, Matematicas,etc). Al entrar en la categoria vas a poder jugar al instante,
+								responde bien las preguntas en menos del tiempo indicado y ganaras puntos (los puntos
+								que ganes se basan en los segundos que te queden al responder correctamente, de lo
+								contrario no sumaras puntos).
+							</p>
+						</div>
+					</div>
+					<div className="carousel-item">
+						<img
+							height="600px"
+							src="https://i.pinimg.com/originals/84/bb/bf/84bbbf2145216e3c8f6ba2939329c6b6.jpg"
+							className="d-block w-100 sslider"
+							alt="..."
+						/>
+						<div className="carousel-caption  desenfoqueText">
+							<h5 className="h3">Top semanal</h5>
+							<p>
+								Que es el top semanal? El top semanal es un metodo de competicion entre todos los
+								jugadores en el que podran ganar buenas recompenzas. Quieres ganar? pues es hora de
+								estudiar y responder correctamente en el menos tiempo posible, asi podras ganar muchos
+								mas puntos y ser el primero en el top semanal. Los primeros 5 ganaran recompenzas de
+								hasta 1000 coins, si leiste bien 1000 coins 😲, una locura no? pero deja te contamos que
+								si todo funciona segun lo planeado, podremos poner en el futuro un top mensual en el que
+								podras ganar hasta 20000 coins 🤯.
+							</p>
+						</div>
+					</div>
+					<div className="carousel-item">
+						<img
+							height="600px"
+							src="https://i1.wp.com/criptotendencia.com/wp-content/uploads/2020/07/Qui%C3%A9n-est%C3%A1-detr%C3%A1s-del-ataque-contra-Twitter.jpg?fit=1200%2C800&ssl=1"
+							className="d-block w-100 sslider"
+							alt="..."
+						/>
+						<div className="carousel-caption  desenfoqueText">
+							<h5 className="h3">Quien esta detras</h5>
+							<p>
+								Si te preguntas o te has preguntado quien o quienes estan detras de este proyecto, aqui
+								te vamos a responder. Somos 3 chicos que estudiamos en 4Geeks Academy en donde
+								aprendimos todo lo que teniamos que saber sobre desarrollo de aplicaciones web. Como
+								proyecto final nos toco trabajar en una aplicacion web sobre algo que nos interesara a
+								nosotros. Cuando se eligieron los grupos, el nuestro era el mas pequeño en
+								participantes, pero eso no nos puso trabas en el camino, ya que como grupo trabajamos
+								exelentes. La idea del proyecto surgio despues de 2 horas de planteamientos de ideas
+								hasta que dimos justo en lo indicado. Ya que tenemos un participante apacionado por los
+								videojuegos eso nos dio una ventaja a la hora de desarrollar la aplicacion. Tambien otra
+								de las ventajas fue tener un participante con buen desempeño en la progrmacion. Y por
+								ultimo una gran ventaja la hora de trabajar con otro idioma como el ingles, tenemos una
+								compañera que desataca en esa area. Como ven nuestro proyecto fue saliendo de a poco
+								pero con un gran trabajo colaborativo.
+							</p>
+						</div>
+					</div>
+					<div className="carousel-item">
+						<img
+							height="600px"
+							src="https://store-images.s-microsoft.com/image/apps.3862.13561912577062334.e86dd888-b0d2-4afe-9e86-ad735f80c450.8656a0f2-3e75-4d31-8fb5-7ead1c2e6692?mode=scale&q=90&h=1080&w=1920&format=jpg"
+							className="d-block w-100 sslider"
+							alt="..."
+						/>
+						<div className="carousel-caption  desenfoqueText">
+							<h5 className="h3">Coins</h5>
+							<p>
+								Compra coins para obtener ventajas a la hora de responder una pregunta dificil, o que no
+								puedas responder rapido por los nervios. Para comprar coins tienes que ir al apartado
+								(mas coins) ahi encontraras un formulario donde te pedira la cantidad de coins que
+								quieras comprar, luego de confirmada la cantidad de coins que quieras comprar,
+								automaticamente te enviara a un formulario de paypal para ingresar tu cuenta y confirmar
+								el pago. Finalizado el pago puedes ir a tu perfil y comprobar que tus coins estan ahi ya
+								para que los utilices. Tambien puedes reclamar tus primeros coins en tu perfil, debajo
+								de tus coins podras encontrar un boton (Reclamar coins). Usa tus primeros coins para
+								probar y disfrutar en cualquiera de los juegos disponibles.
+							</p>
+						</div>
+					</div>
 				</div>
+				<a className="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+					<span className="carousel-control-prev-icon" aria-hidden="true" />
+					<span className="sr-only">Previous</span>
+				</a>
+				<a className="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+					<span className="carousel-control-next-icon" aria-hidden="true" />
+					<span className="sr-only">Next</span>
+				</a>
 			</div>
 		</div>
 	);

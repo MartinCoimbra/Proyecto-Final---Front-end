@@ -6,42 +6,42 @@ import { PayPal } from "../component/paypal";
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
 	return (
-		<nav className="navbar border-bottom fixed-top">
+		<nav className="navbar  fixed-top">
 			<Link to="/" className="navbar-brand mb-0 h1 d-sm-block d-flex">
 				<span className=" btn--2 text-white">JUDYA</span>
 			</Link>
 			<div className={store.logeado == false ? "d-block ml-auto" : "d-none"}>
 				<Link className="text-decoration-none" to="/">
-					<span className="mr-3 text-white">Inicio</span>
+					<span className="btn--2 mr-3 text-white">Inicio</span>
 				</Link>
 				<Link className="text-decoration-none" to="/login">
-					<span className="mr-3 text-white">Login</span>
+					<span className="btn--2 mr-3 text-white">Login</span>
 				</Link>
 				<Link className="text-decoration-none" to="/registro">
-					<span className="mr-3 text-white">Registro</span>
+					<span className="btn--2 mr-3 text-white">Registro</span>
 				</Link>
 				<Link className="text-decoration-none" to="/acercade">
-					<span className="mr-3 text-white">Acerca de</span>
+					<span className="btn--2 mr-3 text-white">Acerca de</span>
 				</Link>
 				<Link className="text-decoration-none" to="/top">
-					<span className="mr-3 text-white">Top</span>
+					<span className="btn--2 mr-3 text-white">Top</span>
 				</Link>
 				<Link className="text-decoration-none" to="/sabiasque">
-					<span className="mr-3 text-white">Curiosidades</span>
+					<span className="btn--2 mr-3 text-white">Curiosidades</span>
 				</Link>
 			</div>
 			<div className={store.logeado == false ? "d-none" : "d-block ml-auto"}>
 				<Link className="text-decoration-none" to="/">
-					<span className="mr-3 text-white">Inicio</span>
+					<span className="btn--2 mr-3 text-white">Inicio</span>
 				</Link>
 				<Link className="text-decoration-none" to="/acercade">
-					<span className="mr-3 text-white">Acerca de</span>
+					<span className="btn--2 mr-3 text-white">Acerca de</span>
 				</Link>
 				<Link className="text-decoration-none" to="/top">
-					<span className="mr-3 text-white">Top</span>
+					<span className="btn--2 mr-3 text-white">Top</span>
 				</Link>
 				<Link className="text-decoration-none" to="/sabiasque">
-					<span className="mr-3 text-white">Curiosidades</span>
+					<span className="btn--2 mr-3 text-white">Curiosidades</span>
 				</Link>
 				<Link
 					to="/perfil"

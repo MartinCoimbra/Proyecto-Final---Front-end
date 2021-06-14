@@ -7,63 +7,59 @@ export const Perfil = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="container-fluid fondoTop px-0 mx-0 mt-5">
-			<div className="container fondoperfil rounded my-5">
-				<div className="row justify-content-end form-group">
-					<Link to="/">
-						<button className="btn btn-outline-primary mr-3 mt-4">Volver</button>
-					</Link>
-				</div>
-				<div className="row pt-4 pr-4 pl-4 mb-0 pb-0">
-					<div className="col-3">
-						<figure className="figure">
-							<img
-								src={store.infoProfile.urlfoto}
-								className="figure-img img-fluid rounded rounded-circle"
-								alt="..."
-							/>
-						</figure>
+		<div className="container-fluid px-0 mx-0 mt-5 mt-sm-1">
+			<div className="container fondoperfil rounded my-5 py-3">
+				<div className="row pt-4 pr-4 pl-4 mb-0 pb-0 justify-content-center justify-content-md-between">
+					<div className="col-12 col-md-5 col-xl-3 ">
+						<img
+							src={store.infoProfile.urlfoto}
+							className="rounded rounded-circle imgPersonPerfil w-100"
+							alt="..."
+						/>
 					</div>
-					<div className="col-9 d-flex align-items-start flex-column">
-						<h1>
+					<div className="col-12 col-md-6 col-lg-8 d-flex align-items-start flex-column">
+						<h3>
 							{store.infoProfile.first_name + " "}
 							{store.infoProfile.last_name}
-						</h1>
+						</h3>
 						<div className="row m-auto w-100">
-							<div className="col-8 mt-3 border border-info bg-white comentMarcado p-3">
+							<div className="col-12 col-md-10 col-lg-8 mt-3 border border-info bg-white comentMarcado p-3">
 								<p className="p-0 m-0 ">{store.infoProfile.descripcion} ☕</p>
 							</div>
-							<div className="col-1 d-flex align-self-end">
+							<div className="col-4 col-md-1 my-3 mt-md-0 d-flex align-self-end">
 								<Link to="/editardatos">
-									<a className="d-inline">Editar</a>
+									<p className="d-inline text-white">Editar</p>
 								</Link>
-							</div>
-							<div className="col-3 d-flex align-self-end">
-								<button className="btn btn-success">¡VAMOS A JUGAR!</button>
 							</div>
 						</div>
 					</div>
+					<div className="col-12 d-flex justify-content-end col-md-1">
+						<Link to="/">
+							<button className="btn btn-outline-dark mr-3">Volver</button>
+						</Link>
+					</div>
 				</div>
 				<div className="row">
-					<div className="col-3 px-0 mx-0 text-center">
-						<p className="h3 ml-5 text-danger">
+					<div className="col-12 d-flex d-lg-block col-md-3 px-0 mx-0 text-center">
+						<p className="h3 d-flex d-md-block ml-5 text-danger">
 							Coins: {store.coin}{" "}
 							<img
 								src="https://github.com/Niukeitor/imagenesPF/blob/main/monedita.png?raw=true"
 								width="35px"
+								className="mx-3"
 							/>
 						</p>
-						<div className={store.coin > 0 ? "d-none" : "d-block"}>
+						<div className={store.coin > 0 ? "d-none" : "d-flex d-md-block float-left float-lg-none"}>
 							<button
 								onClick={() => {
 									actions.postCoin();
 								}}
 								className="btn btn-success">
-								Reclamar coin
+								Reclamar coin🟡
 							</button>
 						</div>
 					</div>
-					<div className="col-9 mb-3">
+					<div className="d-none d-lg-block col-md-9 mb-3">
 						<p className="h4">Tus estadisticas</p>
 						<div className="bg-white estadistica comentMarcado d-flex p-3">
 							{/* Map de estadistias o de ultimas partidas */}

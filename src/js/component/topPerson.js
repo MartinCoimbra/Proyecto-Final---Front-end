@@ -7,7 +7,7 @@ export function Topperson(props) {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="w-100 row fondoPerson mx-0 px-0 py-3 mb-2">
+		<div className="w-100 row fondoTopC2 mx-0 px-0 py-3 mb-2">
 			<div className="col-3">
 				<img className="w-75 rounded rounded-circle" src={props.urlfoto} />
 			</div>

@@ -39,13 +39,7 @@ export const Editardatos = () => {
 	});
 	return (
 		<div className="container-fluid  px-0 mx-0 mt-5">
-			<div className="card bg-dark text-center text-white">
-				<img
-					height="850px"
-					src="https://blogs.iadb.org/conocimiento-abierto/wp-content/uploads/sites/10/2016/10/photo-editing-WP.jpg"
-					className="card-img"
-					alt="..."
-				/>
+			<div className="card text-center text-white">
 				<div className="card-img-overlay">
 					<h5 className="card-title mt-5 h2">Edita tus datos</h5>
 					<div className="row justify-content-center form-group">

@@ -7,24 +7,17 @@ export const Home = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="text-center container-fluid">
-			<div className="row h-75">
-				<div>
-					<div>
-						<img
-							src="https://github.com/Niukeitor/imagenesPF/blob/main/judya2.png?raw=true"
-							className="d-block w-100 slider"
-							alt="..."
-						/>
-					</div>
-				</div>
+		<div className="text-center container-fluid px-0">
+			<div>
+				<img
+					src="https://github.com/MartinCoimbra/MartinCoimbra/blob/main/fondojudiaO.jpg?raw=true"
+					className="d-block w-100 slider px-0 mx-0"
+					alt="..."
+				/>
 			</div>
 
 			<div className="container">
-				<div className="row my-4 bg-eblue text-white flex-column flex-sm-row align-items-center justify-content-between">
-					<h1 className="w-100 m-0">JUDYA</h1>
-					{/* col-md */}
-
+				<div className="row mb-4 mt-1 bg-eblue text-white flex-column flex-sm-row align-items-center justify-content-between py-2">
 					<div className="col-10 col-sm-4">
 						<div className="form-group m-0">
 							<select
@@ -42,11 +35,11 @@ export const Home = () => {
 					</div>
 
 					<div className="col-10 my-3 my-sm-0 col-sm-3">
-						<button className="btn btn-danger w-100 text-white">Play!</button>
+						<button className="btn btn-primary border m-0 w-100 text-white">Play!</button>
 					</div>
-					<div className="col-10 col-sm-4 mb-3">
+					<div className="col-10 col-sm-4">
 						<Link
-							className="btn btn-danger w-100"
+							className="btn btn-primary m-0 border w-100"
 							to={store.logeado == true ? "/postpreguntado" : "/login"}>
 							Publicar un preguntado
 						</Link>

@@ -11,10 +11,13 @@ export const Top = () => {
 
 	return (
 		<div className="container-fluid px-0 mx-0 mt-5">
-			<img className="w-100" src="https://github.com/MartinCoimbra/MartinCoimbra/blob/main/top.gif?raw=true" />
-			<div className="containerfluid pt-5 fondoTop">
+			<img
+				className="w-100"
+				src="https://github.com/MartinCoimbra/MartinCoimbra/blob/main/topestudiantes.png?raw=true"
+			/>
+			<div className="containerfluid pt-5 fondoTopC">
 				<div className="container">
-					<div className="contenedorTop fondoTop">
+					<div className="contenedorTop fondoTopC">
 						{/* Aqui mapeamos el top */}
 						{store.top.map((element, i) => {
 							return (

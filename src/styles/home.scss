@@ -78,18 +78,17 @@
 
 }
 .bg-eblue{
-    background: #1096f5 ;
+    background: #0084FF ;
 }
 
 
-.btn {
+/* .btn {
   height: 40px;
   width: 70px;
   border-radius: 3px;
   text-transform: uppercase;
   background-color: transparent;
   color: #fff;
-  font-size: 50px;
   overflow: hidden;
   transition: all 500ms ease;
   border: 5px solid #20e2d7;
@@ -97,8 +96,8 @@
   z-index: 0;
   font-weight: 700;
   cursor: pointer;
-}
-.btn::before {
+} */
+/* .btn::before {
   content: "";
   position: sticky;
   left: 0;
@@ -109,12 +108,12 @@
   transition: all 500ms ease;
   z-index: -1;
 
-}
-.btn--1::before {
+} */
+/* .btn--1::before {
   width: 0;
   height: 90%;
-}
-.btn--1:hover {
+} */
+/* .btn--1:hover {
   color: #434343;
 }
 .btn--1:hover::before {
@@ -127,7 +126,7 @@
   box-shadow: 0 0 40px #26d0eee1, 0 0 40px #26d0eee1, 0 0 50px #26d0eee1;
   color: #ffffff  34343;
 
-}
+} */
 
 
 @keyframes shadow-pulse {

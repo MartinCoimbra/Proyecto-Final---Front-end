@@ -9,39 +9,17 @@ export const Home = () => {
 	return (
 		<div className="text-center container-fluid">
 			<div className="row h-75">
-				<div className="col-12 px-0 pt-2">
-					<div id="carouselExampleIndicators" className="carousel slide mt-5" htmlData-ride="carousel">
-						<ol className="carousel-indicators">
-							<li htmlData-target="#carouselExampleIndicators" htmlData-slide-to="0" className="active" />
-						</ol>
-						<div className="carousel-inner h-100">
-							<div className="carousel-item active slider">
-								<img
-									src="https://github.com/Niukeitor/imagenesPF/blob/main/judya2.png?raw=true"
-									className="d-block w-100 slider"
-									alt="..."
-								/>
-							</div>
-						</div>
-						<a
-							className="carousel-control-prev"
-							href="#carouselExampleIndicators"
-							role="button"
-							data-slide="prev">
-							<span className="carousel-control-prev-icon" aria-hidden="true" />
-							<span className="sr-only">Previous</span>
-						</a>
-						<a
-							className="carousel-control-next"
-							href="#carouselExampleIndicators"
-							role="button"
-							data-slide="next">
-							<span className="carousel-control-next-icon" aria-hidden="true" />
-							<span className="sr-only">Next</span>
-						</a>
+				<div>
+					<div>
+						<img
+							src="https://github.com/Niukeitor/imagenesPF/blob/main/judya2.png?raw=true"
+							className="d-block w-100 slider"
+							alt="..."
+						/>
 					</div>
 				</div>
 			</div>
+
 			<div className="container">
 				<div className="row my-4 bg-eblue text-white flex-column flex-sm-row align-items-center justify-content-between">
 					<h1 className="w-100 m-0">JUDYA</h1>

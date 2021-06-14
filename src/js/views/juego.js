@@ -47,6 +47,9 @@ export const Juego = () => {
 			} else {
 				setFondo("bg-white rounded");
 			}
+			if (num == 0) {
+				respuestaInc();
+			}
 		});
 	}
 	/* pausa */
@@ -124,6 +127,12 @@ export const Juego = () => {
 			setDisableBtn(false);
 			goTimer();
 		}
+	};
+	const respuestaInc = () => {
+		setResFV("Incorrecta D:!");
+		setNum(0);
+		setVer("d-block");
+		setDisableBtn(true);
 	};
 	/* Cada vez que pase a la siguiente pregunta en un btn siguiente incrementar el [0] por 1  */
 	/* preguntasYresp[0] position */
@@ -217,8 +226,49 @@ export const Juego = () => {
 						</div>
 					</div>
 				</div>
-				<div className="row justify-content-center pb-5 mt-2">
-					<div className="col-5 d-flex justify-content-between">
+
+				<div className="row pb-5 mt-2">
+					<div className="col-3 d-flex flex-column">
+						{/* Antes de dar los beneficion verificar que tenga coin en caso de ser asi, tomar los coin que tiene y restarlo por el valor de cada uno */}
+						<div className={store.coin >= 100 ? "d-block" : "d-none"}>
+							<p className="text-white">100 Coin</p>
+							<button
+								onClick={() => {
+									actions.putCoinComodin(100);
+									handleClick();
+									setDisableBtn(true);
+									setResFV("Comodin 🔆");
+									setVer("d-block");
+								}}
+								className="btn btn-primary">
+								Respuesta correcta
+							</button>
+						</div>
+						<div className={store.coin >= 50 ? "d-block" : "d-none"}>
+							<p className="text-white">50 Coin</p>
+							<button
+								onClick={() => {
+									/* Opcion B disable */
+									actions.putCoinComodin(50);
+									handleClick();
+								}}
+								className="btn btn-primary">
+								Pausar tiempo
+							</button>
+						</div>
+						<div className={store.coin >= 25 ? "d-block" : "d-none"}>
+							<p className="text-white">25 Coin</p>
+							<button
+								onClick={() => {
+									actions.putCoinComodin(24);
+									setNum(20);
+								}}
+								className="btn btn-primary">
+								Reset time
+							</button>
+						</div>
+					</div>
+					<div className="col-6 align-self-center text-center">
 						{/* BOTON 1 */}
 						<button
 							disabled={disableBtn}
@@ -245,7 +295,6 @@ export const Juego = () => {
 										: ""}
 						</button>
 						{/* BOTON 2 */}
-
 						<button
 							disabled={disableBtn}
 							onClick={() => {
@@ -261,7 +310,7 @@ export const Juego = () => {
 								);
 								handleClick;
 							}}
-							className="btn btn-primary">
+							className="btn btn-primary mx-3">
 							{respuestaC == 1
 								? store.preguntasYresp[position].respuesta[0].opcion_c
 								: respuestaC == 3
@@ -271,7 +320,6 @@ export const Juego = () => {
 										: ""}
 						</button>
 						{/* BOTON 3 */}
-
 						<button
 							disabled={disableBtn}
 							onClick={() => {
@@ -296,7 +344,6 @@ export const Juego = () => {
 										? store.preguntasYresp[position].respuesta[0].opcion_correcta
 										: ""}
 						</button>
-						{/* <h1 className="text-white">{respuestaC}</h1> */}
 					</div>
 				</div>
 			</div>

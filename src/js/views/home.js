@@ -7,73 +7,17 @@ export const Home = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="text-center container-fluid fondoTop">
+		<div className="text-center container-fluid">
 			<div className="row h-75">
 				<div className="col-12 px-0 pt-2">
 					<div id="carouselExampleIndicators" className="carousel slide mt-5" htmlData-ride="carousel">
 						<ol className="carousel-indicators">
 							<li htmlData-target="#carouselExampleIndicators" htmlData-slide-to="0" className="active" />
-							<li htmlData-target="#carouselExampleIndicators" htmlData-slide-to="1" />
-							<li htmlData-target="#carouselExampleIndicators" htmlData-slide-to="2" />
-							<li htmlData-target="#carouselExampleIndicators" htmlData-slide-to="3" />
-							<li htmlData-target="#carouselExampleIndicators" htmlData-slide-to="4" />
-							<li htmlData-target="#carouselExampleIndicators" htmlData-slide-to="5" />
-							<li htmlData-target="#carouselExampleIndicators" htmlData-slide-to="6" />
-							<li htmlData-target="#carouselExampleIndicators" htmlData-slide-to="7" />
 						</ol>
 						<div className="carousel-inner h-100">
 							<div className="carousel-item active slider">
 								<img
-									src="https://github.com/Niukeitor/imagenesPF/blob/main/arte.gif?raw=true"
-									className="d-block w-100 slider"
-									alt="..."
-								/>
-							</div>
-							<div className="carousel-item h-100">
-								<img
-									src="https://github.com/Niukeitor/imagenesPF/blob/main/ciencia.gif?raw=true"
-									className="d-block w-100 slider"
-									alt="..."
-								/>
-							</div>
-							<div className="carousel-item h-100">
-								<img
-									src="https://github.com/Niukeitor/imagenesPF/blob/main/ciencias%20sociales.gif?raw=true"
-									className="d-block w-100 slider"
-									alt="..."
-								/>
-							</div>
-							<div className="carousel-item h-100">
-								<img
-									src="https://github.com/Niukeitor/imagenesPF/blob/main/deportes.gif?raw=true"
-									className="d-block w-100 slider"
-									alt="..."
-								/>
-							</div>
-							<div className="carousel-item h-100">
-								<img
-									src="https://github.com/Niukeitor/imagenesPF/blob/main/entretenimiento.gif?raw=true"
-									className="d-block w-100 slider"
-									alt="..."
-								/>
-							</div>
-							<div className="carousel-item h-100">
-								<img
-									src="https://github.com/Niukeitor/imagenesPF/blob/main/geografia.gif?raw=true"
-									className="d-block w-100 slider"
-									alt="..."
-								/>
-							</div>
-							<div className="carousel-item h-100">
-								<img
-									src="https://github.com/Niukeitor/imagenesPF/blob/main/mates.gif?raw=true"
-									className="d-block w-100 slider"
-									alt="..."
-								/>
-							</div>
-							<div className="carousel-item h-100">
-								<img
-									src="https://github.com/Niukeitor/imagenesPF/blob/main/programacion.gif?raw=true"
+									src="https://github.com/Niukeitor/imagenesPF/blob/main/judya2.png?raw=true"
 									className="d-block w-100 slider"
 									alt="..."
 								/>
@@ -99,7 +43,7 @@ export const Home = () => {
 				</div>
 			</div>
 			<div className="container">
-				<div className="row my-4 bg-dark text-white flex-column flex-sm-row align-items-center justify-content-between">
+				<div className="row my-4 bg-eblue text-white flex-column flex-sm-row align-items-center justify-content-between">
 					<h1 className="w-100 m-0">JUDYA</h1>
 					{/* col-md */}
 
@@ -120,7 +64,7 @@ export const Home = () => {
 					</div>
 
 					<div className="col-10 my-3 my-sm-0 col-sm-3">
-						<button className="btn bg-danger w-100 text-white">Play!</button>
+						<button className="btn btn-danger w-100 text-white">Play!</button>
 					</div>
 					<div className="col-10 col-sm-4 mb-3">
 						<Link

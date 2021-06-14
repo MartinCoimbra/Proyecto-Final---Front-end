@@ -310,7 +310,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(resp => resp.json())
 					.then(resp => {
 						console.log(resp);
-
 						setStore({ coin: resp[0].coins });
 					})
 					.catch(error => console.log(error));
@@ -335,6 +334,28 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.catch(error => {
 						console.log(error);
 					});
+			},
+			putCoinComodin: num => {
+				let coinsTotal = { coins: getStore().coin - num };
+				/* postCoin */
+				console.log(coinsTotal);
+				if (getStore().coin - num == 0) {
+					coinsTotal = 1;
+				}
+
+				fetch(process.env.BACKEND_URL + "/coin", {
+					method: "PUT",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: localStorage.getItem("token")
+					},
+					body: JSON.stringify(coinsTotal)
+				})
+					.then(resp => resp.json())
+					.then(resp => {
+						getActions().getCoin();
+					})
+					.catch(error => console.log(error));
 			},
 			actionRemove: () => {
 				localStorage.removeItem("token");

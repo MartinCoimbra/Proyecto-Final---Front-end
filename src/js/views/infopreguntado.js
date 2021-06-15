@@ -12,8 +12,8 @@ export const Infopreguntado = () => {
 	const [startA, setStartA] = useState("");
 	/* startActive */
 	return (
-		<div className="container-fluid fondoTop px-0 mx-0 mt-5">
-			<div className="container bg-light rounded p-3 mt-5 mb-3">
+		<div className="container-fluid px-0 mx-0 mt-5">
+			<div className="container fondoperfil rounded p-3 mt-5 mb-3">
 				<div className="row mb-5">
 					<div className="col-12 col-md-6">
 						<img src={store.preguntadoEs[0].url_foto} className="rounded w-100 infoimgH mb-2" alt="..." />
@@ -22,13 +22,12 @@ export const Infopreguntado = () => {
 						<h1 className="text-center">{store.preguntadoEs[0].nombre}</h1>
 						<p>
 							{store.preguntadoEs[0].descripcion} <br />
-							Categoria:
 							{/* {store.preguntadoEs[0].categoria.name} */}
 						</p>
 					</div>
 					<div className="col-6">
 						<Link to="/">
-							<button className="btn btn-outline-primary">Volver</button>
+							<button className="btn btn-outline-dark">Volver</button>
 						</Link>
 					</div>
 					<div className="col-12 col-md-6 text-center text-warning h2 ">

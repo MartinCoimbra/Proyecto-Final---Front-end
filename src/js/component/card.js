@@ -12,8 +12,7 @@ export function Cards(props) {
 				<img src={props.img} className="card-img preguntadoMapH" alt="..." />
 
 				<div className="card-img-overlay desenfoque2">
-					<h5 className="card-title info">{props.nombre}</h5>
-					<p className="card-text info">{props.descripcion}</p>
+					<h5 className="card-title info bg-dark">{props.nombre}</h5>
 					{/* LINK-s */}
 					<div className="info">
 						{/* Evento on click, al apretar ver mas fecht de ese preguntado ESPECIFICO */}

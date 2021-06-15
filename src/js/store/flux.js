@@ -18,8 +18,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 			logeado: false,
 			registrado: false,
 			filtrado: false,
-			registroData: {},
-			loginData: {},
+			registroData: {
+				username: "",
+				password: "",
+				email: "",
+				first_name: "",
+				last_name: "",
+				urlfoto: "",
+				descripcion: ""
+			},
+			loginData: {
+				email: "",
+				password: ""
+			},
 			infoProfile: {} /* Info del usuario logueado */,
 			registroFake: false,
 			dataPreguntado: {},
@@ -79,12 +90,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 				})
 					.then(resp => resp.json())
 					.then(resp => {
-						/* Guardamos el token en el localStorage */
-						localStorage.setItem("token", resp.token);
-						if (resp.token !== undefined) {
-							setStore({ logeado: true });
-							setStore({ infoProfile: resp.user });
-							/* getActions().getCoin() */
+						console.log(resp);
+						if (resp.message === "Email o password incorrecto") {
+							alert("Email o password incorrecto");
+						} else {
+							/* Guardamos el token en el localStorage */
+							localStorage.setItem("token", resp.token);
+							if (resp.token !== undefined) {
+								setStore({ logeado: true });
+								setStore({ infoProfile: resp.user });
+								/* getActions().getCoin() */
+							}
 						}
 					})
 					.catch(error => console.log(error));
@@ -114,6 +130,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 			postRegistro: () => {
+				console.log("entre al metodo");
+
 				const dataEnviar = getStore().registroData;
 				fetch(process.env.BACKEND_URL + "/user", {
 					method: "POST",
@@ -124,9 +142,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 				})
 					.then(resp => resp.json())
 					.then(resp => {
-						setStore({ registrado: true });
+						console.log(resp);
+						if (resp.message === "ya hay un usuario con este email") {
+							alert("Ya hay un usuario con ese email");
+						} else {
+							alert("✅ Registro completo ✅");
+							setStore({ registrado: true });
+						}
 					})
 					.catch(error => {
+						console.log("NO SE HA PODIDO >:D");
+
 						console.log(error);
 						setStore({ registroFake: true });
 					});
@@ -361,6 +387,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				localStorage.removeItem("token");
 				setStore({ logeado: false });
 				setStore({ infoProfile: {} });
+				setStore({ registroData: {} });
 			}
 		}
 	};

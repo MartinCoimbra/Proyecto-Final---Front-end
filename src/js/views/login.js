@@ -20,7 +20,7 @@ export const Login = () => {
 						<input
 							onChange={actions.loginData}
 							name="email"
-							type="text"
+							type="email"
 							className="form-control"
 							id="exampleInputEmail1"
 							aria-describedby="emailHelp"
@@ -47,7 +47,11 @@ export const Login = () => {
 				<div className="row justify-content-center form-group">
 					<button
 						onClick={() => {
-							actions.login();
+							if (store.loginData.email != "" || store.loginData.password != "") {
+								actions.login();
+							} else {
+								alert("Ingrese un usuario vlaido");
+							}
 						}}
 						className="btn btn-primary mr-3">
 						Aceptar

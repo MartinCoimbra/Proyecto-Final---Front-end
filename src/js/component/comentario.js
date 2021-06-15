@@ -19,12 +19,38 @@ export function Comentario(props) {
 						{store.comentariosDelPreguntado[props.posicion].usuario.last_name}
 					</h4>
 					<p className="pl-3">{store.comentariosDelPreguntado[props.posicion].comentario}</p>
-					<div className="col-12 text-warning text-right px-0 mb-0 mt-1 h4">
-						<i className={calificacion == 1 ? "fas fa-star startActive" : "fas fa-star"} />
-						<i className="fas fa-star" />
-						<i className="fas fa-star" />
-						<i className="fas fa-star" />
-						<i className="fas fa-star" />
+					<div className="col-12 text-right px-0 mb-0 mt-1 h4">
+						<i
+							className={
+								calificacion === 1 ||
+								calificacion === 2 ||
+								calificacion === 3 ||
+								calificacion === 4 ||
+								calificacion === 5
+									? "fas fa-star startActive"
+									: "fas fa-star"
+							}
+						/>
+						<i
+							className={
+								calificacion === 2 || calificacion === 3 || calificacion === 4 || calificacion === 5
+									? "fas fa-star startActive"
+									: "fas fa-star"
+							}
+						/>
+						<i
+							className={
+								calificacion === 3 || calificacion === 4 || calificacion === 5
+									? "fas fa-star startActive"
+									: "fas fa-star"
+							}
+						/>
+						<i
+							className={
+								calificacion === 4 || calificacion === 5 ? "fas fa-star startActive" : "fas fa-star"
+							}
+						/>
+						<i className={calificacion === 5 ? "fas fa-star startActive" : "fas fa-star"} />
 					</div>
 				</div>
 			</div>

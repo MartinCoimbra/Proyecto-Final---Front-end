@@ -7,11 +7,12 @@ import "../../styles/demo.scss";
 
 export const Registro = () => {
 	const { store, actions } = useContext(Context);
-
+	const [passValidacion2, setPassValidacion2] = useState();
+	const [contra, setContra] = useState(false);
 	return (
 		<div className="card bg-dark text-center text-white">
-			<div className="card-img-overlay desenfoque mt-5">
-				<h5 className="card-title mt-4 h2">Registro</h5>
+			<div className="card-img-overlay mt-5">
+				<h5 className="card-title h2">Registro</h5>
 				<p className="card-text">¡Es hora de aprender!</p>
 				<div className="row justify-content-center form-group">
 					{/* Email */}
@@ -50,7 +51,7 @@ export const Registro = () => {
 					<div className="col-12 col-sm-5">
 						<p className="text-left">Confirme Contraseña</p>
 						<input
-							/* onChange={actions.registroData} */
+							onChange={e => setPassValidacion2(e.target.value)}
 							name="password2"
 							type="password"
 							className="form-control"
@@ -103,24 +104,34 @@ export const Registro = () => {
 						</div>
 					</div>
 				</div>
-				<div className={store.registrado ? "d-block" : "d-none"}>
-					<div className="row justify-content-center">
-						<div className="col-6">
-							<p className="h3 text-primary">¡Registro completado!</p>
-						</div>
-					</div>
-				</div>
-				<div className={store.registroFake ? "d-block" : "d-none"}>
-					<div className="row justify-content-center">
-						<div className="col-6">
-							<p className="h3 text-danger">¡Complete todos los campos!</p>
-						</div>
-					</div>
-				</div>
 				<div className="row justify-content-center form-group">
 					<button
 						onClick={() => {
-							actions.postRegistro();
+							if (store.registroData.email.includes("@")) {
+								if (passValidacion2 != store.registroData.password) {
+									alert("Las contraseñas no son iguales");
+								} else if (passValidacion2 === store.registroData.password) {
+									if (store.registroData.password.length <= 7) {
+										alert("La contraseña es muy corta 😅");
+									} else {
+										if (
+											store.registroData.username === "" ||
+											store.registroData.password === "" ||
+											store.registroData.email === "" ||
+											store.registroData.first_name === "" ||
+											store.registroData.last_name === "" ||
+											store.registroData.urlfoto === "" ||
+											store.registroData.descripcion === ""
+										) {
+											alert("❌ Complete los campos correspondientes ❌");
+										} else {
+											actions.postRegistro();
+										}
+									}
+								}
+							} else {
+								alert("Ingrese un correo valido");
+							}
 						}}
 						className="btn btn-primary mr-3">
 						Aceptar

@@ -11,10 +11,10 @@ export function PayPalV() {
 
 	const [checkout, setCheckOut] = useState(false);
 	return (
-		<div className="container-fluid fondopaypal py-5">
-			<div className="container py-5 my-5">
+		<div className="container-fluid fondopaypal w-100 py-5">
+			<div className="container py-5 my-5 ">
 				<div className="row justify-content-center my-5 py-5 text-center">
-					<div className="col-5 my-5 py-5 text-white desenfoque tipografia">
+					<div className="col-5 my-5 py-5 text-white fondoperfil tipografia">
 						<img
 							src="https://github.com/Niukeitor/imagenesPF/blob/main/paypal-logo-4.png?raw=true"
 							width="250px"
@@ -40,8 +40,8 @@ export function PayPalV() {
 								onClick={() => {
 									setCheckOut(true);
 								}}
-								className="btn btn-outline-primary mr-3 mt-4">
-								PayPal
+								className="btn btn-outline-dark mr-3 mt-4">
+								Pagar
 							</button>
 						)}
 					</div>

@@ -1,3 +1,120 @@
+@import "~bootstrap/scss/bootstrap.scss";
 /* 
     General Styles
 */
+body{
+    /* background-image:url(https://raw.githubusercontent.com/MartinCoimbra/MartinCoimbra/main/background.png); */
+    background-image:url(https://github.com/MartinCoimbra/MartinCoimbra/blob/main/imgfondoazul.jpg?raw=true);
+    background-size: 100%;
+}
+.slider{
+    height: 95vh;
+}
+.imgPersonPerfil{
+    height: 30vh;
+}
+.sslider{
+    height: 100vh;
+}
+.collapseM{
+    display: none;
+}
+ 
+@media screen and (max-width: 770px) {
+  .imgPersonPerfil{
+    height: 20vh;
+}
+}
+@media screen and (max-width: 775px) {
+  .slider{
+    height: 65vh;
+}
+.imgPersonPerfil{
+    height: 40vh;
+}
+}
+@media screen and (max-width: 620px) {
+  .slider{
+    height: 55vh;
+}
+}
+@media screen and (max-width: 444px) {
+  .slider{
+    height: 45vh;
+}
+}
+
+.preguntadoMapH{
+    height: 30vh;
+}
+.fondoTop{
+    background: #DF4A39;
+    background-size: 100% 100%;
+}
+.fondoPerson{
+    background: #E7BD0E;
+    border-radius: 5px;
+}
+.fondoperfil{
+    background: url(https://swall.teahub.io/photos/small/167-1670183_3d-blue-wallpaper-fondo-azul-del-mar.jpg);
+    background-size: 100% 100%;
+}
+.fondonew{
+    background-image:  url(https://image.freepik.com/vector-gratis/fondo-arrugado-papel-cuadriculado-hoja_47243-1131.jpg);
+}
+.paleta6{
+    background: #545557be;
+}
+.paleta5{
+    background: #262626;
+}
+.paleta4{
+    background: #00868b;
+}
+.paleta3{
+    background: #40e0d0;
+}
+.paleta2{
+    background: #ddddddb7;
+}
+.paleta1{
+    background: #dddddd;
+}
+.myDiv{
+    min-height: 100%;
+    max-height: 100%;
+}
+.naranja{
+    padding: 5px 10px;
+    background-color: #205f99;
+    color: white;
+    border-radius: 5px;
+    border: solid 0px;
+}
+.fondoTopC{
+    background: #65BAF7;
+}
+.fondoTopC2{
+    background: #5271FF;
+}
+.fondopaypal{
+    background: url(https://github.com/Niukeitor/imagenesPF/blob/main/header.jpg?raw=true);
+    background-size: 100% 100%;
+}
+.tipografia{
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.infoimgH{
+    height: 50vh;
+}
+.start{
+    cursor: pointer;
+}
+.startActive{
+    color: yellow;
+}
+.hoverStart1:hover, .hoverStart2:hover, .hoverStart3:hover, .hoverStart4:hover, .hoverStart5:hover{
+    color: yellow;
+}

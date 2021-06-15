@@ -45,17 +45,18 @@ export const Login = () => {
 					</div>
 				</div>
 				<div className="row justify-content-center form-group">
-					<Link to="/">
-						<button className="btn btn-secondary mr-3">Cancelar</button>
-					</Link>
 					<button
 						onClick={() => {
 							actions.login();
 						}}
-						className="btn btn-primary">
+						className="btn btn-primary mr-3">
 						Aceptar
 						{store.logeado == true ? <Redirect to="/" /> : ""}
 					</button>
+
+					<Link to="/">
+						<button className="btn btn-secondary ">Cancelar</button>
+					</Link>
 				</div>
 			</div>
 		</div>

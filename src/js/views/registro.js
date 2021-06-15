@@ -118,16 +118,17 @@ export const Registro = () => {
 					</div>
 				</div>
 				<div className="row justify-content-center form-group">
-					<Link to="/">
-						<button className="btn btn-secondary mr-3">Cancelar</button>
-					</Link>
 					<button
 						onClick={() => {
 							actions.postRegistro();
 						}}
-						className="btn btn-primary">
+						className="btn btn-primary mr-3">
 						Aceptar
 					</button>
+
+					<Link to="/">
+						<button className="btn btn-secondary ">Cancelar</button>
+					</Link>
 				</div>
 			</div>
 		</div>

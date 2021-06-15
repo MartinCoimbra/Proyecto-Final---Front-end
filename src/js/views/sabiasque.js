@@ -19,7 +19,7 @@ export const Sabiasque = () => {
 				<div className="carousel-item active">
 					<img
 						height="600px"
-						src="https://e.rpp-noticias.io/xlarge/2018/10/08/531753_690363.jpg"
+						src="https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2017/11/30134211/GettyImages-695936656.jpg"
 						className="d-block w-100 sslider px-0 mx-0"
 						alt="..."
 					/>
@@ -35,7 +35,7 @@ export const Sabiasque = () => {
 				<div className="carousel-item">
 					<img
 						height="600px"
-						src="https://cdn.ticbeat.com/src/uploads/2017/11/tecnicas-aprender-rapido-810x540.jpg"
+						src="https://lamentepoderosa.com/wp-content/uploads/2020/07/C%C3%93MO-ESTUDIAR-10.jpg"
 						className="d-block w-100 sslider px-0 mx-0"
 						alt="..."
 					/>
@@ -52,7 +52,7 @@ export const Sabiasque = () => {
 				<div className="carousel-item">
 					<img
 						height="600px"
-						src="https://www.revistamoi.com/wp-content/uploads/2016/07/mejora-tu-memoria-con-ejercicio.jpg"
+						src="https://www.accesodirecto.org/wp-content/uploads/2019/12/memorizar-la-biblia.jpg"
 						className="d-block w-100 sslider px-0 mx-0"
 						alt="..."
 					/>

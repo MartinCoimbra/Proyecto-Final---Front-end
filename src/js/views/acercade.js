@@ -85,18 +85,19 @@ export const Acercade = () => {
 							<h5 className="h3">¿Quien esta detrás?</h5>
 							<p>
 								Si te preguntas o te has preguntado quien o quienes están detrás de este proyecto, aquí
-								te vamos a responder. Somos 3 chicos que estudiamos en 4Geeks Academy en donde
+								te vamos a responder. Somos 2 chicos que estudiamos en 4Geeks Academy en donde
 								aprendimos todo lo que teníamos que saber sobre desarrollo de aplicaciones web. Como
 								proyecto final nos toco trabajar en una aplicación web sobre algo que nos interesara a
-								nosotros. Cuando se eligieron los grupos, el nuestro era el más pequeño en
-								participantes, pero eso no nos puso trabas en el camino, ya que como grupo trabajamos
-								exelentes. La idea del proyecto surgió después de 2 horas de planteamientos de ideas
+								nosotros. Cuando se eligieron los grupos, el nuestro era el más pequeño en participantes
+								(3). Lamentablemente por cuestiones de la vida terminamos siendo 2 al frente de este
+								proyecto, pero eso no nos puso trabas en el camino, ya que como grupo trabajamos
+								excelentes. La idea del proyecto surgió después de 2 horas de planteamientos de ideas,
 								hasta que dimos justo en lo indicado. Ya que tenemos un participante apasionado por los
-								videojuegos eso nos dio una ventaja a la hora de desarrollar la aplicación. También otra
-								de las ventajas fue tener un participante con buen desempeño en la programación. Y por
-								ultimo una gran ventaja la hora de trabajar con otro idioma como el ingles, tenemos una
-								compañera que desataca en esa área. Como ven nuestro proyecto fue saliendo de a poco
-								pero con un gran trabajo colaborativo.
+								videojuegos y un buen desempeñó y cariño por el backend, lo que nos dio una ventaja a la
+								hora de saber como desarrollar la aplicación y trabajar en sus funciones. También otra
+								de las ventajas fue tener un participante con buen desempeño en la programación a la
+								hora de trabajar con frontend y backend, sus conocimientos y dedicación, fue lo que nos
+								permitió seguir adelante y no bajar los brazos en ninguna circunstanciá.
 							</p>
 						</div>
 					</div>

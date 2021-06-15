@@ -13,7 +13,7 @@ export const Postpreguntado = () => {
 		console.log(`Seleccionaste ${event.target.value}`);
 	}; */
 	return (
-		<div className="container-fluid my-5 fondoTop px-0 mx-0 mt-5">
+		<div className="container-fluid my-5 fondoperfil px-0 mx-0 mt-5">
 			<div className="container mt-5 mb-2">
 				<div className="row justify-content-center">
 					<div className="col-8 text-center mt-5">

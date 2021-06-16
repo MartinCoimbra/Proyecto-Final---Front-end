@@ -38,6 +38,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				categoria: 0,
 				descripcion: "",
 				nombre: "",
+				url_foto: "",
+
 				pregunta: "",
 				url_foto_pregunta: "",
 				opcion_correcta: "",

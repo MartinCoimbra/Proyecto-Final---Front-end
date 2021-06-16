@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/demo.scss";
+import Swal from "sweetalert2";
 
 export const Postpreguntado = () => {
 	const { store, actions } = useContext(Context);
@@ -14,6 +15,8 @@ export const Postpreguntado = () => {
 	}; */
 	return (
 		<div className="container-fluid my-5 px-0 mx-0 mt-5">
+			{store.logeado === false ? <Redirect to="/" /> : ""}
+
 			<div className="container mt-5 mb-2">
 				<div className="row justify-content-center">
 					<div className="col-8 text-center mt-5">
@@ -445,8 +448,8 @@ export const Postpreguntado = () => {
 						<div className="col-9 col-md-5 col-lg-5 col-xl-5 text-center">
 							<button
 								onClick={() => {
-									actions.postPreguntado();
-									setHome(true);
+									//actions.postPreguntado();//
+									//setHome(true);//
 								}}
 								className="btn btn-success p-4">
 								<p className="h4">¡Publicar mi preguntado!</p>

@@ -14,12 +14,6 @@ export const Navbar = () => {
 				<Link className="text-decoration-none" to="/">
 					<span className="btn--2 mr-3 text-white">Inicio</span>
 				</Link>
-				<Link className="text-decoration-none" to="/login">
-					<span className="btn--2 mr-3 text-white">Login</span>
-				</Link>
-				<Link className="text-decoration-none" to="/registro">
-					<span className="btn--2 mr-3 text-white">Registro</span>
-				</Link>
 				<Link className="text-decoration-none" to="/acercade">
 					<span className="btn--2 mr-3 text-white">Acerca de</span>
 				</Link>
@@ -27,7 +21,13 @@ export const Navbar = () => {
 					<span className="btn--2 mr-3 text-white">Top</span>
 				</Link>
 				<Link className="text-decoration-none" to="/sabiasque">
-					<span className="btn--2 mr-3 text-white">Curiosidades</span>
+					<span className="btn--2 mr-5 text-white">Curiosidades</span>
+				</Link>
+				<Link className="text-decoration-none" to="/login">
+					<span className="btn--2 mr-3 text-white">Login</span>
+				</Link>
+				<Link className="text-decoration-none" to="/registro">
+					<span className="btn--2 mr-3 text-white">Registro</span>
 				</Link>
 			</div>
 			<div className={store.logeado == false ? "d-none" : "d-block ml-auto"}>

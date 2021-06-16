@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/demo.scss";
+import Swal from "sweetalert2";
 
 export const Postpreguntado = () => {
 	const { store, actions } = useContext(Context);
@@ -14,6 +15,8 @@ export const Postpreguntado = () => {
 	}; */
 	return (
 		<div className="container-fluid my-5 px-0 mx-0 mt-5">
+			{store.logeado === false ? <Redirect to="/" /> : ""}
+
 			<div className="container mt-5 mb-2">
 				<div className="row justify-content-center">
 					<div className="col-8 text-center mt-5">
@@ -37,6 +40,7 @@ export const Postpreguntado = () => {
 								className="form-control"
 								name="categoria"
 								id="examplesFormControlSelect1">
+								<option value={0} />
 								{store.categorias.map(element => (
 									<option key={element.value} value={element.id}>
 										{element.name}
@@ -83,7 +87,21 @@ export const Postpreguntado = () => {
 				<div className="row justify-content-end mb-3">
 					<button
 						onClick={() => {
-							setSiguiente(1);
+							if (
+								store.dataPreguntado.categoria === 0 ||
+								store.dataPreguntado.descripcion === "" ||
+								store.dataPreguntado.nombre === "" ||
+								store.dataPreguntado.url_foto === ""
+							) {
+								Swal.fire({
+									title: "¡Ups!",
+									text: "Verifique que los campos esten completos 🧐",
+									icon: "error",
+									confirmButtonText: "Ok"
+								});
+							} else {
+								setSiguiente(1);
+							}
 						}}
 						className="btn btn-success mr-5">
 						Siguiente ✅
@@ -163,7 +181,22 @@ export const Postpreguntado = () => {
 					<div className="row justify-content-end mb-3">
 						<button
 							onClick={() => {
-								setSiguiente(2);
+								if (
+									store.dataPreguntado.pregunta === "" ||
+									store.dataPreguntado.url_foto_pregunta === "" ||
+									store.dataPreguntado.opcion_correcta === "" ||
+									store.dataPreguntado.opcion_b === "" ||
+									store.dataPreguntado.opcion_c === ""
+								) {
+									Swal.fire({
+										title: "¡Ups!",
+										text: "Verifique que los campos esten completos 🧐",
+										icon: "error",
+										confirmButtonText: "Ok"
+									});
+								} else {
+									setSiguiente(2);
+								}
 							}}
 							className="btn btn-success mr-5">
 							Siguiente ✅
@@ -230,7 +263,22 @@ export const Postpreguntado = () => {
 					<div className="row justify-content-end mb-3">
 						<button
 							onClick={() => {
-								setSiguiente(3);
+								if (
+									store.dataPreguntado.pregunta2 === "" ||
+									store.dataPreguntado.url_foto_pregunta2 === "" ||
+									store.dataPreguntado.opcion_correcta2 === "" ||
+									store.dataPreguntado.opcion_b2 === "" ||
+									store.dataPreguntado.opcion_c2 === ""
+								) {
+									Swal.fire({
+										title: "¡Ups!",
+										text: "Verifique que los campos esten completos 🧐",
+										icon: "error",
+										confirmButtonText: "Ok"
+									});
+								} else {
+									setSiguiente(3);
+								}
 							}}
 							className="btn btn-success mr-5">
 							Siguiente ✅
@@ -297,7 +345,22 @@ export const Postpreguntado = () => {
 					<div className="row justify-content-end mb-3">
 						<button
 							onClick={() => {
-								setSiguiente(4);
+								if (
+									store.dataPreguntado.pregunta3 === "" ||
+									store.dataPreguntado.url_foto_pregunta3 === "" ||
+									store.dataPreguntado.opcion_correcta3 === "" ||
+									store.dataPreguntado.opcion_b3 === "" ||
+									store.dataPreguntado.opcion_c3 === ""
+								) {
+									Swal.fire({
+										title: "¡Ups!",
+										text: "Verifique que los campos esten completos 🧐",
+										icon: "error",
+										confirmButtonText: "Ok"
+									});
+								} else {
+									setSiguiente(4);
+								}
 							}}
 							className="btn btn-success mr-5">
 							Siguiente ✅
@@ -364,7 +427,22 @@ export const Postpreguntado = () => {
 					<div className="row justify-content-end mb-3">
 						<button
 							onClick={() => {
-								setSiguiente(5);
+								if (
+									store.dataPreguntado.pregunta4 === "" ||
+									store.dataPreguntado.url_foto_pregunta4 === "" ||
+									store.dataPreguntado.opcion_correcta4 === "" ||
+									store.dataPreguntado.opcion_b4 === "" ||
+									store.dataPreguntado.opcion_c4 === ""
+								) {
+									Swal.fire({
+										title: "¡Ups!",
+										text: "Verifique que los campos esten completos 🧐",
+										icon: "error",
+										confirmButtonText: "Ok"
+									});
+								} else {
+									setSiguiente(5);
+								}
 							}}
 							className="btn btn-success mr-5">
 							Siguiente ✅
@@ -431,7 +509,22 @@ export const Postpreguntado = () => {
 					<div className="row justify-content-end mb-3">
 						<button
 							onClick={() => {
-								setSiguiente(6);
+								if (
+									store.dataPreguntado.pregunta5 === "" ||
+									store.dataPreguntado.url_foto_pregunta5 === "" ||
+									store.dataPreguntado.opcion_correcta5 === "" ||
+									store.dataPreguntado.opcion_b5 === "" ||
+									store.dataPreguntado.opcion_c5 === ""
+								) {
+									Swal.fire({
+										title: "¡Ups!",
+										text: "Verifique que los campos esten completos 🧐",
+										icon: "error",
+										confirmButtonText: "Ok"
+									});
+								} else {
+									setSiguiente(6);
+								}
 							}}
 							className="btn btn-success mr-5">
 							Siguiente ✅

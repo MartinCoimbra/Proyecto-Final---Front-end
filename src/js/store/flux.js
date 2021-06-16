@@ -34,7 +34,42 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			infoProfile: {} /* Info del usuario logueado */,
 			registroFake: false,
-			dataPreguntado: {},
+			dataPreguntado: {
+				categoria: 0,
+				descripcion: "",
+				nombre: "",
+				url_foto: "",
+
+				pregunta: "",
+				url_foto_pregunta: "",
+				opcion_correcta: "",
+				opcion_b: "",
+				opcion_c: "",
+
+				pregunta2: "",
+				url_foto_pregunta2: "",
+				opcion_correcta2: "",
+				opcion_b2: "",
+				opcion_c2: "",
+
+				pregunta3: "",
+				url_foto_pregunta3: "",
+				opcion_correcta3: "",
+				opcion_b3: "",
+				opcion_c3: "",
+
+				pregunta4: "",
+				url_foto_pregunta4: "",
+				opcion_correcta4: "",
+				opcion_b4: "",
+				opcion_c4: "",
+
+				pregunta5: "",
+				url_foto_pregunta5: "",
+				opcion_correcta5: "",
+				opcion_b5: "",
+				opcion_c5: ""
+			},
 			categorias: [{}],
 			preguntados: [{}],
 			preguntadoEs: [{}],

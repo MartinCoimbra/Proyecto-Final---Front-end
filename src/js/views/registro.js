@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-
+import Swal from "sweetalert2";
 import { Context } from "../store/appContext";
-
 import "../../styles/demo.scss";
 
 export const Registro = () => {
@@ -107,30 +106,46 @@ export const Registro = () => {
 				<div className="row justify-content-center form-group">
 					<button
 						onClick={() => {
-							if (store.registroData.email.includes("@")) {
-								if (passValidacion2 != store.registroData.password) {
-									alert("Las contraseñas no son iguales");
-								} else if (passValidacion2 === store.registroData.password) {
-									if (store.registroData.password.length <= 7) {
-										alert("La contraseña es muy corta 😅");
-									} else {
-										if (
-											store.registroData.username === "" ||
-											store.registroData.password === "" ||
-											store.registroData.email === "" ||
-											store.registroData.first_name === "" ||
-											store.registroData.last_name === "" ||
-											store.registroData.urlfoto === "" ||
-											store.registroData.descripcion === ""
-										) {
-											alert("❌ Complete los campos correspondientes ❌");
-										} else {
-											actions.postRegistro();
-										}
-									}
+							if (
+								store.registroData.username === "" ||
+								store.registroData.password === "" ||
+								store.registroData.email === "" ||
+								store.registroData.first_name === "" ||
+								store.registroData.last_name === "" ||
+								store.registroData.urlfoto === "" ||
+								store.registroData.descripcion === ""
+							) {
+								Swal.fire({
+									title: "¡Ups!",
+									text: "❌ Complete los campos faltantes ❌",
+									icon: "error",
+									confirmButtonText: "Ok"
+								});
+							} else if (store.registroData.email.includes("@") === false) {
+								Swal.fire({
+									title: "¡Ups!",
+									text: "❌ Ingrese un correo valido ❌",
+									icon: "error",
+									confirmButtonText: "Ok"
+								});
+							} else if (passValidacion2 != store.registroData.password) {
+								Swal.fire({
+									title: "¡Ups!",
+									text: "Las contraseñas no son iguales 😣",
+									icon: "error",
+									confirmButtonText: "Ok"
+								});
+							} else if (passValidacion2 === store.registroData.password) {
+								if (store.registroData.password.length <= 7) {
+									Swal.fire({
+										title: "¡Ups!",
+										text: "La contraseña es muy corta 😅 Nota: minmo 8 caracteres",
+										icon: "warning",
+										confirmButtonText: "Ok"
+									});
 								}
 							} else {
-								alert("Ingrese un correo valido");
+								actions.postRegistro();
 							}
 						}}
 						className="btn btn-primary mr-3">

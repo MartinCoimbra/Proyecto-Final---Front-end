@@ -3,9 +3,10 @@ import "../../styles/home.scss";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import { Cards } from "../component/card";
+import Swal from "sweetalert2";
+
 export const Home = () => {
 	const { store, actions } = useContext(Context);
-
 	return (
 		<div className="text-center container-fluid px-0">
 			<div>
@@ -39,6 +40,16 @@ export const Home = () => {
 					</div>
 					<div className="col-10 col-sm-4">
 						<Link
+							onClick={() => {
+								store.logeado == false
+									? Swal.fire({
+											title: "¡Hey!",
+											text: "¡Para publicar un preguntado tienes que loguearte!",
+											icon: "info",
+											confirmButtonText: "Ok"
+									  })
+									: "";
+							}}
 							className="btn btn-primary m-0 border w-100"
 							to={store.logeado == true ? "/postpreguntado" : "/login"}>
 							Publicar un preguntado

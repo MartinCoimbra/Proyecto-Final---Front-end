@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link, Redirect } from "react-router-dom";
-
+import Swal from "sweetalert2";
 import { Context } from "../store/appContext";
-
 import "../../styles/demo.scss";
 
 export const Editardatos = () => {
@@ -13,6 +12,7 @@ export const Editardatos = () => {
 	const [first_name, setFirst_name] = useState(store.infoProfile.first_name);
 	const [last_name, setLast_name] = useState(store.infoProfile.last_name);
 	const [password, setPassword] = useState(store.infoProfile.password);
+	const [password2, setPassword2] = useState(store.infoProfile.password);
 	const [urlfoto, setUrlfoto] = useState(store.infoProfile.urlfoto);
 	const [descripcion, setDescripcion] = useState(store.infoProfile.descripcion);
 	/* store.infoProfile.username */
@@ -105,14 +105,14 @@ export const Editardatos = () => {
 							/>
 						</div>
 						<div className="col-12 col-sm-5">
-							<p className="text-left">Contraseña</p>
+							<p className="text-left">Contraseña confirmacion</p>
 							<input
-								onChange={e => setPassword(e.target.value)}
-								name="password"
+								onChange={e => setPassword2(e.target.value)}
+								name="password2"
 								type="password"
 								className="form-control"
 								aria-describedby="emailHelp"
-								value={password}
+								value={password2}
 							/>
 						</div>
 					</div>
@@ -148,16 +148,51 @@ export const Editardatos = () => {
 					</div>
 					<div className="row justify-content-center form-group">
 						<Link to="/perfil">
-							<button className="btn btn-secondary mr-3">Cancelar</button>
+							<button className="btn btn-secondary mr-3">Volver</button>
 						</Link>
-						<Link
-							to="/perfil"
+						<button
 							onClick={() => {
-								actions.putEditar(newDataUser);
+								if (
+									first_name === "" ||
+									last_name === "" ||
+									descripcion === "" ||
+									password === "" ||
+									urlfoto === "" ||
+									email === ""
+								) {
+									Swal.fire({
+										title: "¡Ups!",
+										text: "❌ Complete los campos faltantes ❌",
+										icon: "error",
+										confirmButtonText: "Ok"
+									});
+								} else if (password != password2) {
+									Swal.fire({
+										title: "¡Cuidado!",
+										text: "Las contraseñas no coinciden 😥",
+										icon: "warning",
+										confirmButtonText: "Ok"
+									});
+								} else if (password.length <= 7) {
+									Swal.fire({
+										title: "¡Cuidado!",
+										text: "La contraseña es muy corta 😅 Nota: minmo 8 caracteres",
+										icon: "warning",
+										confirmButtonText: "Ok"
+									});
+								} else {
+									Swal.fire({
+										title: "¡Listo!",
+										text: "Datos editados correctamente ✅",
+										icon: "success",
+										confirmButtonText: "Ok"
+									});
+									actions.putEditar(newDataUser);
+								}
 							}}
 							className="naranja">
 							Editar
-						</Link>
+						</button>
 					</div>
 				</div>
 			</div>

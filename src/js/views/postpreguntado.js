@@ -13,7 +13,7 @@ export const Postpreguntado = () => {
 		console.log(`Seleccionaste ${event.target.value}`);
 	}; */
 	return (
-		<div className="container-fluid my-5 fondoperfil px-0 mx-0 mt-5">
+		<div className="container-fluid my-5 px-0 mx-0 mt-5">
 			<div className="container mt-5 mb-2">
 				<div className="row justify-content-center">
 					<div className="col-8 text-center mt-5">
@@ -21,7 +21,7 @@ export const Postpreguntado = () => {
 					</div>
 				</div>
 			</div>
-			<div className={siguiente == 0 ? "container py-2 mb-4 fondoPerson" : "d-none"}>
+			<div className={siguiente == 0 ? "container py-2 mb-4 fondoperfil" : "d-none"}>
 				{/* PONER SELECT CPARA SABER DE QUE CATEGORIA QUIERE QUE SEA */}
 				<div className="row justify-content-center my-2">
 					<div className="col-9">
@@ -105,7 +105,7 @@ export const Postpreguntado = () => {
 				</div>
 			</div>
 			<div className={siguiente == 1 ? "d-block" : "d-none"}>
-				<div className="container my-5 fondoPerson py-4">
+				<div className="container my-5 fondoperfil py-4">
 					<div className="row justify-content-center mb-3">
 						<div className="col-12 col-md-9">
 							<p className="text-left h4">Pregunta 1:</p>
@@ -172,7 +172,7 @@ export const Postpreguntado = () => {
 				</div>
 			</div>
 			<div className={siguiente == 2 ? "d-block" : "d-none"}>
-				<div className="container my-5 fondoPerson py-4">
+				<div className="container my-5 fondoperfil py-4">
 					<div className="row justify-content-center mb-3">
 						<div className="col-12 col-md-9">
 							<p className="text-left h4">Pregunta 2:</p>
@@ -239,7 +239,7 @@ export const Postpreguntado = () => {
 				</div>
 			</div>
 			<div className={siguiente == 3 ? "d-block" : "d-none"}>
-				<div className="container my-5 fondoPerson py-4">
+				<div className="container my-5 fondoperfil py-4">
 					<div className="row justify-content-center mb-3">
 						<div className="col-12 col-md-9">
 							<p className="text-left h4">Pregunta 3:</p>
@@ -306,7 +306,7 @@ export const Postpreguntado = () => {
 				</div>
 			</div>
 			<div className={siguiente == 4 ? "d-block" : "d-none"}>
-				<div className="container my-5 fondoPerson py-4">
+				<div className="container my-5 fondoperfil py-4">
 					<div className="row justify-content-center mb-3">
 						<div className="col-12 col-md-9">
 							<p className="text-left h4">Pregunta 4:</p>
@@ -373,7 +373,7 @@ export const Postpreguntado = () => {
 				</div>
 			</div>
 			<div className={siguiente == 5 ? "d-block" : "d-none"}>
-				<div className="container my-5 fondoPerson py-4">
+				<div className="container my-5 fondoperfil py-4">
 					<div className="row justify-content-center mb-3">
 						<div className="col-12 col-md-9">
 							<p className="text-left h4">Pregunta 5:</p>

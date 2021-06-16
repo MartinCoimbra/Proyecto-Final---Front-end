@@ -1,4 +1,5 @@
 import { number, string } from "prop-types";
+import Swal from "sweetalert2";
 
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
@@ -38,7 +39,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			preguntados: [{}],
 			preguntadoEs: [{}],
 			catFiltrada: 0,
-			comentarioData: {},
+			comentarioData: {
+				calificacion: 0,
+				comentario: ""
+			},
 			comentariosDelPreguntado: [
 				{
 					id: 1,
@@ -92,7 +96,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(resp => {
 						console.log(resp);
 						if (resp.message === "Email o password incorrecto") {
-							alert("Email o password incorrecto");
+							Swal.fire({
+								title: "¡Ups!",
+								text: "Email o Contraseña incorrecta 😣",
+								icon: "error",
+								confirmButtonText: "Ok"
+							});
 						} else {
 							/* Guardamos el token en el localStorage */
 							localStorage.setItem("token", resp.token);
@@ -144,9 +153,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(resp => {
 						console.log(resp);
 						if (resp.message === "ya hay un usuario con este email") {
-							alert("Ya hay un usuario con ese email");
+							Swal.fire({
+								title: "¡Ups!",
+								text: "Ya hay un usuario con ese email 😣",
+								icon: "error",
+								confirmButtonText: "Ok"
+							});
 						} else {
-							alert("✅ Registro completo ✅");
+							Swal.fire({
+								title: "¡Ups!",
+								text: "✅ Registro completo ✅",
+								icon: "success",
+								confirmButtonText: "Ok"
+							});
 							setStore({ registrado: true });
 						}
 					})

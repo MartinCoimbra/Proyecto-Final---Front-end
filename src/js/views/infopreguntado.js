@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
-
+import { Link, Redirect } from "react-router-dom";
+import Swal from "sweetalert2";
 import { Context } from "../store/appContext";
-
 import "../../styles/demo.scss";
 import { Comentario } from "../component/comentario";
 
@@ -10,6 +9,7 @@ export const Infopreguntado = () => {
 	const { store, actions } = useContext(Context);
 	const [cant, setCant] = useState(0);
 	const [startA, setStartA] = useState("");
+	const [home, setHome] = useState(false);
 	/* startActive */
 	return (
 		<div className="container-fluid px-0 mx-0 mt-5">
@@ -115,15 +115,45 @@ export const Infopreguntado = () => {
 							/>
 						</div>
 						<div>
-							<Link to={store.logeado == true ? "" : "/login"}>
-								<button
-									onClick={() => {
+							<Link
+								onClick={() => {
+									if (store.logeado == false) {
+										Swal.fire({
+											title: "¡Hey!",
+											text: "¡Para comentar un preguntado tienes que loguearte!",
+											icon: "info",
+											confirmButtonText: "Ok"
+										});
+									} else if (store.comentarioData.comentario === "") {
+										Swal.fire({
+											title: "¡Ups!😅",
+											text: "¡No te olvides de poner un comentario!",
+											icon: "warning",
+											confirmButtonText: "Ok"
+										});
+									} else if (store.comentarioData.calificacion === 0) {
+										Swal.fire({
+											title: "⭐⭐⭐⭐⭐",
+											text: "¡Recuerda que tu calificacion es importante!",
+											icon: "warning",
+											confirmButtonText: "Ok"
+										});
+									} else {
+										Swal.fire({
+											title: "¡Yesss! 😎",
+											text: "¡Tu comentario se realizó con éxito!",
+											icon: "info",
+											confirmButtonText: "Ok"
+										});
 										actions.postComentario();
-									}}
-									className="btn btn-success">
-									Comentar
-								</button>
+										setHome(true);
+									}
+								}}
+								to={store.logeado == false ? "/login" : console.log("")}
+								className="btn btn-success">
+								Comentar
 							</Link>
+							{home === true ? <Redirect to="/" /> : ""}
 						</div>
 					</div>
 				</div>

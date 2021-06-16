@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link, Redirect } from "react-router-dom";
+import Swal from "sweetalert2";
 
 import { Context } from "../store/appContext";
 
@@ -47,10 +48,22 @@ export const Login = () => {
 				<div className="row justify-content-center form-group">
 					<button
 						onClick={() => {
-							if (store.loginData.email != "" || store.loginData.password != "") {
+							if (store.loginData.email === "" || store.loginData.password === "") {
+								Swal.fire({
+									title: "¡Heeeey!",
+									text: "Para poder loguearse tienes que ingresar tu correo y contraseña 🤓",
+									icon: "warning",
+									confirmButtonText: "Ok"
+								});
+							} else if (store.loginData.email != "" || store.loginData.password != "") {
 								actions.login();
 							} else {
-								alert("Ingrese un usuario vlaido");
+								Swal.fire({
+									title: "¡Ups!",
+									text: "Ingrese un usuario vlaido 😣",
+									icon: "error",
+									confirmButtonText: "Ok"
+								});
 							}
 						}}
 						className="btn btn-primary mr-3">

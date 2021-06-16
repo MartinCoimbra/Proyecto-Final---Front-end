@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
 import { Link, useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 export function Cards(props) {
 	const { store, actions } = useContext(Context);
@@ -24,15 +25,20 @@ export function Cards(props) {
 							to={"/infopreguntado/" + props.id}>
 							<button className="btn btn-info mr-1">Ver más</button>
 						</Link>
-						<Link to={store.logeado == true ? "/cuentaregresiva" : "/login"}>
-							{/* Al darle play poner preguntas y respuestas en el array */}
-							<button
-								onClick={() => {
-									store.logeado == true ? actions.getPreguntasYresp(id) : console.log("No jugamos");
-								}}
-								className="btn btn-success">
-								Play
-							</button>
+						<Link
+							onClick={() => {
+								store.logeado == false
+									? Swal.fire({
+											title: "¡Hey!",
+											text: "¡Para jugar un preguntado tienes que loguearte!",
+											icon: "info",
+											confirmButtonText: "Ok"
+									  })
+									: actions.getPreguntasYresp(id);
+							}}
+							to={store.logeado == true ? "/cuentaregresiva" : "/login"}
+							className="btn btn-success">
+							Play
 						</Link>
 					</div>
 				</div>

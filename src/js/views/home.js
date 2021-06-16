@@ -26,6 +26,8 @@ export const Home = () => {
 								className="form-control"
 								name="categoria"
 								id="examplesFormControlSelect1">
+								<option value="0">Todos</option>
+
 								{store.categorias.map(element => (
 									<option key={element.value} value={element.id}>
 										{element.name}
@@ -36,7 +38,16 @@ export const Home = () => {
 					</div>
 
 					<div className="col-10 my-3 my-sm-0 col-sm-3">
-						<button className="btn btn-primary border m-0 w-100 text-white">Play!</button>
+						<Link
+							onClick={() => {
+								let numTotal = store.preguntados.length;
+								let numAleatorio = Math.floor(Math.random() * (numTotal - 1 + 1) + 1);
+								actions.getPreguntasYresp(numAleatorio);
+							}}
+							to={store.logeado == true ? "/cuentaregresiva" : "/login"}
+							className="btn btn-primary border m-0 w-100 text-white">
+							Play!
+						</Link>
 					</div>
 					<div className="col-10 col-sm-4">
 						<Link

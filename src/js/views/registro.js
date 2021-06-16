@@ -135,16 +135,23 @@ export const Registro = () => {
 									icon: "error",
 									confirmButtonText: "Ok"
 								});
-							} else if (passValidacion2 === store.registroData.password) {
-								if (store.registroData.password.length <= 7) {
-									Swal.fire({
-										title: "¡Ups!",
-										text: "La contraseña es muy corta 😅 Nota: minmo 8 caracteres",
-										icon: "warning",
-										confirmButtonText: "Ok"
-									});
-								}
+							} else if (
+								passValidacion2 === store.registroData.password &&
+								store.registroData.password.length <= 7
+							) {
+								Swal.fire({
+									title: "¡Ups!",
+									text: "La contraseña es muy corta 😅 Nota: minmo 8 caracteres",
+									icon: "warning",
+									confirmButtonText: "Ok"
+								});
 							} else {
+								Swal.fire({
+									title: "¡Bien!",
+									text: "¡Registro completado!",
+									icon: "info",
+									confirmButtonText: "Ok"
+								});
 								actions.postRegistro();
 							}
 						}}

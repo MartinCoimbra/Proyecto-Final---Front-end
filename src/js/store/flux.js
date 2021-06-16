@@ -323,6 +323,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(resp => resp.json())
 					.then(resp => {
 						console.log(resp);
+						setStore({
+							comentarioData: {
+								calificacion: 0,
+								comentario: ""
+							}
+						});
 					})
 					.catch(error => {
 						console.log(error + "Necesita estar login para comentar");

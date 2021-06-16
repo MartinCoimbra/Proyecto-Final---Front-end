@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/demo.scss";
 
@@ -8,6 +8,8 @@ export const Perfil = () => {
 
 	return (
 		<div className="container-fluid px-0 mx-0 mt-5 mt-sm-1">
+			{store.logeado === false ? <Redirect to="/" /> : ""}
+
 			<div className="container fondoperfil rounded my-5 py-3">
 				<div className="row pt-4 pr-4 pl-4 mb-0 pb-0 justify-content-center justify-content-md-between">
 					<div className="col-12 col-md-5 col-xl-3 ">

@@ -279,6 +279,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			filtradoTrue: e => {
 				setStore({ filtrado: true });
 				setStore({ catFiltrada: e.target.value });
+				if (e.target.value === "0") {
+					setStore({ filtrado: false });
+				}
 				getActions().getPreguntado();
 			},
 			verpreguntadoE: id => {

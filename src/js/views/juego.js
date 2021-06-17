@@ -137,102 +137,21 @@ export const Juego = () => {
 	/* Al hacer click le mandamos el num de la resp que le hicimos click 
         y si concide el num por parametro a respuesttaC= num */
 	return (
-		<div className="container-fluid fondoTop px-0 mx-0 mt-4">
+		<div className="container-fluid px-0 mx-0 mt-4">
 			{store.logeado === false ? (
 				<Redirect to="/" />
 			) : (
-				<div className="container paleta5 rounded border my-5">
+				<div className="container fondojuego mt-5 rounded border">
 					<div className="row justify-content-between p-5">
-						<div className="col-2">
-							<button className="btn btn-danger">Salir</button>
-						</div>
-						<div className="col-8 text-center text-white">
-							<h1>{store.preguntasYresp[position].preguntado.nombre}</h1>
-						</div>
-						<div className="col-2" />
 						<div className="col-3">
 							<p className="mt-3 p-2 bg-white rounded">Puntos: {puntos}</p>
 							<p className="mt-3 p-2 bg-white rounded">
 								Partidas {position + 1}
 								/5
 							</p>
-						</div>
-						<div className="col-5 px-0 text-center">
-							<img
-								src={store.preguntasYresp[position].foto_pregunta}
-								className="figure-img img-fluid rounded w-75"
-								alt="..."
-							/>
-						</div>
-						<div className="col-3">
-							<div className={"mt-3 p-2 pb-3 d-flex justify-content-between " + fondo}>
-								<p className="align-middle mt-3 pl-3 h4">Tiempo: </p>
-								<p className="align-middle mt-3 px-0 h4 text-dark">{num} </p>
-								<img
-									className="w-25 pr-3 py-2"
-									src="https://ayuda.mascaradelatex.com/hc/article_attachments/1500004826121/reloj.gif"
-								/>{" "}
-							</div>
-						</div>
-					</div>
-					<div className="row justify-content-center">
-						<div className="col-6">
-							<div className="cuadrodepregunta w-100 pt-2 pb-2 text-center">
-								<p className="h4">{store.preguntasYresp[position].preguntas}</p>
-							</div>
-						</div>
-					</div>
-					<div className="row justify-content-center pb-5 mt-2">
-						<div className="col-3">
-							<div className="progress">
-								<div
-									className="progress-bar progress-bar-striped"
-									style={{
-										width: Math.floor(num2 * 100) / 20 + "%"
-									}}
-									role="progressbar"
-									aria-valuenow="75"
-									aria-valuemin="0"
-									aria-valuemax={(20 * 100) / 20}
-								/>
-							</div>
-						</div>
-					</div>
 
-					<div className={ver}>
-						<div className="row justify-content-center">
-							<div className="col-5">
-								<h3 className="text-white">Tu respuesta es: {resFV} </h3>
-							</div>
-							<div className={position + 1 === 5 ? "d-none" : "col-2"}>
-								<button
-									onClick={() => {
-										aumentarPuntos();
-										siguientePregunta();
-									}}
-									className="btn btn-success">
-									Siguiente ✅
-								</button>
-							</div>
-							<div className={position + 1 === 5 ? "d-block" : "d-none"}>
-								<button
-									onClick={() => {
-										console.log("tus puntos sonnn:" + puntos);
-										actions.putEditarPuntos(puntos);
-										setHome(true);
-									}}
-									className="btn btn-success">
-									Siguiente ✅{home == true ? <Redirect to="/top" /> : ""}
-								</button>
-							</div>
-						</div>
-					</div>
-
-					<div className="row pb-5 mt-2">
-						<div className="col-3 d-flex flex-column">
-							{/* Antes de dar los beneficion verificar que tenga coin en caso de ser asi, tomar los coin que tiene y restarlo por el valor de cada uno */}
 							<div className={store.coin >= 100 ? "d-block" : "d-none"}>
-								<p className="text-white">100 Coin</p>
+								<p className="text-white mb-0">100 Coin</p>
 								<button
 									onClick={() => {
 										actions.putCoinComodin(100);
@@ -241,110 +160,181 @@ export const Juego = () => {
 										setResFV("Comodin 🔆");
 										setVer("d-block");
 									}}
-									className="btn btn-primary">
+									className="Ccoins">
 									Respuesta correcta
 								</button>
 							</div>
 							<div className={store.coin >= 50 ? "d-block" : "d-none"}>
-								<p className="text-white">50 Coin</p>
+								<p className="text-white mb-0">50 Coin</p>
 								<button
 									onClick={() => {
 										/* Opcion B disable */
 										actions.putCoinComodin(50);
 										handleClick();
 									}}
-									className="btn btn-primary">
+									className="Ccoins">
 									Pausar tiempo
 								</button>
 							</div>
 							<div className={store.coin >= 25 ? "d-block" : "d-none"}>
-								<p className="text-white">25 Coin</p>
+								<p className="text-white mb-0">25 Coin</p>
 								<button
 									onClick={() => {
 										actions.putCoinComodin(24);
 										setNum(20);
 									}}
-									className="btn btn-primary">
+									className="Ccoins">
 									Reset time
 								</button>
 							</div>
 						</div>
-						<div className="col-6 align-self-center text-center">
-							{/* BOTON 1 */}
-							<button
-								disabled={disableBtn}
-								onClick={() => {
-									console.log("tu respuesta es" + btn1);
-									respuestaCorrectaVerific(
-										respuestaC == 1
-											? store.preguntasYresp[position].respuesta[0].opcion_correcta
-											: respuestaC == 2
-												? store.preguntasYresp[position].respuesta[0].opcion_b
-												: respuestaC == 3
-													? store.preguntasYresp[position].respuesta[0].opcion_c
-													: ""
-									);
-									handleClick;
-								}}
-								className="btn btn-primary">
-								{respuestaC == 1
-									? store.preguntasYresp[position].respuesta[0].opcion_correcta
-									: respuestaC == 2
-										? store.preguntasYresp[position].respuesta[0].opcion_b
-										: respuestaC == 3
-											? store.preguntasYresp[position].respuesta[0].opcion_c
-											: ""}
-							</button>
-							{/* BOTON 2 */}
-							<button
-								disabled={disableBtn}
-								onClick={() => {
-									console.log("tu respuesta es" + btn2);
-									respuestaCorrectaVerific(
-										respuestaC == 1
-											? store.preguntasYresp[position].respuesta[0].opcion_c
-											: respuestaC == 3
-												? store.preguntasYresp[position].respuesta[0].opcion_b
+
+						<div className="col-6 text-center text-white">
+							<h1>{store.preguntasYresp[position].preguntado.nombre}</h1>
+							<div className="col-10 px-0 text-center">
+								<img
+									src={store.preguntasYresp[position].foto_pregunta}
+									className="figure-img img-fluid rounded w-75"
+									alt="..."
+								/>
+							</div>
+
+							<div className="col-10">
+								<div className="cuadrodepregunta w-100 py-2 text-center mb-2">
+									<p className="text-dark m-0">{store.preguntasYresp[position].preguntas}</p>
+								</div>
+							</div>
+
+							<div className="col-10">
+								<div className="progress">
+									<div
+										className="progress-bar progress-bar-striped"
+										style={{
+											width: Math.floor(num2 * 100) / 20 + "%"
+										}}
+										role="progressbar"
+										aria-valuenow="75"
+										aria-valuemin="0"
+										aria-valuemax={(20 * 100) / 20}
+									/>
+								</div>
+							</div>
+
+							<div className={ver}>
+								<div className="col-10">
+									<h3 className="text-white">Tu respuesta es: {resFV} </h3>
+									<div className={position + 1 === 5 ? "d-none" : ""}>
+										<button
+											onClick={() => {
+												aumentarPuntos();
+												siguientePregunta();
+											}}
+											className="btn btn-success">
+											Siguiente ✅
+										</button>
+									</div>
+									<div className={position + 1 === 5 ? "d-block" : "d-none"}>
+										<button
+											onClick={() => {
+												console.log("tus puntos sonnn:" + puntos);
+												actions.putEditarPuntos(puntos);
+												setHome(true);
+											}}
+											className="btn btn-success">
+											Siguiente ✅{home == true ? <Redirect to="/top" /> : ""}
+										</button>
+									</div>
+								</div>
+							</div>
+							<div className="col-10 align-self-center text-center ">
+								{/* BOTON 1 */}
+								<button
+									disabled={disableBtn}
+									onClick={() => {
+										console.log("tu respuesta es" + btn1);
+										respuestaCorrectaVerific(
+											respuestaC == 1
+												? store.preguntasYresp[position].respuesta[0].opcion_correcta
 												: respuestaC == 2
-													? store.preguntasYresp[position].respuesta[0].opcion_correcta
-													: ""
-									);
-									handleClick;
-								}}
-								className="btn btn-primary mx-3">
-								{respuestaC == 1
-									? store.preguntasYresp[position].respuesta[0].opcion_c
-									: respuestaC == 3
-										? store.preguntasYresp[position].respuesta[0].opcion_b
+													? store.preguntasYresp[position].respuesta[0].opcion_b
+													: respuestaC == 3
+														? store.preguntasYresp[position].respuesta[0].opcion_c
+														: ""
+										);
+										handleClick;
+									}}
+									className="btn btn-primary border m-3">
+									{respuestaC == 1
+										? store.preguntasYresp[position].respuesta[0].opcion_correcta
 										: respuestaC == 2
-											? store.preguntasYresp[position].respuesta[0].opcion_correcta
-											: ""}
-							</button>
-							{/* BOTON 3 */}
-							<button
-								disabled={disableBtn}
-								onClick={() => {
-									console.log("tu respuesta es" + btn3);
-									respuestaCorrectaVerific(
-										respuestaC == 1
 											? store.preguntasYresp[position].respuesta[0].opcion_b
-											: respuestaC == 2
+											: respuestaC == 3
+												? store.preguntasYresp[position].respuesta[0].opcion_c
+												: ""}
+								</button>
+								{/* BOTON 2 */}
+								<button
+									disabled={disableBtn}
+									onClick={() => {
+										console.log("tu respuesta es" + btn2);
+										respuestaCorrectaVerific(
+											respuestaC == 1
 												? store.preguntasYresp[position].respuesta[0].opcion_c
 												: respuestaC == 3
-													? store.preguntasYresp[position].respuesta[0].opcion_correcta
-													: ""
-									);
-									handleClick;
-								}}
-								className="btn btn-primary">
-								{respuestaC == 1
-									? store.preguntasYresp[position].respuesta[0].opcion_b
-									: respuestaC == 2
+													? store.preguntasYresp[position].respuesta[0].opcion_b
+													: respuestaC == 2
+														? store.preguntasYresp[position].respuesta[0].opcion_correcta
+														: ""
+										);
+										handleClick;
+									}}
+									className="btn btn-primary border  mx-sm-3 m-3">
+									{respuestaC == 1
 										? store.preguntasYresp[position].respuesta[0].opcion_c
 										: respuestaC == 3
-											? store.preguntasYresp[position].respuesta[0].opcion_correcta
-											: ""}
-							</button>
+											? store.preguntasYresp[position].respuesta[0].opcion_b
+											: respuestaC == 2
+												? store.preguntasYresp[position].respuesta[0].opcion_correcta
+												: ""}
+								</button>
+								{/* BOTON 3 */}
+								<button
+									disabled={disableBtn}
+									onClick={() => {
+										console.log("tu respuesta es" + btn3);
+										respuestaCorrectaVerific(
+											respuestaC == 1
+												? store.preguntasYresp[position].respuesta[0].opcion_b
+												: respuestaC == 2
+													? store.preguntasYresp[position].respuesta[0].opcion_c
+													: respuestaC == 3
+														? store.preguntasYresp[position].respuesta[0].opcion_correcta
+														: ""
+										);
+										handleClick;
+									}}
+									className="btn btn-primary border m-3">
+									{respuestaC == 1
+										? store.preguntasYresp[position].respuesta[0].opcion_b
+										: respuestaC == 2
+											? store.preguntasYresp[position].respuesta[0].opcion_c
+											: respuestaC == 3
+												? store.preguntasYresp[position].respuesta[0].opcion_correcta
+												: ""}
+								</button>
+							</div>
+						</div>
+
+						<div className="col-3">
+							<button className="btn btn-danger">Salir</button>
+							<div className={"mt-3 p-2 pb-3 d-flex justify-content-between " + fondo}>
+								<p className="align-middle mt-3 pl-3 h4">Tiempo: </p>
+								<p className="align-middle mt-3 px-0 h4 text-dark">{num} </p>
+								<img
+									className="w-25 pr-3 py-2"
+									src="https://ayuda.mascaradelatex.com/hc/article_attachments/1500004826121/reloj.gif"
+								/>{" "}
+							</div>
 						</div>
 					</div>
 				</div>

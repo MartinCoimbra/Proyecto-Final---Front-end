@@ -143,7 +143,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 							if (resp.token !== undefined) {
 								setStore({ logeado: true });
 								setStore({ infoProfile: resp.user });
-								/* getActions().getCoin() */
+								getActions().getCoin();
 							}
 						}
 					})
